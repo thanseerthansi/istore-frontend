@@ -1,0 +1,28 @@
+.ec-page-content .section-title .ec-title {
+    padding: 0 34px;
+  }
+  .ec-page-content .section-title .ec-title:after {
+    width: 20px;
+  }
+  .ec-page-content .section-title .ec-title:before {
+    width: 20px;
+  }
+  .product_page .ec-page-content {
+    margin-bottom: 0;
+  }
+  .blog_page .ec-page-content .section-title {
+    margin-bottom: 23px;
+  }
+  .track_order_page .ec-page-content .section-title {
+    margin-bottom: 22px;
+  }
+  .track_order_page .ec-page-content .section-title .ec-title {
+    padding: 0 64px;
+  }
+  .track_order_page .ec-page-content .section-title .ec-title:after {
+    width: 50px;
+  }
+  .track_order_page .ec-page-content .section-title .ec-title:before {
+    width: 50px;
+  }
+  
