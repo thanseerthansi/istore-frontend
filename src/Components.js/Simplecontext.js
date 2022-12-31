@@ -43,8 +43,8 @@ export default function Simplecontextprovider({children}) {
   
   const accesscheck = async()=>{
     
-    const token = localStorage.getItem('access_token');
-    var refresh_token = window.localStorage.getItem('refresh_token')
+    const token = localStorage.getItem('access_user');
+    var refresh_token = window.localStorage.getItem('refresh_user')
     // console.log("valid1",refresh_token)
     
     if (refresh_token && token){
@@ -63,14 +63,14 @@ export default function Simplecontextprovider({children}) {
             if(accessdata.status===200){
               window.localStorage.setItem('access_token', accessdata.data.access)   
             } else{
-              return navigate('/adminlogin')
+              return navigate('/login')
             }
             
         }catch (error) {
           console.log("error",error)
           // console.log("erro/rmessga",error.response.status)
           if (error.response.status===401){
-              return navigate('/adminlogin');
+              return navigate('/login');
           }
         }
       }else{
@@ -79,9 +79,10 @@ export default function Simplecontextprovider({children}) {
       }
   }else{
     console.log("notrefresh token")
-        return navigate('/adminlogin');
+        return navigate('/login');
   }
 }
+
   return (
     <Simplecontext.Provider value={{
         accesscheck,products,setproducts,modelsname

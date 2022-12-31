@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Checkout() {
     const [viewcart,setviewcart]=useState([]);
     const [customerdetails,setcustomerdetails]=useState();
+    console.log("viewcaer",viewcart)
     useEffect(() => {
       Scripts()
       cartfunction()
@@ -74,7 +75,7 @@ export default function Checkout() {
         
       }
       const setallnull=()=>{
-        setviewcart([''])
+        setviewcart([])
         window.localStorage.setItem('cart','')
         setcustomerdetails()
       }
@@ -122,6 +123,7 @@ export default function Checkout() {
                     
                     
                     <div className="ec-check-bill-form">
+                      {viewcart.length ? 
                       <form onSubmit={(e)=>checkout(e,(viewcart.reduce((n, {price}) => n + parseInt(price), 0)))} >
                         <span className="ec-bill-wrap ">
                           <label>Name*</label>
@@ -166,6 +168,7 @@ export default function Checkout() {
                         </div>
                         :null }
                       </form>
+                      :null}
                     </div>
                   </div>
                 </div>

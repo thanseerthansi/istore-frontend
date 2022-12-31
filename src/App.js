@@ -7,9 +7,14 @@ import Categoryproducts from "./Components.js/Categoryproducts";
 import Checkout from "./Components.js/Checkout";
 // import Detailproduct from "./Components.js/Detailproduct";
 import Home from "./Components.js/Home";
+import Login from "./Components.js/Login";
+import Orders from "./Components.js/Orders";
 import Product from "./Components.js/Product";
+import Register from "./Components.js/Register";
+import Selled from "./Components.js/Selled";
 import Sellmyphone from "./Components.js/Sellmyphone";
 import Simplecontextprovider from "./Components.js/Simplecontext";
+import Userprofile from "./Components.js/Userprofile";
 
 function App() {
  
@@ -26,6 +31,11 @@ function App() {
           <Route exact path="categoryproduct/:model" element={<Categoryproducts/>}/>
           <Route exact path="checkout" element={<Checkout/>} /> 
           <Route exact path="sellmyphone" element={<Sellmyphone/>} /> 
+          <Route exact path="login" element={<Login/>} /> 
+          <Route exact path="register" element={<Register/>} /> 
+          <Route exact path="userprofile" element={<Userprofile/>} /> 
+          <Route exact path="orders" element={<Orders/>} /> 
+          <Route exact path="selled" element={<Selled/>} /> 
         </Routes>
       </Simplecontextprovider>
       </Router>
