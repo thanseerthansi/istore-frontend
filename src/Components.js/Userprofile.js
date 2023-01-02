@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from './Header'
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,12 +6,63 @@ import 'react-toastify/dist/ReactToastify.css';
 import Scripts from './Scripts';
 import { Simplecontext } from './Simplecontext';
 import Footer from './Footer';
+import Callaxios from './Callaxios';
 export default function Userprofile() {
-    const {accesscheck} =useContext(Simplecontext)
+    const {accesscheck,logoutf} =useContext(Simplecontext)
+    const [userdata,setuserdata]=useState([])
+    const [email,setemail]=useState()
+    const [contact,setcontact]=useState()
+    const [password,setpassword]=useState()
+    const [userid,setuserid]=useState()
     useEffect(() => {
         Scripts()
         accesscheck()
+        getuser()
       }, [])
+      const notify = (msg) => toast.success(msg, {
+        position: "top-center",
+      });
+    const notifyerror = (msg) => toast.error(msg, {
+      position: "top-center",
+      });
+    const getuser=async()=>{
+      try {
+        let emailid = window.localStorage.getItem('email')
+        // console.log("emua",emailid)
+        if (emailid){
+        let data = await Callaxios("get",'user/user/',{email:emailid}) 
+        // console.log("data",data)
+        if(data.status===200){
+          setuserdata(data.data)
+          setemail(data.data[0].email)
+          setcontact(data.data[0].contact)
+          setuserid(data.data[0].id)
+        }
+    }
+      } catch (error) {
+        
+      }
+      
+    }
+    const edituserfn =async(e)=>{
+      e.preventDefault();
+      try {
+        let data = await Callaxios("post","user/user/",{"id":userid,"username":email,"email":email,"contact":contact,"oldpassword":password})
+        console.log("data",data)
+        if(data.data.Status===200){
+          notify('Updated Successfully')
+          setemail(email)
+          setcontact(contact)
+          setpassword('')
+          getuser()
+        }else{
+          notifyerror("Something Went wrong")
+        }
+      } catch (error) {
+        
+      }
+      
+    }
   return (
     <div>
         <Header/>
@@ -59,10 +110,7 @@ export default function Userprofile() {
                     <li><Link to="/userprofile">User Profile</Link></li>
                     <li><Link to="/orders">Orders</Link></li>                  
                     <li><Link to="/selled">Sells</Link></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="track-order.html">Track Order</a></li>
-                    <li><a href="user-invoice.html">Invoice</a></li>
+                    <li><a onClick={()=>logoutf()} >Logout</a></li>
                     </ul>
                 </div>
                 </div>
@@ -78,42 +126,17 @@ export default function Userprofile() {
                     
                     <h5>Account Information</h5>
                     <div className="row">
-                        <div className="col-md-6 col-sm-12">
+                        <div className="col-md-12 col-sm-12">
                         <div className="ec-vendor-detail-block ec-vendor-block-email space-bottom-30">
                             <h6>E-mail address <a href="/" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal"><img src="assets/images/icons/edit.svg" className="svg_img pro_svg" alt="edit" /></a></h6>
                             <ul>
-                            <li><strong>Email 1 : </strong>support1@exapmle.com</li>
-                            <li><strong>Email 2 : </strong>support2@exapmle.com</li>
+                            <li><strong>Email : </strong>{window.localStorage.getItem('email')}</li>
+                            <li><strong>Contact : </strong>{userdata.length ?  userdata[0].contact : null}</li>
                             </ul>
                         </div>
                         </div>
-                        <div className="col-md-6 col-sm-12">
-                        <div className="ec-vendor-detail-block ec-vendor-block-contact space-bottom-30">
-                            <h6>Contact nubmer<a href="/" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal"><img src="assets/images/icons/edit.svg" className="svg_img pro_svg" alt="edit" /></a></h6>
-                            <ul>
-                            <li><strong>Phone Nubmer 1 : </strong>(123) 123 456 7890</li>
-                            <li><strong>Phone Nubmer 2 : </strong>(123) 123 456 7890</li>
-                            </ul>
-                        </div>
-                        </div>
-                        <div className="col-md-6 col-sm-12">
-                        <div className="ec-vendor-detail-block ec-vendor-block-address mar-b-30">
-                            <h6>Address<a href="javasript:void(0)" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal"><img src="assets/images/icons/edit.svg" className="svg_img pro_svg" alt="edit" /></a></h6>
-                            <ul>
-                            <li><strong>Home : </strong>123, 2150 Sycamore Street, dummy text of
-                                the, San Jose, California - 95131.</li>
-                            </ul>
-                        </div>
-                        </div>
-                        <div className="col-md-6 col-sm-12">
-                        <div className="ec-vendor-detail-block ec-vendor-block-address">
-                            <h6>Shipping Address<a href="javasript:void(0)" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal"><img src="assets/images/icons/edit.svg" className="svg_img pro_svg" alt="edit" /></a></h6>
-                            <ul>
-                            <li><strong>Office : </strong>123, 2150 Sycamore Street, dummy text of
-                                the, San Jose, California - 95131.</li>
-                            </ul>
-                        </div>
-                        </div>
+                        
+                      
                     </div>
                     </div>
                 </div>
@@ -138,44 +161,23 @@ export default function Userprofile() {
             
            
             <div className="ec-vendor-upload-detail">
-              <form className="row g-3">
+              <form onSubmit={(e)=>edituserfn(e)} className="row g-3">
+               
                 <div className="col-md-6 space-t-15">
-                  <label className="form-label">First name</label>
-                  <input type="text" className="form-control" />
+                  <label className="form-label">Email id </label>
+                  <input onChange={(e)=>setemail(e.target.value)} value={email} type="email" className="form-control" />
                 </div>
+                
                 <div className="col-md-6 space-t-15">
-                  <label className="form-label">Last name</label>
-                  <input type="text" className="form-control" />
-                </div>
-                <div className="col-md-12 space-t-15">
-                  <label className="form-label">Address 1</label>
-                  <input type="text" className="form-control" />
-                </div>
-                <div className="col-md-12 space-t-15">
-                  <label className="form-label">Address 2</label>
-                  <input type="text" className="form-control" />
-                </div>
-                <div className="col-md-12 space-t-15">
-                  <label className="form-label">Address 3</label>
-                  <input type="text" className="form-control" />
+                  <label className="form-label">Phone number </label>
+                  <input onChange={(e)=>setcontact(e.target.value)} value={contact} type="text" className="form-control" />
                 </div>
                 <div className="col-md-6 space-t-15">
-                  <label className="form-label">Email id 1</label>
-                  <input type="text" className="form-control" />
+                  <label className="form-label">Password </label>
+                  <input onChange={(e)=>setpassword(e.target.value)}  value={password} type="password" className="form-control" />
                 </div>
-                <div className="col-md-6 space-t-15">
-                  <label className="form-label">Email id 2</label>
-                  <input type="text" className="form-control" />
-                </div>
-                <div className="col-md-6 space-t-15">
-                  <label className="form-label">Phone number 1</label>
-                  <input type="text" className="form-control" />
-                </div>
-                <div className="col-md-6 space-t-15">
-                  <label className="form-label">Phone number 2</label>
-                  <input type="text" className="form-control" />
-                </div>
-                <div className="col-md-12 space-t-15">
+                
+                <div className="col-md-12 space-t-15 pt-2">
                   <button type="submit" className="btn btn-primary">Update</button>
                   <a href="#" className="btn btn-lg btn-secondary qty_close" data-bs-dismiss="modal" aria-label="Close">Close</a>
                 </div>

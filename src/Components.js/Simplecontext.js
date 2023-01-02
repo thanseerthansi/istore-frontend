@@ -22,7 +22,7 @@ export default function Simplecontextprovider({children}) {
 
   const getproduct = async()=>{
     let data = await Callaxios("get","product/product/",{sellstatus:"True"})
-    console.log("dataresponsenwxt",data.data)
+    // console.log("dataresponsenwxt",data)
     if (data.status===200){ 
         setproducts(data.data) 
 
@@ -82,10 +82,17 @@ export default function Simplecontextprovider({children}) {
         return navigate('/login');
   }
 }
+const logoutf=()=>{
+  window.localStorage.removeItem("access_user")
+  window.localStorage.removeItem("refresh_user")
+  window.localStorage.removeItem("email")
+  // console.log("okdelete")
+  return navigate('/');
+}  
 
   return (
     <Simplecontext.Provider value={{
-        accesscheck,products,setproducts,modelsname
+        accesscheck,products,setproducts,modelsname,logoutf
     }}>{children}</Simplecontext.Provider>
   )
 }

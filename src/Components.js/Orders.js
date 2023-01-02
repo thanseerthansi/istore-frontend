@@ -8,12 +8,13 @@ import { Simplecontext } from './Simplecontext';
 import Footer from './Footer';
 import Callaxios from './Callaxios';
 import { BaseURL } from './urlcall';
+import ReactWhatsapp from 'react-whatsapp';
 
 export default function Orders() {
     const [orderproduct,setorderproduct]= useState('')
     const [orders,setorders]= useState([])
     const [nextorder,setnextorder]=useState('')
-    const {accesscheck} =useContext(Simplecontext)
+    const {accesscheck,logoutf} =useContext(Simplecontext)
     useEffect(() => {
         Scripts()
         accesscheck()
@@ -30,7 +31,7 @@ export default function Orders() {
             let emailid = window.localStorage.getItem('email')
             if (emailid){
                 let data = await Callaxios("get","/purchase/order/",{'email':emailid})
-                // console.log("data",data.data.results)
+                console.log("data",data)
                 if (data.status===200){
                     
                     setorders(data.data.results)
@@ -66,6 +67,15 @@ export default function Orders() {
         }else{
             
         }
+    }
+    const whatsappchat=(id)=>{
+      // console.log("ok")
+      // let isMobileDevice = window.matchMedia("only screen and (max-width: 760px)").matches;
+      // if(isMobileDevice){
+      // console.log("sdf")
+      let url = `https://web.whatsapp.com/send?phone="917034114744"&text= I have got wrong product from your website .want to return  this product -ID${id}`;
+      window.open(url);
+      // }
     }
         
   return (
@@ -115,10 +125,9 @@ export default function Orders() {
                 <li><Link to="/userprofile">User Profile</Link></li>
                 <li><Link to="/orders">Orders</Link></li>
                 <li><Link to="/selled">Sells</Link></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-                <li><a href="track-order.html">Track Order</a></li>
-                <li><a href="user-invoice.html">Invoice</a></li>
+                <li><a onClick={()=>logoutf()} >Logout</a></li>
+                
+                
                 </ul>
             </div>
             </div>
@@ -191,10 +200,11 @@ export default function Orders() {
             <table className="table ec-table">
           <thead>
             <tr>
-                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
                 <th scope="col">Image</th>
                 <th scope="col">Condition</th>
                 <th scope="col">Price</th>
+                <th scope="col">Return</th>
                 
             </tr>
           </thead>
@@ -205,6 +215,10 @@ export default function Orders() {
                 <td><img className="prod-img" src={BaseURL+itm.product[0].images[0].image} alt="product image " height={50}  /></td>
                 <td><span>{itm.condition}</span></td>
                 <td><span>${itm.price}</span></td>
+                <td>
+                <span className="tbl-btn"><a onClick={()=>whatsappchat(itm.id)} className="btn btn-lg btn-primary">Return</a></span>
+                </td>
+                
                 
               </tr>
             )):null}

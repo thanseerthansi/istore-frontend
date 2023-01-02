@@ -177,6 +177,62 @@ export default function Footer() {
     </div>
   </footer>
   {/* Footer Area End */}
+  {/* chat strat */}
+  <div className="ec-cp-style cp-right-bottom">
+  {/* Start Floating Panel Container */}
+  <div className="cp-panel">	
+    
+    
+    {/* Chat Button For Whatsapp */}
+    <a id="cp-whatsapp" href="/" className="cp-list" data-number={917034114744} data-message="Please help me! I have got wrong product from your website." target="_blank">
+      <div className="cp-image">
+        <img src="assets/images/chat-pro/cp-whatsapp.png" alt={''} />
+      </div>	
+      <div className="cp-content">
+        <h2>Whatsapp</h2>
+        <p>directlly chat on Whatsapp</p>
+      </div>
+    </a>
+    {/* Chat Button For Telegram */}
+    <a className="cp-list" href="https://t.me/kathiriyaketan" target="_blank">
+      <div className="cp-image">
+        <img src="assets/images/chat-pro/cp-telegram.png" alt={''} />
+      </div>	
+      <div className="cp-content">
+        <h2>Telegram</h2>
+        <p> get solution over Telegram</p>
+      </div>
+    </a>
+    
+    {/* Mail Button For Email */}
+    <a className="cp-list" href="mailto:kathiriyaketan57@gmail.com" target="_blank">
+      <div className="cp-image">
+        <img src="assets/images/chat-pro/cp-email.png" alt={''} />
+      </div>	
+      <div className="cp-content">
+        <h2>Email</h2>
+        <p> talk with us over Email</p>
+      </div>
+    </a>
+    {/* Call Button For Phone Number */}
+    <a className="cp-list" href="tel:+919099153528" target="_blank">
+      <div className="cp-image">
+        <img src="assets/images/chat-pro/cp-telephone.png" alt={''} />
+      </div>	
+      <div className="cp-content">
+        <h2>Call</h2>
+        <p> talk with us over telephone</p>
+      </div>
+    </a>
+  </div>
+  {/*/ End Floating Panel Container */}
+  {/* Start Right Floating Button */}
+  <div className="cp-button cp-right-bottom">
+    <img src="assets/images/chat-pro/chat.png" alt="icon" />
+  </div>
+  {/*/ End Right Floating Button */}
+</div>
+  {/* chat end */}
     </div>
   )
 }

@@ -13,7 +13,7 @@ export default function Selled() {
     const [orderproduct,setorderproduct]= useState('')
     const [orders,setorders]= useState([])
     const [nextorder,setnextorder]=useState('')
-    const {accesscheck} =useContext(Simplecontext)
+    const {accesscheck,logoutf} =useContext(Simplecontext)
     useEffect(() => {
         Scripts()
         accesscheck()
@@ -29,9 +29,9 @@ export default function Selled() {
         try {
             let emailid = window.localStorage.getItem('email')
             if (emailid){
-                let data = await Callaxios("get","/selling/sellorder/")
+                let data = await Callaxios("get","/selling/sellorder/",{email:emailid})
                 if (data.status===200){
-                    console.log("statusdata",data)
+                    // console.log("statusdata",data)
                     setorders(data.data.results)
                     setnextorder(data.data.next)
                 }else{
@@ -111,10 +111,8 @@ export default function Selled() {
                 <li><Link to="/userprofile">User Profile</Link></li>
                 <li><Link to="/orders">Orders</Link></li>
                 <li><Link to="/selled">Sells</Link></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-                <li><a href="track-order.html">Track Order</a></li>
-                <li><a href="user-invoice.html">Invoice</a></li>
+                <li><a onClick={()=>logoutf()} >Logout</a></li>
+                
                 </ul>
             </div>
             </div>
@@ -187,7 +185,7 @@ export default function Selled() {
                 <table className="table ec-table">
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
                     <th scope="col">Image</th>
                     <th scope="col">Condition</th>
                     <th scope="col">Price</th>

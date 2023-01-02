@@ -295,7 +295,7 @@ export default function Header() {
                 <li className="dropdown"><Link to="/">Home</Link>
                   
                 </li>
-                <li className="dropdown position-static"><a href="/">Categories</a>
+                {/* <li className="dropdown position-static"><a href="/">Categories</a>
                   <ul className="mega-menu d-block">
                     <li className="d-flex">
                       <ul className="d-block">
@@ -353,7 +353,7 @@ export default function Header() {
                       </ul>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link></li>
                 <li className="dropdown"><Link to="/userprofile">Account</Link> </li>
                 <li className="dropdown"><Link to="/">About Us</Link> </li>
