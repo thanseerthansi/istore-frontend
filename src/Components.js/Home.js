@@ -304,7 +304,7 @@ export default function Home() {
           </div>
           <div className="ec-spe-products">
            
-            {products.filter((item,index)=>index < 3).map((itm,k)=>(
+            {products.filter(t => t.category.toUpperCase().includes("DEAL")).map((itm,k)=>(
             <div key={k} className="ec-fs-product">
               <div className="ec-fs-pro-inner ec-product-inner">
                 <div className="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
@@ -341,7 +341,7 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-exe-products product-mt-minus-15">
-          {products.length ? products.filter((item,index)=>index < 3).map((itm,k)=>( 
+          {products.length ? products.filter(t => t.category.toUpperCase().includes("EXCLUSIVE")).map((itm,k)=>( 
               <div key={k} className="ec-product-content">
                 <Link to={`/product/${itm.id}`}><div className="ec-product-inner">
                   <div className="ec-product-hover" />
@@ -417,13 +417,13 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-new-slider">
-          {products.length ? products.filter((item,index)=>index < 8).map((itm,k)=>(
+          {products.length ? products.filter(t => t.category.toUpperCase().includes("NEW")).map((itm,k)=>(
             <div key={k} className="col-sm-12 ec-all-product-block">
               <div className="ec-all-product-inner">
                 <div className="ec-pro-image-outer">
                   <div className="ec-pro-image">
                     <a href="product-left-sidebar.html" className="image">
-                      <img className="main-image" src={itm.images[0].image} alt="Product" />
+                      <img className="main-image" src={itm.images.length ? itm.images[0].image :null} alt="Product" />
                     </a>
                   </div>
                 </div>
@@ -453,13 +453,13 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-special-slider">
-          {products.length ? products.filter((item,index)=>index < 8).map((itm,k)=>(
+          {products.length ? products.filter(t => t.category.toUpperCase().includes("SPECIAL")).map((itm,k)=>(
             <div key={k} className="col-sm-12 ec-all-product-block">
               <div className="ec-all-product-inner">
                 <div className="ec-pro-image-outer">
                   <div className="ec-pro-image">
                     <a href="product-left-sidebar.html" className="image">
-                      <img className="main-image" src={itm.images[0].image} alt="Product" />
+                      <img className="main-image" src={itm.images.length ? itm.images[0].image :null} alt="Product" />
                     </a>
                   </div>
                 </div>
@@ -487,13 +487,13 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-best-slider">
-          {products.length ? products.filter((item,index)=>index < 8).map((itm,k)=>(
+          {products.length ? products.filter(t => t.category.toUpperCase().includes("BEST")).map((itm,k)=>(
             <div key={k} className="col-sm-12 ec-all-product-block">
               <div className="ec-all-product-inner">
                 <div className="ec-pro-image-outer">
                   <div className="ec-pro-image">
                     <a href="product-left-sidebar.html" className="image">
-                      <img className="main-image" src={itm.images[0].image} alt="Product" />
+                      <img className="main-image" src={itm.images.length ? itm.images[0].image :null} alt="Product" />
                     </a>
                   </div>
                 </div>

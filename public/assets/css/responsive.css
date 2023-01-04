@@ -2593,6 +2593,9 @@
   .ec-checkout-wrap .ec-check-bill-form .ec-bill-wrap.ec-bill-half {
     width: 100%;
   }
+  .ec-checkout-wrap .ec-check-bill-form .ec-bill-wrap.ec-bill-quarter {
+    width: 100%;
+  }
   .ec-checkout-wrap .ec-check-bill-form input {
     margin-bottom: 15px;
   }
@@ -2811,8 +2814,8 @@
   }
 
   #scrollUp {
-    right: 15px;
-    bottom: 125px;
+    right: 12px;
+    bottom: 12px;
   }
 
   #ec-fixedbutton {
@@ -2937,6 +2940,10 @@
   }
   .ec-blog-card:hover .title-content {
     margin-top: 40px;
+  }
+  .single-pro-sidebar{
+    width:100%;
+    background-color: #fff;
   }
 }
 @media (max-width: 480px) {

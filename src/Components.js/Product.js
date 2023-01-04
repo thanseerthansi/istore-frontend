@@ -381,7 +381,7 @@ export default function Product() {
                             storagelist.map((itm,k)=>(
                               
                               // <div key={k} className='p-2'><button onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')} className={istorage === itm ? `bg-gray-700 font-semibold  py-2 px-4 border  text-white border-gray-400  hover:bg-gray-700  rounded`:`bg-gray font-semibold  py-2 px-4 border text-gray-400 hover:text-white border-gray-400  hover:bg-gray-700  rounded`} >{itm}</button></div>
-                              <li key={k}  style={istorage === itm ?{backgroundColor:"#fdd330",color:"#ffffff"}:{}} onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')}><span >{itm}</span></li>
+                              <li key={k} className="classheadstyle"  style={istorage === itm ?{backgroundColor:"#fdd330",color:"#ffffff"}:{}} onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')}><span >{itm}</span></li>
                             ))
                           :null}
                           </ul>
@@ -393,7 +393,7 @@ export default function Product() {
                           <ul className='text-center ' >
                           {productdetail ? <>
                             {(productdetail[0].sellprice.split(',')).filter(name => name.includes(istorage)).map((itm,i) =>(
-                              <li key={i} className='price p-2'  style={icondition === itm.split('-')[1] ?{backgroundColor:"#fdd330",color:"#ffffff",height:"60px",width:"130px"}:{height:"60px",width:"130px"}} onClick={()=>seticondition(itm.split('-')[1]) & setiprice(itm.split('-')[2]) &setogprice(itm.split('-')[2])}><span >{itm.split("-")[1]}<br/> AED {itm.split('-')[2]}</span></li>
+                              <li key={i} className='price p-2 classchildstyle '  style={icondition === itm.split('-')[1] ?{backgroundColor:"#fdd330",color:"#ffffff",height:"60px",width:"130px"}:{height:"60px",width:"130px"}} onClick={()=>seticondition(itm.split('-')[1]) & setiprice(itm.split('-')[2]) &setogprice(itm.split('-')[2])}><span className='text-capitalize '><span className='fw-bold' >{itm.split("-")[1]}</span><br/> AED {itm.split('-')[2]}</span></li>
                               // <div key={k} className='p-2'><button onClick={()=>seticondition(itm.split('-')[1]) & setiprice(itm.split('-')[2]) &setogprice(itm.split('-')[2])} className={`font-semibold ${icondition === itm.split('-')[1]? `text-white bg-gray-700`:`bg-gray text-gray-400`} px-4 border  hover:text-white border-gray-400   hover:bg-gray-700  rounded `}> {itm.split("-")[1]}<br/>AED {itm.split('-')[2]}</button></div>
                             ))}
                           </> :null}
@@ -431,18 +431,18 @@ export default function Product() {
                     </div>
                   </div>
                 </div>
-                <div className="single-pro-sidebar ">
+                <div className="single-pro-sidebar   ">
                   {conditiondata.map((itm,k)=>(
                     <div className='pt-2'key={k}>
                     <div  style={{width: '100%',backgroundColor:"#F8F4F4" }}>
                       <div className="ec-sb-pro-sl-item p-2">
                         
                         <div className="ec-pro-content">
-                          <h5 className="ec-pro-title text-center">{itm.condition}</h5>
+                          <h5 className=" single-pro-content ec-single-title text-center" style={{fontFamily:"Montserrat",fontWeight: 900,lineHeight: "30px",fontSize:"16px"}} >{itm.condition}</h5>
                           
-                          <ul className=''>
+                          <ul className='text-center'>
                             {itm.description.split(',').map((cond,c)=>(
-                              <li key={c} className=''>• {cond}</li>
+                              <li key={c} className='text-capitalize ' style={{fontFamily:"Montserrat",fontWeight:"600",fontSize:"12px"}}> {cond}</li>
                             ))}
                             
                             
@@ -469,6 +469,7 @@ export default function Product() {
           <div className="ec-single-pro-tab">
             <div className="ec-single-pro-tab-wrapper">
               <div className="ec-single-pro-tab-nav">
+                
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
                     <a className="nav-link active" href='/' data-bs-toggle="tab" data-bs-target="#ec-spt-nav-details" role="tablist">Detail</a>
@@ -504,6 +505,7 @@ export default function Product() {
                   </div>
                 </div>
                 <div id="ec-spt-nav-review" className="tab-pane fade">
+                
                   <div className="row">
                     <div className="ec-t-review-wrapper ">
                       
@@ -514,11 +516,11 @@ export default function Product() {
                             <img  key={i} src={imge.image} alt={''} height='120' width={'160'} />
                           )):null}
                           
-                         
+                          
                         </div>
                         <div className="ec-t-review-content">
                           <div className="ec-t-review-top">
-                            <div className="ec-t-review-name">{itm.customer}</div>
+                            <div className="ec-t-review-name classheadstyle">{itm.customer}</div>
                             <ReactStars 
                               value={itm.review_star}
                               count={5}
@@ -541,9 +543,9 @@ export default function Product() {
                       
                       
                     </div>
-                    <div className="ec-ratting-content">
+                    <div className="ec-ratting-content row">
                       <h3>Add a Review</h3>
-                      <div className="ec-ratting-form">
+                      <div className="ec-ratting-form col-md-8">
                         <form onSubmit={(e)=>starrating  ? reviewadd(e):notifyfunction(e,"fill all the fields")}>
                           <div className="ec-ratting-star">
                             <span>Your rating:</span>
@@ -554,11 +556,12 @@ export default function Product() {
                               activeColor="#ffd700"
                             />
                           </div>
+                          
                           <div className="ec-ratting-input">
-                            <input name="your-name" onChange={(e)=>setreviename(e.target.value)} value={reviename} placeholder="Name" type="text" required />
+                            <input className='border border-secondary border-bottom-0' name="your-name" onChange={(e)=>setreviename(e.target.value)} value={reviename} placeholder="Name" type="text" required />
                           </div>
                           <div className="ec-ratting-input">
-                            <input name="your-email" onChange={(e)=>setreviewmail(e.target.value)} value={reviewmail} placeholder="Email*" type="email" required />
+                            <input className='border border-secondary border-bottom-0' name="your-email" onChange={(e)=>setreviewmail(e.target.value)} value={reviewmail} placeholder="Email*" type="email" required />
                           </div>
                           <div className="ec-ratting-input form-submit">
                             <textarea onChange={(e)=>setreview(e.target.value)} value={review} name="your-commemt" placeholder="Enter Your Comment" defaultValue={""} required />
@@ -582,7 +585,7 @@ export default function Product() {
                             </div>
                             </div>
                                 <label className='font-bold'><b>Add Images :</b></label><br/>
-                              <input onChange={(e)=>e.target.files[0] !== undefined ? imageaddtolist(e.target.files[0]):''} style={{color: "rgba(0, 0, 0, 0)"}}  type='file' className='border border-gray-600  rounded '/>
+                              <input  onChange={(e)=>e.target.files[0] !== undefined ? imageaddtolist(e.target.files[0]):''} style={{color: "rgba(0, 0, 0, 0)"}} value={''} type='file' className='border border-gray-600 inputfile rounded '/>
                       
                             <button className="btn btn-primary" type="submit" value="Submit">Submit</button>
                           </div>

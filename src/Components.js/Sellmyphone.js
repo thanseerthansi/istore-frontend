@@ -30,12 +30,14 @@ export default function Sellmyphone() {
     }, [])
     
     const callstorage=(k)=>{
-        // console.log("data",k)
+        // console.log("dataasfsasaf", products.filter(t => t.title.toUpperCase().includes(k.toUpperCase())))
         let data = products.filter(t => t.title.toUpperCase().includes(k.toUpperCase()))
-        setselectedproduct(data[0])
+        .reduce((a,b)=>a.buyprice.length>b.buyprice.length?a:b)
+        // console.log("data16565",data)
+        setselectedproduct(data)
         // console.log("data1",data[0])
         let list =[];
-        (data[0].buyprice.split(',')).map((itm)=>{
+        (data.buyprice.split(',')).map((itm)=>{
           
           let spl = itm.split('-')[0]
           if (list[0]){
@@ -56,7 +58,7 @@ export default function Sellmyphone() {
         seticondition(value.split('-')[1]) 
         setiprice(value.split('-')[2])
         let data = await Callaxios("get","product/condition/",{"condition":value.split('-')[1]})
-        console.log(data)
+        // console.log(data)
         if (data.status===200){
         //   console.log("datasuccess",data.data)
           setconditiondata(()=>[...data.data])
@@ -98,9 +100,9 @@ export default function Sellmyphone() {
       }
       const getcondition=async()=>{
         let data = await Callaxios("get","product/condition/")
-        console.log(data)
+        // console.log(data)
         if (data.status===200){
-          console.log("datacondition",data.data)
+          // console.log("datacondition",data.data)
           setconditions(()=>[...data.data])
         }
       }
@@ -160,8 +162,8 @@ export default function Sellmyphone() {
                         <span  className="ec-bl-select-inner">
                         <select onChange={(e)=>setimodel(e.target.value) & callstorage(e.target.value) & seticondition()}  className="ec-bill-select">
                             <option hidden >Select Your iPhone</option>
-                            {modelsname.length ? modelsname.map((itm,k)=>(
-                                <option key={k} value={itm.model_name}>{itm.model_name}</option>
+                            {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(
+                                <option key={k} value={itm}>{itm}</option>
                             )) :null}
                             
                            
@@ -208,18 +210,20 @@ export default function Sellmyphone() {
         {/* card start */}
         {icondition ? <>
         <div className="pt-5 ml-2 " aria-hidden="false" role="tabpanel" id="slick-slide100" style={{width: 390}}><div><li className="ec-test-item" style={{width: '100%', display: 'inline-block'}}>
-      <div className="ec-test-inner">
-        <div className="ec-test-content">
-        <h5 className="ec-pro-title ml-5">{icondition}</h5>
-          <div className="ec-test-name">Price : <b>Upto ${iprice}</b></div>
+      <div className="ec-test-inner ">
+        <div className="ec-test-content pb-6">
+        <h5 className="ec-pro-title text-capitalize classheadstyle fs-3 " >{icondition}</h5>
+          <div className="ec-test-name classheadstyle">Price : <b>Upto ${iprice}</b></div>
           
           <div className='textstart'>
-          <div className="ec-test-designation text-warning">Our Expert will evaluate its correct condition at the time of handover</div>
+          <div className="ec-test-designation  text-center">Our Expert will evaluate its correct condition at the time of handover</div>
           <hr className='bg-secondary' />
           <div className="m-right ">
-          <ul className='ml-1 '>
+            <h5 className='text-center classheadstyle' style={{textDecoration:"underline"}}>Properties</h5 >
+          <ul className='text-center '>
+            
           {conditiondata ? conditiondata[0] ? conditiondata[0].description.split(',').map((itm,k)=>(
-              <li key={k} className=''>• {itm}</li>
+              <li key={k} className='classchildstyle text-capitalize'>{itm}</li>
           )):null :null}
             
             
@@ -237,22 +241,22 @@ export default function Sellmyphone() {
         </div>
         {/* Sidebar Area Start */}
 
-        <div className="ec-checkout-rightside col-lg-4 col-md-12">
+        <div className="ec-checkout-rightside d-md-block d-none col-lg-4 col-md-12">
           <div className="ec-sidebar-wrap">
             {/* Sidebar Summary Block */}
             <div className="ec-sidebar-block">
-             <div className="ml-4  ">
+             <div className="ml-6  ">
                   {conditions.map((itm,k)=>(
                     <div className='pt-2'key={k}>
                     <div  style={{width: '100%',backgroundColor:"#F8F4F4" }}>
                       <div className="ec-sb-pro-sl-item p-2">
                         
-                        <div className="ec-pro-content">
-                          <h5 className="ec-pro-title ml-5">{itm.condition}</h5>
+                        <div className="ec-pro-content text-center ">
+                          <h5 className="ec-pro-title classheadstyle  ">{itm.condition}</h5>
                           
-                          <ul className='ml-5'>
+                          <ul className=''>
                             {itm.description.split(',').map((cond,c)=>(
-                              <li key={c} className=''>• {cond}</li>
+                              <li key={c} className='classchildstyle text-capitalize '> {cond}</li>
                             ))}
                             
                             
@@ -299,42 +303,44 @@ export default function Sellmyphone() {
                   <div className="ec-bl-block-content">
                     
                     
-                    <div className="ec-check-bill-form">
+                    <div className="ec-check-bill-form ">
                       <form onSubmit={(e)=>checkout(e)}>
-                        <span className="ec-bill-wrap ">
+                        
+                        <span className="ec-bill-wrap ec-bill-half ">
                           <label>Name*</label>
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,customer_name:e.target.value})} name="name" placeholder="Enter your name" required />
                         </span>
+                        
                         {/* <span className="ec-bill-wrap ec-bill-half">
                           <label>Last Name*</label>
                           <input type="text" name="lastname" placeholder="Enter your last name" required />
                         </span> */}
-                        <span className="ec-bill-wrap">
+                        <span className="ec-bill-wrap ec-bill-half">
                           <label>Address *</label>
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,address:e.target.value})} required name="address" placeholder="Address Line 1" />
                         </span>
                         
-                        <span className="ec-bill-wrap ec-bill-half">
+                        <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Email *</label>
                           <input type="email" onChange={(e)=> setcustomerdetails({...customerdetails,email:e.target.value})} required name="email" placeholder="email" /> 
                         </span>
-                        <span className="ec-bill-wrap ec-bill-half">
+                        <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Contact *</label> 
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,contact:e.target.value})} name="contact" placeholder="contact" />  
                         </span>
-                        <span className="ec-bill-wrap ec-bill-half">
+                        <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Country *</label>
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,country:e.target.value})} name="Country" placeholder="Country" /> 
                         </span>
-                        <span className="ec-bill-wrap ec-bill-half">
+                        <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Region State</label> 
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,state:e.target.value})} name="state" placeholder="Region State" />  
                         </span>
-                        <span className="ec-bill-wrap ec-bill-half">
+                        <span className="ec-bill-wrap ec-bill-quarter">
                           <label>City *</label>  
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,city:e.target.value})} name="city" placeholder="City" required/>                    
                         </span>
-                        <span className="ec-bill-wrap ec-bill-half">
+                        <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Post Code</label>
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,postcode:e.target.value})} name="postalcode" placeholder="Post Code" />
                         </span>

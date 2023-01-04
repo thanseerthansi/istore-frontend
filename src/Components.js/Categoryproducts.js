@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Header from './Header'
 import Scripts from './Scripts'
@@ -6,16 +6,46 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Simplecontext } from './Simplecontext';
 import Footer from './Footer';
+import Callaxios from './Callaxios';
 
 export default function Categoryproducts() {
+
+  
   const {products} =useContext(Simplecontext)
-  console.log("product",products)
+  const [conditiondata,setconditiondata]=useState([])
+  // const [filterdata,setfilterdata]=useState([])
+  const [condition,setcondition]=useState('')
+  const [fromprice,setfromprice]=useState()
+  const [toprice,settoprice]=useState()
+  const [storage,setstorage]=useState()
+  console.log("cobnditioim",toprice)
     useEffect(() => {
       Scripts()
+      getcondition()
+      // console.log("product",products)
     }, [])
   const  urlparam  = useParams()
   let urlmodel = urlparam.model
   // console.log("models",urlmodel)
+  const getcondition = async()=>{
+    try {   
+      let data = await Callaxios("get","/product/condition/")
+      // console.log("conditiondata",data)
+    if (data.status===200){
+        // console.log("conditiondata",data)
+        setconditiondata(data.data)
+    
+    }
+    } catch (error) {
+      
+    }
+  }
+  // const filterfn =(e)=>{
+  //   e.preventDefault()
+  //   let data = filterdata.filter(item=>item.condition.toUpperCase().includes(condition.toUpperCase()))
+  //   // .filter(item=>item.)
+  //   console.log("sadf",data)
+  // }
   return (
     <div>
         <Header/>
@@ -41,22 +71,65 @@ export default function Categoryproducts() {
       </div>
     </div>
   </div>
+  
   {/* Product tab Area Start */}
   <section className="section ec-product-tab section-space-p">
     <div className="container">
-      <div className="row">
+   
+      <div className="row ">
         <div className="col-md-12 section-title-block">
           <div className="section-title">
-            <h2 className="ec-title">{urlmodel}</h2>
+            <h2 className="ec-title">{urlmodel}</h2><br/>
             {/* <h6 className="ec-sub-title">Lorem Ipsum is simply dummy text of the printing</h6> */}
+            
           </div>
         </div>
+        {/* <div className='row'> */}
+        <span className="classheadstyle">Filter</span><br/>
+        <div className=" col-md-3 col-6  mt-1">
+        <select onChange={(e)=>setcondition(e.target.value)} style={{width:"100%"}} className="ec-bill-select selectbox border border-2 border-dark text-uppercase">
+        <option hidden >Select Condition</option>
+        <option value={""}  >All Condition</option>
+          {conditiondata.length ? conditiondata.map((itm,k)=>(
+              <option  key={k} value={itm.condition}>{itm.condition}</option>
+          )):null}
+                            
+          </select>
+        </div>
+        <div className=" col-md-3 col-6 mt-1 text-end align-middle   ">
+        <select onChange={(e)=>setstorage(e.target.value)} className="ec-bill-select selectbox border border-2 border-dark  text-uppercase">
+        <option hidden >Select Storage</option>
+        <option value={""}  >All Storage</option>
+        <option value={"128"}  >128 GB</option>
+        <option value={"256"} >256 GB</option>
+        <option value={"512"} >512 GB</option>
+        <option value={"1TB"} >1 TB</option>
+         
+                            
+          </select>
+        </div >
+        <div className=" col-md-3 col-6 mt-1">
+          <input onChange={(e)=>setfromprice(e.target.value)} type="number"  name="number" placeholder="From Price" />
+        </div>
+        <div className=" col-md-3 col-6 mt-1">
+          <input onChange={(e)=>settoprice(e.target.value)} type="number"  name="number" placeholder="To Price"  />
+        </div >
+        
+        {/* </div> */}
+        
       </div>
+      <br/>
       <div className="row m-tb-minus-15">
         <div className="col-">
           <div className="tab-content">
             <div className="row">
-            {products.length ? products.filter(t => t.model_name.toUpperCase().includes(urlmodel.toUpperCase())).map((itm,k)=>( 
+            {products.length ? products.filter(t => t.model_name.toUpperCase().includes(urlmodel.toUpperCase()))
+            .filter(t=>t.sellprice.toUpperCase().includes(condition ? condition.toUpperCase() : ""))
+            .filter(t=>t.sellprice.toUpperCase().includes(storage ? storage : ""))
+            .filter(t=>t.sellfromprice >= (fromprice ? fromprice:"0"))
+            .filter(t=>t.sellfromprice <=(toprice ? toprice : "1000000000"))
+            // .filter(t=>t.sellfromprice <= (toprice ? toprice:""))
+            .map((itm,k)=>( 
               <div key={k} className="col-lg-3 col-md-6 col-sm-6 col-xs-6 ec-product-content">
                 <Link to={`/product/${itm.id}`}><div className="ec-product-inner">
                   <div className="ec-product-hover" />

@@ -81,7 +81,7 @@ export default function Register() {
         <div className="col-12">
         <div className="row ec_breadcrumb_inner">
             <div className="col-md-6 col-sm-12">
-            <h2 className="ec-breadcrumb-title">Login</h2>
+            <h2 className="ec-breadcrumb-title">Register</h2>
             </div>
             <div className="col-md-6 col-sm-12">
             {/* ec-breadcrumb-list start */}

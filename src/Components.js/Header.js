@@ -98,7 +98,7 @@ export default function Header() {
           </div>
           {/* Header Top phone End */}
           {/* Header Top call Start */}
-          <div className="col header-top-center">
+          <div hidden className="col header-top-center ">
             {/* Language Start */}
             <div className="header-top-lan-curr header-top-lan dropdown">
               <button className="dropdown-toggle" data-bs-toggle="dropdown">English <i className="ecicon eci-angle-down" aria-hidden="true" /></button>
@@ -123,8 +123,8 @@ export default function Header() {
           <div className="col header-top-right d-none d-lg-block">
             <div className="header-top-right-inner d-flex justify-content-end">
               {/* Header User Start */}
-              <div className="ec-header-user dropdown">
-                <button className="dropdown-toggle" data-bs-toggle="dropdown"><img src="/assets/images/icons/user_5.svg" className="svg_img top_svg" alt={''}/>{window.localStorage.getItem('email') ?<span className="ec-btn-title">Logout</span>:<span className="ec-btn-title">Login</span>}</button>
+              {/* <div className="ec-header-user dropdown">
+                <Link to="/login" className="dropdown-toggle" data-bs-toggle="dropdown"><img src="/assets/images/icons/user_5.svg" className="svg_img top_svg" alt={''}/>{window.localStorage.getItem('email') ?<span className="ec-btn-title">Logout</span>:<span className="ec-btn-title">Login</span>}</Link>
                 <ul className="dropdown-menu dropdown-menu-right">
                   <li><Link className="dropdown-item" to="/register">Register</Link></li>
                   <li><Link className="dropdown-item" to="/checkout">Checkout</Link></li>
@@ -133,14 +133,20 @@ export default function Header() {
                   :<li><Link className="dropdown-item" to="/login">Login</Link></li>
                   }
                 </ul>
+              </div> */}
+              <div className="ec-header-wishlist">
+                <Link  to="/login">
+                  {/* <div className="top-icon"></div> */}
+                  <span className="ec-btn-title">Login</span>
+                </Link>
               </div>
               {/* Header User End */}
               {/* Header wishlist Start */}
               <div className="ec-header-wishlist">
-                <a href="/">
-                  <div className="top-icon"><img src="/assets/images/icons/pro_wishlist.svg" className="svg_img top_svg" alt={''}/></div>
-                  <span className="ec-btn-title">wishlist</span>
-                </a>
+                <Link to="/register">
+                  {/* <div className="top-icon"><i className="fa  fa-right-to-bracket" aria-hidden="true"></i></div> */}
+                  <span className="ec-btn-title">Register</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -149,25 +155,29 @@ export default function Header() {
           <div className="col header-top-res d-lg-none">
             <div className="ec-header-bottons">
               {/* Header User Start */}
-              <div className="ec-header-user dropdown">
+              {/* <div className="ec-header-user dropdown">
                 <button className="dropdown-toggle" data-bs-toggle="dropdown"><img src="/assets/images/icons/user_5.svg" className="svg_img header_svg" alt={''}/></button>
                 <ul className="dropdown-menu dropdown-menu-right">
                   <li><Link className="dropdown-item" to="/register">Register</Link></li>
                   <li><Link className="dropdown-item" to="/checkout">Checkout</Link></li>
                   <li><Link className="dropdown-item" to="/login">Login</Link></li>
                 </ul>
-              </div>
+              </div> */}
+              <Link to="/Login" className="ec-header-btn ec-header-wishlist">
+                <div className="header-icon"><img src="https://iconarchive.com/download/i91933/icons8/windows-8/User-Interface-Login.ico" className="svg_img header_svg" alt={''}/></div>
+                
+              </Link>
               {/* Header User End */}
               {/* Header Cart Start */}
-              <a href="/" className="ec-header-btn ec-header-wishlist">
-                <div className="header-icon"><img src="/assets/images/icons/wishlist.svg" className="svg_img header_svg" alt={''}/></div>
-                <span className="ec-header-count ec-wishlist-count">0</span>
-              </a>
+              <Link to="/register" className="ec-header-btn ec-header-wishlist">
+                <div className="header-icon"><img src="/assets/images/icons/user.svg" className="svg_img header_svg" alt={''}/></div>
+                
+              </Link>
               {/* Header Cart End */}
               {/* Header Cart Start */}
-              <a href="#ec-side-cart" className="ec-header-btn ec-side-toggle">
+              <a href="#ec-side-cart" onClick={()=>cartfunction()} className="ec-header-btn ec-side-toggle">
                 <div className="header-icon"><img src="/assets/images/icons/cart_5.svg" className="svg_img header_svg" alt={''}/></div>
-                <span className="ec-header-count ec-cart-count">3</span>
+                {/* <span className="ec-header-count ec-cart-count">3</span> */}
               </a>
               {/* Header Cart End */}
               {/* Header menu Start */}
@@ -218,7 +228,7 @@ export default function Header() {
                 {/* Header wishlist End */}
                 {/* Header Cart Start */}
                 <a href="#ec-side-cart" onClick={()=>cartfunction()} className="ec-header-btn ec-side-toggle">
-                  <div className="header-icon"><img src="/assets/images/icons/cart_5.svg" className="svg_img header_svg" alt={''}/></div>
+                  <div className="header-icon"><img src="/assets/images/icons/cart_5.svg" className="svg_img header_svg"  alt={''}/></div>
                   <span className="ec-btn-title"><span className="ec-cart-count"></span> Cart</span>
                 </a>
                 {/* Header Cart End */}
@@ -276,8 +286,8 @@ export default function Header() {
                 <div id="ec-category-menu" className="ec-category-menu">
                   <ul className="ec-category-wrapper">
                   <li><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/iphone`}>ALL PRODUCTS</Link></li>
-                    {modelsname.length ? modelsname.map((itm,k)=>(                    
-                    <li key={k}><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/${itm.model_name}`}>{itm.model_name}</Link></li>
+                    {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(                    
+                    <li key={k}><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/${itm}`}>{itm}</Link></li>
                     )):null}
                     {/* <li><a className="ec-cat-menu-link" href="/">Electronics &amp; Digital</a></li>
                     <li><a className="ec-cat-menu-link" href="/">Home Accessories</a></li>
@@ -354,7 +364,9 @@ export default function Header() {
                     </li>
                   </ul>
                 </li> */}
+                <li className="dropdown"><Link to="/categoryproduct/iphone">Products</Link> </li>
                 <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link></li>
+                
                 <li className="dropdown"><Link to="/userprofile">Account</Link> </li>
                 <li className="dropdown"><Link to="/">About Us</Link> </li>
               </ul>
@@ -381,16 +393,16 @@ export default function Header() {
           <li ><Link to="/">Home</Link>
               
             </li>
-            <li><a href="/">Categories</a>
+            {/* <li><a href="/">Categories</a>
               <ul className="sub-menu">
                 <li>
-                  <a href="/">Classic Variation</a>
+                <a href="/">Classic Variation</a>
                   <ul className="sub-menu">
-                    <li><a href="shop-left-sidebar-col-3.html">Left sidebar 3 column</a></li>
-                    <li><a href="shop-left-sidebar-col-4.html">Left sidebar 4 column</a></li>
-                    <li><a href="shop-right-sidebar-col-3.html">Right sidebar 3 column</a></li>
-                    <li><a href="shop-right-sidebar-col-4.html">Right sidebar 4 column</a></li>
-                    <li><a href="shop-full-width.html">Full width 4 column</a></li>
+                    {categorydata.length ?  categorydata[0].category.split(',').map((itm,k)=>(
+                      <li key={k}><Link to="/">{itm}</Link></li>
+                    )):null}
+                    
+                   
                   </ul>
                 </li>
                 <li>
@@ -430,7 +442,8 @@ export default function Header() {
                 <li><a className="p-0" href="shop-left-sidebar-col-3.html"><img className="img-responsive" src="/assets/images/menu-banner/1.jpg" alt={''}/></a>
                 </li>
               </ul>
-            </li>
+            </li> */}
+            <li className="dropdown"><Link to="/categoryproduct/iphone">Products</Link> </li>
             <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link>
                  
             </li>

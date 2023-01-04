@@ -16396,7 +16396,7 @@ li {
 }
 
 .ec-header-bottom {
-  padding: 25px 0;
+  padding: 9px 0;
 }
 .ec-header-bottom > .row {
   -webkit-box-pack: justify;
@@ -17804,7 +17804,7 @@ body {
   height: 40px;
   background-color: #0d4fcf;
   color: #ffffff;
-  right: 70px;
+  right: 14px;
   bottom: 15px;
   border-radius: 100%;
   text-align: center;
@@ -18199,18 +18199,17 @@ body {
 #ec-fixedbutton .ec-change-mode.active .ec-mode-off {
   display: none;
 }
-
+.selectbox{
+  width:100%;
+  height:100%;
+}
 select {
-  -webkit-appearance: none;
+  -webkit-appearance:button;
   -moz-appearance: none;
   -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: 0 !important;
-  background: transparent;
-  background-image: none;
+  appearance: auto;
+  outline: 1;
+  
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -21234,7 +21233,7 @@ section.ec-test-section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: #ffffff;
+  background: #ffcece;
   padding: 20px;
   text-align: center;
   border-radius: 9px;
@@ -21243,6 +21242,8 @@ section.ec-test-section {
   -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
   margin-top: -40px;
   padding-top: 53px;
+  padding-bottom: 53px;
+  margin-bottom: 40px;
 }
 .ec-test-inner .ec-test-img {
   border-radius: 100%;
@@ -23730,6 +23731,9 @@ section.ec-instagram-section {
 .ec-checkout-wrap .ec-check-bill-form .ec-bill-wrap.ec-bill-half {
   width: 50%;
 }
+.ec-checkout-wrap .ec-check-bill-form .ec-bill-wrap.ec-bill-quarter {
+  width: 33.3333333333%;
+}
 .ec-checkout-wrap .ec-check-bill-form form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24441,4 +24445,21 @@ ec-sidebar-wrap.ec-checkout-del-wrap h3, .ec-sidebar-wrap.ec-checkout-del-wrap .
   font-weight: 700;
   color: #777;
   background: #f7f7f7;
+}
+.classheadstyle{
+  font-family: Montserrat;
+  font-weight: 900;
+  line-height: 30px;
+  font-size: 16px;
+}
+.classchildstyle{
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 12px;
+}
+.inputfile{
+ padding-right: 10px;
+ padding-left: 0;
+ line-height:24px;
+ height: 32px;
 }
