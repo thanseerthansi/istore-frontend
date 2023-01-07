@@ -283,7 +283,7 @@ export default function Header() {
                 <span className="ec-category-title">all categories</span>
               </div>
               <div className="ec-category-content">
-                <div id="ec-category-menu" className="ec-category-menu overflow-auto " style={{height:"200px"}}>
+                <div id="ec-category-menu" className="ec-category-menu overflow-auto " style={{height:"250px"}}>
                   <ul className="ec-category-wrapper ">
                   <li><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/iphone`}>ALL PRODUCTS</Link></li>
                     {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(                    

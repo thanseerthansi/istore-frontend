@@ -129,9 +129,9 @@ export default function Home() {
                   <div className="ec-pro-image-outer ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
                     <div className="ec-pro-image m-auto ">
                       <p to={`/product/${itm.id}`} className="image ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
-                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="200"/>
+                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="auto"/>
                         
-                        <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="200" />
+                        <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="auto" />
                        
                       </p>
                     </div>
@@ -241,7 +241,7 @@ export default function Home() {
               <div className="ec-fs-pro-inner ec-product-inner">
                 <div className="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
                   <div className="ec-fs-pro-image">
-                    <Link to={`/product/${itm.id}`} className="image"><img className="main-image .objectimage" src={itm.images[0].image} alt="Product" height={250}/></Link>
+                    <Link to={`/product/${itm.id}`} className="image"><img className="main-image .objectimage" src={itm.images[0].image} alt="Product" height="auto"/></Link>
                   </div>
                 </div>
                 <div className="ec-pro-content col-lg-6 col-md-6 col-sm-6">
@@ -280,9 +280,9 @@ export default function Home() {
                   <div className="ec-pro-image-outer" >
                     <div className="ec-pro-image ">
                       <p  className="image ">
-                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="200"/>
+                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="auto"/>
                         
-                        <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="200" />
+                        <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="auto" />
                        
                       </p>
                     </div>
