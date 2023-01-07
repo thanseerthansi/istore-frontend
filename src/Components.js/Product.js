@@ -381,7 +381,7 @@ export default function Product() {
                             storagelist.map((itm,k)=>(
                               
                               // <div key={k} className='p-2'><button onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')} className={istorage === itm ? `bg-gray-700 font-semibold  py-2 px-4 border  text-white border-gray-400  hover:bg-gray-700  rounded`:`bg-gray font-semibold  py-2 px-4 border text-gray-400 hover:text-white border-gray-400  hover:bg-gray-700  rounded`} >{itm}</button></div>
-                              <li key={k} className="classheadstyle"  style={istorage === itm ?{backgroundColor:"#fdd330",color:"#ffffff"}:{}} onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')}><span >{itm}</span></li>
+                              <li key={k} className="classheadstyle"  style={istorage === itm ?{backgroundColor:"#13b5e1",color:"#ffffff"}:{}} onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')}><span >{itm}</span></li>
                             ))
                           :null}
                           </ul>
@@ -393,7 +393,7 @@ export default function Product() {
                           <ul className='text-center ' >
                           {productdetail ? <>
                             {(productdetail[0].sellprice.split(',')).filter(name => name.includes(istorage)).map((itm,i) =>(
-                              <li key={i} className='price p-2 classchildstyle '  style={icondition === itm.split('-')[1] ?{backgroundColor:"#fdd330",color:"#ffffff",height:"60px",width:"130px"}:{height:"60px",width:"130px"}} onClick={()=>seticondition(itm.split('-')[1]) & setiprice(itm.split('-')[2]) &setogprice(itm.split('-')[2])}><span className='text-capitalize '><span className='fw-bold' >{itm.split("-")[1]}</span><br/> AED {itm.split('-')[2]}</span></li>
+                              <li key={i} className='price p-2 classchildstyle '  style={icondition === itm.split('-')[1] ?{backgroundColor:"#13b5e1",color:"#ffffff",height:"60px",width:"130px"}:{height:"60px",width:"130px"}} onClick={()=>seticondition(itm.split('-')[1]) & setiprice(itm.split('-')[2]) &setogprice(itm.split('-')[2])}><span className='text-capitalize '><span className='fw-bold' >{itm.split("-")[1]}</span><br/> AED {itm.split('-')[2]}</span></li>
                               // <div key={k} className='p-2'><button onClick={()=>seticondition(itm.split('-')[1]) & setiprice(itm.split('-')[2]) &setogprice(itm.split('-')[2])} className={`font-semibold ${icondition === itm.split('-')[1]? `text-white bg-gray-700`:`bg-gray text-gray-400`} px-4 border  hover:text-white border-gray-400   hover:bg-gray-700  rounded `}> {itm.split("-")[1]}<br/>AED {itm.split('-')[2]}</button></div>
                             ))}
                           </> :null}

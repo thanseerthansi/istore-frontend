@@ -2,13 +2,16 @@
 // import './App.css';
 // import { useEffect } from "react";
 import { BrowserRouter as Router,Navigate,Route,Routes} from "react-router-dom";
+import Aboutus from "./Components.js/Aboutus";
 import Cart from "./Components.js/Cart";
 import Categoryproducts from "./Components.js/Categoryproducts";
 import Checkout from "./Components.js/Checkout";
+import Forgetpassword from "./Components.js/Forgetpassword";
 // import Detailproduct from "./Components.js/Detailproduct";
 import Home from "./Components.js/Home";
 import Login from "./Components.js/Login";
 import Orders from "./Components.js/Orders";
+import Passwordchange from "./Components.js/Passwordchange";
 import Product from "./Components.js/Product";
 import Register from "./Components.js/Register";
 import Selled from "./Components.js/Selled";
@@ -36,6 +39,10 @@ function App() {
           <Route exact path="userprofile" element={<Userprofile/>} /> 
           <Route exact path="orders" element={<Orders/>} /> 
           <Route exact path="selled" element={<Selled/>} /> 
+          <Route exact path="aboutus" element={<Aboutus/>} /> 
+          <Route exact path="forgetpassword" element={<Forgetpassword/>} /> 
+          <Route exact path="passwordchange/:id" element={<Passwordchange/>} /> 
+          
         </Routes>
       </Simplecontextprovider>
       </Router>

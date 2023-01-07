@@ -6,21 +6,26 @@ export default async function  Callaxios(method,url,datalist) {
     //     canceltoken.cancel("Cancelling Request")
     // }
     // canceltoken = axios.CancelToken.source()
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem('user_token');
     // console.log("token",token)
+    // let body = {
+    //             method: 'post',
+    //             url: BaseURL+url,
+    //             headers:{"Authorization" : `Bearer ${token}`},
+    //             data: datalist
+    //             }
+    // if (token === null){  
+    //     // console.log("undefined token")     
+    //     body = {
+    //         method: 'post',
+    //         url: BaseURL+url,           
+    //         data: datalist
+    //         }
+    // }
     let body = {
-                method: 'post',
-                url: BaseURL+url,
-                headers:{"Authorization" : `Bearer ${token}`},
-                data: datalist
-                }
-    if (token === null){  
-        // console.log("undefined token")     
-        body = {
-            method: 'post',
-            url: BaseURL+url,           
-            data: datalist
-            }
+        method: 'post',
+        url: BaseURL+url,           
+        data: datalist
     }
    
     // var refresh_token = window.localStorage.getItem('refresh_token')

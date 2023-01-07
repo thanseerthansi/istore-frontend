@@ -96,7 +96,7 @@ export default function Login() {
                                     <input type="password" onChange={(e)=>setpassword(e.target.value)}  placeholder="Enter your password" required />
                                 </span>
                                 <span className="ec-login-wrap ec-login-fp">
-                                    <label><a href="#">Forgot Password?</a></label>
+                                    <label><Link to="/forgetpassword">Forgot Password?</Link></label>
                                 </span>
                                 <span className="ec-login-wrap ec-login-btn">
                                     <button className="btn btn-primary" type="submit">Login</button>

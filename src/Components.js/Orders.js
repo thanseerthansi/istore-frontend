@@ -58,7 +58,7 @@ export default function Orders() {
     const getorderproduct=async(order_id)=>{ 
         
         let data = await Callaxios("get","/purchase/orderedproduct/",{"order_id":order_id})
-        console.log("dataorderproductasfsdfsf",data.data)
+        // console.log("dataorderproductasfsdfsf",data.data)
         if (data.status===200){
             // console.log("orderproduct", data.data[0].product[0].images[0].image)
             // console.log("statusdata",data.data[0].product)
@@ -68,12 +68,12 @@ export default function Orders() {
             
         }
     }
-    const whatsappchat=(id)=>{
+    const whatsappchat=(id,orderid,date)=>{
       // console.log("ok")
       // let isMobileDevice = window.matchMedia("only screen and (max-width: 760px)").matches;
       // if(isMobileDevice){
       // console.log("sdf")
-      let url = `https://web.whatsapp.com/send?phone="917034114744"&text= I have got wrong product from your website .want to return  this product -ID${id}`;
+      let url = `https://web.whatsapp.com/send?phone="917034114744"&text= I have got wrong product from your website .want to return  this product -ID${id} in Order-${"SN"+date.split('T')[1].split('.')[1]+orderid}`;
       window.open(url);
       // }
     }
@@ -204,6 +204,7 @@ export default function Orders() {
                 <th scope="col">Image</th>
                 <th scope="col">Condition</th>
                 <th scope="col">Price</th>
+                <th scope="col">status</th>
                 <th scope="col">Return</th>
                 
             </tr>
@@ -215,8 +216,9 @@ export default function Orders() {
                 <td><img className="prod-img" src={BaseURL+itm.product[0].images[0].image} alt="product image " height={50}  /></td>
                 <td><span>{itm.condition}</span></td>
                 <td><span>${itm.price}</span></td>
+                <td><span>{itm.status[0].status}</span></td>
                 <td>
-                <span className="tbl-btn"><a onClick={()=>whatsappchat(itm.id)} className="btn btn-lg btn-primary">Return</a></span>
+                <span className="tbl-btn"><a onClick={()=>whatsappchat(itm.id,itm.order_id[0].id,itm.order_id[0].created_date)} className="btn btn-lg btn-primary">Return</a></span>
                 </td>
                 
                 

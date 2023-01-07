@@ -10,10 +10,10 @@ import Callaxios from './Callaxios';
 export default function Userprofile() {
     const {accesscheck,logoutf} =useContext(Simplecontext)
     const [userdata,setuserdata]=useState([])
-    const [email,setemail]=useState()
-    const [contact,setcontact]=useState()
-    const [password,setpassword]=useState()
-    const [userid,setuserid]=useState()
+    const [email,setemail]=useState('')
+    const [contact,setcontact]=useState('')
+    const [password,setpassword]=useState('')
+    const [userid,setuserid]=useState('')
     useEffect(() => {
         Scripts()
         accesscheck()

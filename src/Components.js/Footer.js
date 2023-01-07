@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -64,16 +65,16 @@ export default function Footer() {
           <div className="row">
             <div className="col-sm-12 col-lg-4 ec-footer-contact">
               <div className="ec-footer-widget">
-                <div className="ec-footer-logo"><a href="#"><img src="assets/images/logo/footer-logo-5.png" alt={''}/><img className="dark-footer-logo" src="assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></a></div>
+                <div className="ec-footer-logo"><a href="#"><img src="/assets/images/logo/logo.png " alt={''}/><img className="dark-footer-logo" src="assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></a></div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 <h4 className="ec-footer-heading">Ask Me questions</h4>
                 <div className="ec-footer-links">
                   <ul className="align-items-center">
                     <li className="ec-footer-link">
-                      <span className="call-img"><img src="assets/images/icons/call_5.svg" className="svg_img foo_img" alt={''}/></span>
+                      <span className="call-img"><img src="/assets/images/icons/call_5.svg" className="svg_img foo_img" alt={''}/></span>
                       <span className="call-desc">
                         <span>Got questions? Call us 24/7!</span>
-                        <span><a href="tel:+80080018588">(800) 8001-8588</a>, <a href="tel:+0600874548">(0600) 874 548</a></span>
+                        <span><a href="tel:+80080018588">(91) 1234-1234</a>, <a href="tel:+0600874548">(91) 123 123</a></span>
                       </span>
                     </li>
                   </ul>
@@ -81,7 +82,7 @@ export default function Footer() {
               </div>
               <div className="ec-footer-widget ec-footer-social">
                 <h4 className="ec-footer-heading">Follow Us</h4>
-                <div className="ec-footer-links">
+                {/* <div className="ec-footer-links">
                   <ul className="align-items-center">
                     <li className="list-inline-item"><a href="#"><i className="ecicon eci-facebook" /></a>
                     </li>
@@ -91,7 +92,7 @@ export default function Footer() {
                     <li className="list-inline-item"><a href="#"><i className="ecicon eci-twitter" /></a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-sm-12 col-lg-2 ec-footer-info">
@@ -99,27 +100,26 @@ export default function Footer() {
                 <h4 className="ec-footer-heading">Information</h4>
                 <div className="ec-footer-links">
                   <ul className="align-items-center">
-                    <li className="ec-footer-link"><a href="about-us.html">About us</a></li>
-                    <li className="ec-footer-link"><a href="track-order.html">Delivery Information</a></li>
-                    <li className="ec-footer-link"><a href="privacy-policy.html">Policy &amp; policy </a></li>
-                    <li className="ec-footer-link"><a href="terms-condition.html">Terms &amp; conditions</a></li>
-                    <li className="ec-footer-link"><a href="contact-us.html">Contact us</a></li>
-                    <li className="ec-footer-link"><a href="#">Returns</a></li>
+                    
+                    <li className="ec-footer-link"><Link to="/">Policy &amp; policy </Link></li>
+                    <li className="ec-footer-link"><Link to="/">Terms &amp; conditions</Link></li>
+                    <li className="ec-footer-link"><Link to="/">Contact us</Link></li>
+                    <li className="ec-footer-link"><Link to="/">Returns</Link></li>
                   </ul>
                 </div>
               </div>
             </div>
             <div className="col-sm-12 col-lg-2 ec-footer-account">
               <div className="ec-footer-widget">
-                <h4 className="ec-footer-heading">Customer Service</h4>
+                <h4 className="ec-footer-heading">Quick Links</h4>
                 <div className="ec-footer-links">
                   <ul className="align-items-center">
-                    <li className="ec-footer-link"><a href="#">Site Map</a></li>
-                    <li className="ec-footer-link"><a href="wishlist.html">Wish List</a></li>
-                    <li className="ec-footer-link"><a href="#">Brands</a></li>
-                    <li className="ec-footer-link"><a href="offer.html">Gift Certificates</a></li>
-                    <li className="ec-footer-link"><a href="#">Affiliate</a></li>
-                    <li className="ec-footer-link"><a href="offer.html">Specials</a></li>
+                    <li className="ec-footer-link"><Link to="/">Home</Link></li>
+                    <li className="ec-footer-link"><Link to="/categoryproduct/iphone">Products</Link></li>
+                    <li className="ec-footer-link"><Link to="/sellmyphone">Sell My iPhone</Link></li>
+                    <li className="ec-footer-link"><Link to="/userprofile">Account</Link></li>
+                    <li className="ec-footer-link"><Link to="/aboutus">About Us</Link></li>
+                    
                   </ul>
                 </div>
               </div>
@@ -134,8 +134,19 @@ export default function Footer() {
                   <div className="ec-subscribe-form">
                     <form id="ec-newsletter-form" name="ec-newsletter-form" method="post" action="#">
                       <div id="ec_news_signup" className="ec-form">
-                        <input className="ec-email" type="email" required placeholder="Enter your email" name="ec-email" defaultValue />
-                        <button id="ec-news-btn" className="button btn-primary" type="submit" name="subscribe" value>subscribe</button>
+                        {/* <input className="ec-email" type="email" required placeholder="Enter your email" name="ec-email" defaultValue />
+                        <button id="ec-news-btn" className="button btn-primary" type="submit" name="subscribe" value>subscribe</button> */}
+                        <div className="ec-footer-links">
+                          <ul className="align-items-center">
+                            <li className="list-inline-item"><Link to="/"><i className="ecicon eci-facebook" /></Link>
+                            </li>
+                            <li className="list-inline-item"><Link to="/"><i className="ecicon eci-instagram" /></Link></li>
+                            <li className="list-inline-item"><Link to="/"><i className="ecicon eci-linkedin" /></Link>
+                            </li>
+                            <li className="list-inline-item"><Link to="/"><i className="ecicon eci-twitter" /></Link>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </form>
                   </div>
@@ -143,8 +154,8 @@ export default function Footer() {
               </div>
               <div className="ec-footer-widget ec-share">
                 <ul>
-                  <li className="ec-share-link"><a href="#"><img src="assets/images/icons/iphone.png" alt={''}/></a></li>
-                  <li className="ec-share-link"><a href="#"><img src="assets/images/icons/google.png" alt={''}/></a></li>
+                  <li className="ec-share-link"><a href="#"><img src="/assets/images/icons/iphone.png" alt={''}/></a></li>
+                  <li className="ec-share-link"><a href="#"><img src="/assets/images/icons/google.png" alt={''}/></a></li>
                 </ul>
               </div>
             </div>
@@ -157,7 +168,7 @@ export default function Footer() {
             {/* Footer Copyright Start */}
             <div className="col footer-copy">
               <div className="footer-bottom-copy ">
-                <div className="ec-copy">© 2021 <a className="site-name" href="#">Ekka</a>. All Rights Reserved
+                <div className="ec-copy">© 2023 <Link className="site-name" to="/">iPhone sales</Link>. All Rights Reserved
                 </div>
               </div>
             </div>
@@ -166,7 +177,7 @@ export default function Footer() {
             <div className="col footer-bottom-right">
               <div className="footer-bottom-payment d-flex justify-content-end">
                 <div className="payment-link">
-                  <img src="assets/images/icons/payment.png" alt={''}/>
+                  <img src="/assets/images/icons/payment.png" alt={''}/>
                 </div>
               </div>
             </div>

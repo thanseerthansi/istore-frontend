@@ -152,12 +152,41 @@ export default function Sellmyphone() {
             {/* checkout content Start */}
             <div className="ec-checkout-content">
                 <div className="ec-checkout-inner">
-                <div className="ec-checkout-wrap margin-bottom-30">
-                    
+                <div className="ec-checkout-wrap margin-bottom-30">     
                 <div className="ec-bl-block-content">
+                <h1 className='classheadstyle'>Select iphone</h1>
                 <div className="ec-check-bill-form">
-                    <form action="#" method="post">
-                    <span className="ec-bill-wrap ">
+                  {/* cardrd start */}
+                  <div className='row'>
+                  {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(
+                   
+                  <div key={k} className="col-lg-2 col-md-6 col-sm-6 col-xs-6 ec-product-content">
+                  {(products.filter(t=>t.model_name.toUpperCase().includes(itm.toUpperCase()))).length ? 
+                  <a href="#form_section">
+                <div onClick={()=>setimodel(itm) & callstorage(itm) & seticondition('') & setistorage('')} className=" text-center p-2 card-product " style={imodel ===itm ? {border:"4px solid red"}:{}} >
+                  
+                  
+                    <div className="m-auto ">
+                      <p >
+                        <img className="main-image objectimage " src={(products.filter(t=>t.model_name.toUpperCase().includes(itm.toUpperCase())))[0].images[0].image} alt="Product "   />           
+                                            
+                      </p>
+                    </div>
+                  
+                  <div className="ec-pro-content">
+                    <div className="ec-pro-option">                    
+                    </div>
+                    <h5  className="ec-pro-title "><p className="classchildstyle ">{itm}</p></h5>                 
+                  </div>
+                </div>  </a>
+                :null}             
+              </div>
+
+              )) :null}
+              </div>
+                  {/* cardrd end */}
+                    <form action="#" id="form_section" method="post">
+                    {/* <span className="ec-bill-wrap ">
                         <label>Select iphone *</label>
                         <span  className="ec-bl-select-inner">
                         <select onChange={(e)=>setimodel(e.target.value) & callstorage(e.target.value) & seticondition()}  className="ec-bill-select">
@@ -169,12 +198,12 @@ export default function Sellmyphone() {
                            
                         </select>
                         </span>
-                    </span>
+                    </span> */}
                     {imodel? 
                     <span className="ec-bill-wrap ec-bill-half">
                         <label>Storage *</label>
                         <span className="ec-bl-select-inner">
-                        <select onChange={(e)=>setistorage(e.target.value)} className="ec-bill-select">
+                        <select onChange={(e)=>setistorage(e.target.value)} value={istorage} className="ec-bill-select ">
                             <option hidden>Storage</option>
                             {storagelist.map((itm,k)=>(
                             <option key={k} value={itm}>{itm}</option>
@@ -187,7 +216,7 @@ export default function Sellmyphone() {
                     <span className="ec-bill-wrap ec-bill-half">
                         <label>Condition *</label>
                         <span className="ec-bl-select-inner">
-                        <select onChange={(e)=>callconditionfn(e.target.value)} className="ec-bill-select">
+                        <select onChange={(e)=>callconditionfn(e.target.value)} value={icondition} className="ec-bill-select text-capitalize">
                             <option hidden>Condition</option>
                             {(selectedproduct.buyprice.split(',')).filter(name => name.includes(istorage)).map((itm,k) =>(
                             <option key={k} value={itm}>{itm.split('-')[1]}</option>
@@ -209,7 +238,7 @@ export default function Sellmyphone() {
           </div>
         {/* card start */}
         {icondition ? <>
-        <div className="pt-5 ml-2 " aria-hidden="false" role="tabpanel" id="slick-slide100" style={{width: 390}}><div><li className="ec-test-item" style={{width: '100%', display: 'inline-block'}}>
+        <div className="pt-5 m-auto " aria-hidden="false" role="tabpanel" id="slick-slide100" style={{width: 390}}><div><li className="ec-test-item " style={{width: '100%', display: 'inline-block'}}>
       <div className="ec-test-inner ">
         <div className="ec-test-content pb-6">
         <h5 className="ec-pro-title text-capitalize classheadstyle fs-3 " >{icondition}</h5>

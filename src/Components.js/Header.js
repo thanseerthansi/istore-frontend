@@ -200,7 +200,7 @@ export default function Header() {
             {/* Ec Header Logo Start */}
             <div className="align-self-center ec-header-logo ">
               <div className="header-logo">
-                <Link to="/"><img src="/assets/images/logo/logo-5.png" alt="Site Logo" /><img className="dark-logo" src="/assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></Link>
+                <Link to="/"><img src="/assets/images/logo/logo.png" alt="Site Logo" /><img className="dark-logo" src="/assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></Link>
               </div>
             </div>
             {/* Ec Header Logo End */}
@@ -246,7 +246,7 @@ export default function Header() {
           {/* Ec Header Logo Start */}
           <div className="col">
             <div className="header-logo">
-              <a href="index.html"><img src="/assets/images/logo/logo-5.png" alt="Site Logo" /><img className="dark-logo" src="/assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></a>
+              <a href="index.html"><img src="/assets/images/logo/logo.png" alt="Site Logo" /><img className="dark-logo" src="/assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></a>
             </div>
           </div>
           {/* Ec Header Logo End */}
@@ -283,8 +283,8 @@ export default function Header() {
                 <span className="ec-category-title">all categories</span>
               </div>
               <div className="ec-category-content">
-                <div id="ec-category-menu" className="ec-category-menu">
-                  <ul className="ec-category-wrapper">
+                <div id="ec-category-menu" className="ec-category-menu overflow-auto " style={{height:"200px"}}>
+                  <ul className="ec-category-wrapper ">
                   <li><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/iphone`}>ALL PRODUCTS</Link></li>
                     {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(                    
                     <li key={k}><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/${itm}`}>{itm}</Link></li>
@@ -368,7 +368,7 @@ export default function Header() {
                 <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link></li>
                 
                 <li className="dropdown"><Link to="/userprofile">Account</Link> </li>
-                <li className="dropdown"><Link to="/">About Us</Link> </li>
+                <li className="dropdown"><Link to="/aboutus">About Us</Link> </li>
               </ul>
             </div>
           </div>
@@ -447,7 +447,8 @@ export default function Header() {
             <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link>
                  
             </li>
-            <li className="dropdown"><Link to="/">About Us</Link>
+            <li className="dropdown"><Link to="/userprofile">Account</Link> </li>
+            <li className="dropdown"><Link to="/aboutus">About Us</Link>
               
             </li>
           </ul>
@@ -455,7 +456,7 @@ export default function Header() {
         <div className="header-res-lan-curr">
           <div className="header-top-lan-curr">
             {/* Language Start */}
-            <div className="header-top-lan dropdown">
+            <div className="header-top-lan dropdown d-none">
               <button className="dropdown-toggle text-upper" data-bs-toggle="dropdown">Language <i className="ecicon eci-caret-down" aria-hidden="true" /></button>
               <ul className="dropdown-menu">
                 <li className="active"><a className="dropdown-item" href="/">English</a></li>
@@ -501,7 +502,7 @@ export default function Header() {
           <span className="cart_title">My Cart</span>
           <button className="ec-close">×</button>
         </div>
-        <ul className="eccart-pro-items">
+        <ul className="eccart-pro-items  ">
 
           {viewcart.length ?  viewcart.map((itm,k)=>(
             <li key={k}>

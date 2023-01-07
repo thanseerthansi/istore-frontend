@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Scripts from './Scripts';
 
 export default function Home() {
-  const {products} =useContext(Simplecontext)
+  const {products,modelsname} =useContext(Simplecontext)
   // const [selectitem,setselectitem]=useState()
   useEffect(() => {
     Scripts()
@@ -38,10 +38,10 @@ export default function Home() {
             <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
               <div className="ec-slide-content slider-animation">
                 <h2 className="ec-slide-stitle">new arrival</h2>
-                <h1 className="ec-slide-title">stylish headphone</h1>
+                <h1 className="ec-slide-title">stylish iphone</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                   Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <a href="/" className="btn btn-lg btn-secondary">Shop Now</a>
+                <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See More</Link>
               </div>
             </div>
           </div>
@@ -53,10 +53,10 @@ export default function Home() {
             <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
               <div className="ec-slide-content slider-animation">
                 <h2 className="ec-slide-stitle">Trending Item</h2>
-                <h1 className="ec-slide-title">Motion Camera</h1>
+                <h1 className="ec-slide-title">iphone 14</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                   Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <a href="/" className="btn btn-lg btn-secondary">Shop Now</a>
+                <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See more</Link>
               </div>
             </div>
           </div>
@@ -68,10 +68,10 @@ export default function Home() {
             <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
               <div className="ec-slide-content slider-animation">
                 <h2 className="ec-slide-stitle">new arrival</h2>
-                <h1 className="ec-slide-title">google nest</h1>
+                <h1 className="ec-slide-title">iphone</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                   Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <a href="/" className="btn btn-lg btn-secondary">Shop Now</a>
+                <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See more</Link>
               </div>
             </div>
           </div>
@@ -85,91 +85,23 @@ export default function Home() {
     <div className="container">
       <div className="row">
         <div className="ec_cat_slider">
-          <div className="ec_cat_content">
+          {modelsname.length ?modelsname[0].model_name.split(',').map((itm,k)=>(
+            <div key={k} className="ec_cat_content">
             <div className="ec_cat_inner">
-              <a href="/">
+              <Link to={`/categoryproduct/${itm}`}>
                 <h2 className="d-none">Category</h2>
                 <div className="ec-cat-image">
-                  <img src="assets/images/category-image/8.svg" className="svg_img cat_svg" alt={''}/>
+                  <img src="assets/images/category-image/image-svg.svg" className="svg_img cat_svg" alt={''}/>
                 </div>
                 <div className="ec-cat-desc">
-                  <span className="ec-section-title">Laptops &amp; PC</span>
+                  <span className="ec-section-title">{itm}</span>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
-          <div className="ec_cat_content">
-            <div className="ec_cat_inner">
-              <a href="/">
-                <div className="ec-cat-image">
-                  <img src="assets/images/category-image/9.svg" className="svg_img cat_svg" alt={''}/>
-                </div>
-                <div className="ec-cat-desc">
-                  <span className="ec-section-title">Smartwatches</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="ec_cat_content">
-            <div className="ec_cat_inner">
-              <a href="/">
-                <div className="ec-cat-image">
-                  <img src="assets/images/category-image/10.svg" className="svg_img cat_svg" alt={''}/>
-                </div>
-                <div className="ec-cat-desc">
-                  <span className="ec-section-title">Cameras</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="ec_cat_content">
-            <div className="ec_cat_inner">
-              <a href="/">
-                <div className="ec-cat-image">
-                  <img src="assets/images/category-image/11.svg" className="svg_img cat_svg" alt={''}/>
-                </div>
-                <div className="ec-cat-desc">
-                  <span className="ec-section-title">Console Games</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="ec_cat_content">
-            <div className="ec_cat_inner">
-              <a href="/">
-                <div className="ec-cat-image">
-                  <img src="assets/images/category-image/12.svg" className="svg_img cat_svg" alt={''}/>
-                </div>
-                <div className="ec-cat-desc">
-                  <span className="ec-section-title">Headphones</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="ec_cat_content">
-            <div className="ec_cat_inner">
-              <a href="/">
-                <div className="ec-cat-image">
-                  <img src="assets/images/category-image/13.svg" className="svg_img cat_svg" alt={''}/>
-                </div>
-                <div className="ec-cat-desc">
-                  <span className="ec-section-title">Virtual Reality</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className="ec_cat_content">
-            <div className="ec_cat_inner">
-              <a href="/">
-                <div className="ec-cat-image">
-                  <img src="assets/images/category-image/14.svg" className="svg_img cat_svg" alt={''}/>
-                </div>
-                <div className="ec-cat-desc">
-                  <span className="ec-section-title">Cameras</span>
-                </div>
-              </a>
-            </div>
-          </div>
+          )) :null}
+          
+          
         </div>
       </div>
     </div>
@@ -267,9 +199,9 @@ export default function Home() {
               <div className="banner-block">
                 <img src="assets/images/banner/23.png" alt={''}/>
                 <div className="banner-content">
-                  <span className="ec-banner-stitle">lenovo tablets</span>
+                  <span className="ec-banner-stitle">iPhone</span>
                   <span className="ec-banner-title">UP to 70% OFF</span>
-                  <span className="ec-banner-btn"><a href="/" className="btn-primary">Shop Now</a></span>
+                  <span className="ec-banner-btn"><Link to="/categoryproduct/iphone" className="btn-primary">See more</Link></span>
                 </div>
               </div>
             </div>
@@ -279,9 +211,9 @@ export default function Home() {
               <div className="banner-block">
                 <img src="assets/images/banner/24.png" alt={''}/>
                 <div className="banner-content">
-                  <span className="ec-banner-stitle">Xiaoyi YI 1080p</span>
-                  <span className="ec-banner-title">WiFi IP Camera 36</span>
-                  <span className="ec-banner-btn"><a href="/" className="btn-primary">Shop Now</a></span>
+                  <span className="ec-banner-stitle">iPhone</span>
+                  <span className="ec-banner-title">iPhone 14 pro</span>
+                  <span className="ec-banner-btn"><Link to="/categoryproduct/iphone" className="btn-primary">See more</Link></span>
                 </div>
               </div>
             </div>
@@ -309,7 +241,7 @@ export default function Home() {
               <div className="ec-fs-pro-inner ec-product-inner">
                 <div className="ec-fs-pro-image-outer col-lg-6 col-md-6 col-sm-6">
                   <div className="ec-fs-pro-image">
-                    <a href="product-left-sidebar.html" className="image"><img className="main-image .objectimage" src={itm.images[0].image} alt="Product" height={250}/></a>
+                    <Link to={`/product/${itm.id}`} className="image"><img className="main-image .objectimage" src={itm.images[0].image} alt="Product" height={250}/></Link>
                   </div>
                 </div>
                 <div className="ec-pro-content col-lg-6 col-md-6 col-sm-6">
@@ -321,10 +253,10 @@ export default function Home() {
                       <span className="old-price">${itm.oldfromprice}</span>
                     </span>
                   </div>
-                  {/* <div className="ec-pro-actions">
-                    <button title="Add To Cart" className="add-to-cart btn btn-primary">Add To
-                      Cart</button>
-                  </div> */}
+                  <Link to={`/product/${itm.id}`}>
+                  <div className="ec-pro-actions">
+                    <button  className="add-to-cart btn btn-primary">Deatils</button>
+                  </div></Link>
                 </div>
               </div>
             </div>
@@ -398,7 +330,7 @@ export default function Home() {
             <h2 className="ec-offer-stitle">black friday</h2>
             <h2 className="ec-offer-title">up to 60 % off</h2>
             <span className="ec-offer-desc">Select accessories for your favourites gadgets</span>
-            <span className="ec-offer-btn"><a href="/" className="btn btn-primary">Shop Now</a></span>
+            <span className="ec-offer-btn"><Link to="/categoryproduct/iphone" className="btn btn-primary">See more</Link></span>
           </div>
         </div>
       </div>
@@ -519,9 +451,9 @@ export default function Home() {
             <div className="right-banner-block">
               <img className="right-banner-img" src="assets/images/banner/22.png" alt="Banner" />
               <div className="right-banner-content">
-                <span className="ec-right-banner-title">mi 8 lite</span>
+                <span className="ec-right-banner-title">iPhone</span>
                 <span className="ec-right-banner-stitle">selfies and style</span>
-                <span className="ec-right-banner-btn"><a href="/" className="btn-primary">Add to cart</a></span>
+                {/* <span className="ec-right-banner-btn"><a href="/" className="btn-primary">Add to cart</a></span> */}
               </div>
             </div>
           </div>
@@ -657,51 +589,7 @@ export default function Home() {
   </section> */}
   {/* Ec Brand Section End */}
   {/* Ec Instagram Start */}
-  <section className="section ec-instagram-section section-space-pt">
-    <div className="ec-insta-wrapper">
-      <div className="ec-insta-outer">
-        <div className="insta-auto">
-          <h2 className="d-none">Instagram</h2>
-          {/* instagram item */}
-          <div className="ec-insta-item">
-            <div className="ec-insta-inner">
-              <a href="/" target="_blank"><img src="assets/images/instragram-image/1.jpg" alt={''}/>
-              </a>
-            </div>
-          </div>
-          {/* instagram item */}
-          <div className="ec-insta-item">
-            <div className="ec-insta-inner">
-              <a href="/" target="_blank"><img src="assets/images/instragram-image/2.jpg" alt={''}/>
-              </a>
-            </div>
-          </div>
-          {/* instagram item */}
-          <div className="ec-insta-item">
-            <div className="ec-insta-inner">
-              <a href="/" target="_blank"><img src="assets/images/instragram-image/3.jpg" alt={''}/>
-              </a>
-            </div>
-          </div>
-          {/* instagram item */}
-          <div className="ec-insta-item">
-            <div className="ec-insta-inner">
-              <a href="/" target="_blank"><img src="assets/images/instragram-image/4.jpg" alt={''}/>
-              </a>
-            </div>
-          </div>
-          {/* instagram item */}
-          <div className="ec-insta-item">
-            <div className="ec-insta-inner">
-              <a href="/" target="_blank"><img src="assets/images/instragram-image/5.jpg" alt={''}/>
-              </a>
-            </div>
-          </div>
-          {/* instagram item */}
-        </div>
-      </div>
-    </div>
-  </section>
+  {/*  */}
   {/* Ec Instagram End */}
   
   <Footer/>

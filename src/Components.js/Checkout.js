@@ -64,7 +64,7 @@ export default function Checkout() {
         
         // console.log("data",data)
         let postdata = await Callaxios('post',"purchase/order/",checdata)
-        // console.log("data",postdata)
+        console.log("data",postdata)
         if (postdata.data.Status===200){
           notify("Successfully placed")
           setallnull()
