@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { BaseURL } from './urlcall';
+import jwt_decode from "jwt-decode";
 // let canceltoken;
 export default async function  Callaxios(method,url,datalist) { 
     // if(typeof canceltoken != typeof undefined){
@@ -7,6 +8,35 @@ export default async function  Callaxios(method,url,datalist) {
     // }
     // canceltoken = axios.CancelToken.source()
     const token = localStorage.getItem('user_token');
+    var refresh_token = window.localStorage.getItem('refresh_user')
+    // console.log("valid1",refresh_token)
+    
+    if (refresh_token && token){
+        var decodedToken=jwt_decode(token, {complete: true});
+        var dateNow = new Date();
+        // console.log("valid1",refresh_token)
+        if(decodedToken.exp < dateNow.getTime()){
+            // console.log("valid",refresh_token)
+            try {
+                let accessdata = await axios({
+                method: 'post',
+                url: BaseURL+'api/token/refresh/',
+                data:{"refresh" : refresh_token },
+                })
+            //   console.log("data",accessdata)    
+                if(accessdata.status===200){
+                    window.localStorage.setItem('access_token', accessdata.data.access)   
+                } 
+                
+            }catch (error) {
+            console.log("error",error)
+            // console.log("erro/rmessga",error.response.status)
+            if (error.response.status===401){
+                window.location.href ='/login';
+            }
+            }
+        }
+    }
     // console.log("token",token)
     // let body = {
     //             method: 'post',

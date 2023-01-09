@@ -18,7 +18,7 @@ export default function Categoryproducts() {
   const [fromprice,setfromprice]=useState()
   const [toprice,settoprice]=useState()
   const [storage,setstorage]=useState()
-  console.log("cobnditioim",toprice)
+  // console.log("cobnditioim",toprice)
     useEffect(() => {
       Scripts()
       getcondition()

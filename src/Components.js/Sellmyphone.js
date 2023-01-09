@@ -367,7 +367,7 @@ export default function Sellmyphone() {
                         </span>
                         <span className="ec-bill-wrap ec-bill-quarter">
                           <label>City *</label>  
-                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,city:e.target.value})} required name="city" placeholder="City" required/>                    
+                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,city:e.target.value})}  name="city" placeholder="City" required/>                    
                         </span>
                         <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Post Code</label>
