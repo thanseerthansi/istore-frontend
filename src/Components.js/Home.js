@@ -354,9 +354,9 @@ export default function Home() {
               <div className="ec-all-product-inner">
                 <div className="ec-pro-image-outer">
                   <div className="ec-pro-image">
-                    <a href="product-left-sidebar.html" className="image">
+                    <Link to={`/product/${itm.id}`} className="image">
                       <img className="main-image" src={itm.images.length ? itm.images[0].image :null} alt="Product" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="ec-pro-content">
@@ -390,9 +390,9 @@ export default function Home() {
               <div className="ec-all-product-inner">
                 <div className="ec-pro-image-outer">
                   <div className="ec-pro-image">
-                    <a href="product-left-sidebar.html" className="image">
+                  <Link to={`/product/${itm.id}`} className="image">
                       <img className="main-image" src={itm.images.length ? itm.images[0].image :null} alt="Product" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="ec-pro-content">
@@ -424,9 +424,9 @@ export default function Home() {
               <div className="ec-all-product-inner">
                 <div className="ec-pro-image-outer">
                   <div className="ec-pro-image">
-                    <a href="product-left-sidebar.html" className="image">
+                  <Link to={`/product/${itm.id}`} className="image">
                       <img className="main-image" src={itm.images.length ? itm.images[0].image :null} alt="Product" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="ec-pro-content">
