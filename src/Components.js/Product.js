@@ -484,7 +484,7 @@ export default function Product() {
               </div>
               <div className="tab-content  ec-single-pro-tab-content">
                 <div id="ec-spt-nav-details" className="tab-pane fade show active">
-                  <div className="ec-single-pro-tab-desc">
+                  <div className="ec-single-pro-tab-desc classchildstyle mt-5">
                     <p>{productdetail ? productdetail[0].description : null}
                     </p>
                     {/* <ul>
@@ -513,7 +513,7 @@ export default function Product() {
                         <div key={k} className="ec-t-review-item pt-2">
                         <div className="ec-t-review-avtar">   
                           {itm.images[0] ?  itm.images.map((imge,i)=>(
-                            <img  key={i} src={imge.image} alt={''} height='120' width={'160'} />
+                            <img  key={i} src={imge.image} alt={''} height='auto' width={'160'} />
                           )):null}
                           
                           
@@ -530,8 +530,8 @@ export default function Product() {
                               activeColor="#ffd700"
                             />
                           </div>
-                          <div className="ec-t-review-bottom">
-                            <p>{itm.description}
+                          <div className="ec-t-review-bottom ">
+                            <p className=''>{itm.description}
                             </p>
                           </div>
                         </div>

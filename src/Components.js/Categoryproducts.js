@@ -136,9 +136,9 @@ export default function Categoryproducts() {
                   <div className="ec-pro-image-outer ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
                     <div className="ec-pro-image m-auto ">
                       <p className="image ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
-                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="200"/>
+                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="auto"/>
                         
-                        <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="200" />
+                        <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="auto" />
                        
                       </p>
                     </div>
