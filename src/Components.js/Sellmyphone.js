@@ -355,23 +355,23 @@ export default function Sellmyphone() {
                         </span>
                         <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Contact *</label> 
-                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,contact:e.target.value})} name="contact" placeholder="contact" />  
+                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,contact:e.target.value})} required name="contact" placeholder="contact" />  
                         </span>
                         <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Country *</label>
-                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,country:e.target.value})} name="Country" placeholder="Country" /> 
+                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,country:e.target.value})} required name="Country" placeholder="Country" /> 
                         </span>
                         <span className="ec-bill-wrap ec-bill-quarter">
-                          <label>Region State</label> 
-                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,state:e.target.value})} name="state" placeholder="Region State" />  
+                          <label>Region State *</label> 
+                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,state:e.target.value})} required name="state" placeholder="Region State" />  
                         </span>
                         <span className="ec-bill-wrap ec-bill-quarter">
                           <label>City *</label>  
-                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,city:e.target.value})} name="city" placeholder="City" required/>                    
+                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,city:e.target.value})} required name="city" placeholder="City" required/>                    
                         </span>
                         <span className="ec-bill-wrap ec-bill-quarter">
                           <label>Post Code</label>
-                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,postcode:e.target.value})} name="postalcode" placeholder="Post Code" />
+                          <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,postcode:e.target.value})}  name="postalcode" placeholder="Post Code" />
                         </span>
                        
                         <div className="ec-check-order-btn ml-auto">

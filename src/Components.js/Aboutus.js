@@ -53,7 +53,7 @@ export default function Aboutus() {
           </div>
           <div className="col-md-6 ec-cms-block ec-abcms-block text-center">
             <div className="ec-cms-block-inner">
-              <h3 className="ec-cms-block-title">What is the ekka?</h3>
+              <h3 className="ec-cms-block-title">What is the iPhone Sales?</h3>
               <p>Electronic typesetting text of the printing and typesetting industry. when an unknown printer took a galley of type
                 and scrambled it to make a type specimen book. Lorem Ipsum is
                 simply dutmmy text ever since the 1500s, It has survived not only,

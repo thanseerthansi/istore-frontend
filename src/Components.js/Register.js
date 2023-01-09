@@ -22,11 +22,11 @@ export default function Register() {
     position: "top-center",
     });
     const userregistercall=async(e)=>{
-        console.log("ok")
+        // console.log("ok")
         e.preventDefault();
         try {
             let data = await Callaxios("post","user/user/",{'username':email,"email":email,'password':password,'contact':contact})
-            console.log("data",data.data)
+            // console.log("data",data.data)
     
             if (data.data.Status===200){
                 notify("Registered Successflly")
@@ -35,7 +35,7 @@ export default function Register() {
                 setpassword('')
                 login()
             }
-            else if(data.Message==="{'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}"){
+            else if(data.data.Message==="{'username': [ErrorDetail(string='A user with that username already exists.', code='unique')]}"){
               notifyerror('email already exists')
             }
         } catch (error) {
