@@ -485,8 +485,11 @@ export default function Product() {
               <div className="tab-content  ec-single-pro-tab-content">
                 <div id="ec-spt-nav-details" className="tab-pane fade show active">
                   <div className="ec-single-pro-tab-desc classchildstyle mt-5">
-                    <p>{productdetail ? productdetail[0].description : null}
-                    </p>
+                    {productdetail ? productdetail[0].description.split(',').map((item,key)=>
+                    <ul>
+                      <li key={key} className='text-capitalize ' style={{fontFamily:"Montserrat",fontWeight:"600",fontSize:"12px"}}> {item}</li>
+                    </ul>) : null}
+                    
                     {/* <ul>
                       <li>Any Product types that You want - Simple, Configurable</li>
                       <li>Downloadable/Digital Products, Virtual Products</li>
