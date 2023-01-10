@@ -203,7 +203,7 @@ export default function Sellmyphone() {
                     <span className="ec-bill-wrap ec-bill-half">
                         <label>Storage *</label>
                         <span className="ec-bl-select-inner">
-                        <select onChange={(e)=>setistorage(e.target.value)} value={istorage} className="ec-bill-select ">
+                        <select onChange={(e)=>setistorage(e.target.value ) & seticondition('')} value={istorage} className="ec-bill-select ">
                             <option hidden>Storage</option>
                             {storagelist.map((itm,k)=>(
                             <option key={k} value={itm}>{itm}</option>
