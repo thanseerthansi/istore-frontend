@@ -534,7 +534,7 @@ export default function Product() {
                             />
                           </div>
                           <div className="ec-t-review-bottom ">
-                            <p className=''>{itm.description}
+                            <p  style={{fontFamily:"Montserrat",fontWeight:"600",fontSize:"12px"}}>{itm.description}
                             </p>
                           </div>
                         </div>
