@@ -31,6 +31,7 @@ export default function Login() {
                 window.localStorage.setItem('email', username)
                 window.localStorage.setItem('access_user', data.data.access)
                 window.localStorage.setItem('refresh_user', data.data.refresh) 
+                
                 return navigate('/userprofile');
             }
             // else if(data.message==="Request failed with status code 401"){

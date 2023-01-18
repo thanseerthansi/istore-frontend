@@ -74,7 +74,7 @@ export default function Categoryproducts() {
   
   {/* Product tab Area Start */}
   <section className="section ec-product-tab section-space-p">
-    <div className="container">
+    <div className="container text-start">
    
       <div className="row ">
         <div className="col-md-12 section-title-block">
@@ -87,7 +87,7 @@ export default function Categoryproducts() {
         {/* <div className='row'> */}
         <span className="classheadstyle">Filter</span><br/>
         <div className=" col-md-3 col-6  mt-1">
-        <select onChange={(e)=>setcondition(e.target.value)} style={{width:"100%"}} className="ec-bill-select selectbox border border-2 border-dark text-uppercase">
+        <select onChange={(e)=>setcondition(e.target.value)} style={{width:"100%"}} className="form-select border border-2 border-dark  text-capitalize">
         <option hidden >Select Condition</option>
         <option value={""}  >All Condition</option>
           {conditiondata.length ? conditiondata.map((itm,k)=>(
@@ -97,7 +97,7 @@ export default function Categoryproducts() {
           </select>
         </div>
         <div className=" col-md-3 col-6 mt-1 text-end align-middle   ">
-        <select onChange={(e)=>setstorage(e.target.value)} className="ec-bill-select selectbox border border-2 border-dark  text-uppercase">
+        <select onChange={(e)=>setstorage(e.target.value)} className="form-select  border border-2 border-dark  text-capitalize">
         <option hidden >Select Storage</option>
         <option value={""}  >All Storage</option>
         <option value={"128"}  >128 GB</option>
@@ -109,10 +109,10 @@ export default function Categoryproducts() {
           </select>
         </div >
         <div className=" col-md-3 col-6 mt-1">
-          <input onChange={(e)=>setfromprice(e.target.value)} type="number"  name="number" placeholder="From Price" />
+          <input onChange={(e)=>setfromprice(e.target.value)} type="number" className='rounded'   placeholder="From Price" />
         </div>
         <div className=" col-md-3 col-6 mt-1">
-          <input onChange={(e)=>settoprice(e.target.value)} type="number"  name="number" placeholder="To Price"  />
+          <input onChange={(e)=>settoprice(e.target.value)} type="number" className='rounded'   placeholder="To Price"  />
         </div >
         
         {/* </div> */}

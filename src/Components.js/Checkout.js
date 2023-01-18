@@ -15,10 +15,10 @@ export default function Checkout() {
       cartfunction()
     }, [])
     const notify = (msg) => toast.success(msg, {
-      position: "top-center",
+      position: "top-right",
       });
     const notifyerror = (msg) => toast.error(msg, {
-      position: "top-center",
+      position: "top-right",
       });
     const cartfunction=()=>{
         let orderlist = window.localStorage.getItem('cart')
