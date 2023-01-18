@@ -55,7 +55,7 @@ export default function Sellmyphone() {
       } 
       const callconditionfn=async(value)=>{
         // console.log("data",value.split('-')[1])
-        seticondition(value.split('-')[1]) 
+        seticondition(()=>[...value.split('-')[1]]) 
         setiprice(value.split('-')[2])
         let data = await Callaxios("get","product/condition/",{"condition":value.split('-')[1]})
         // console.log(data)
@@ -202,10 +202,10 @@ export default function Sellmyphone() {
                     </span> */}
                     {imodel? 
                     <span className="ec-bill-wrap ec-bill-half">
-                        <label>Select Your Phone  Storage *</label>
+                        <label>Select Your Phone  Capacity *</label>
                         <span className="ec-bl-select-inner">
                         <select onChange={(e)=>setistorage(e.target.value ) & seticondition('')} value={istorage} className="form-select ">
-                            <option hidden>Select Storage</option>
+                            <option hidden>Select Storage Capacity</option>
                             {storagelist.map((itm,k)=>(
                             <option key={k} value={itm}>{itm}</option>
                             ))}
@@ -216,8 +216,9 @@ export default function Sellmyphone() {
                     {istorage ? 
                     <span className="ec-bill-wrap ec-bill-half">
                         <label>Select Your  Phone Condition *</label>
+                        {/* {icondition} */}
                         <span className="ec-bl-select-inner">
-                        <select onChange={(e)=>callconditionfn(e.target.value)} value={icondition} className="form-select  text-capitalize">
+                        <select onChange={(e)=>callconditionfn(e.target.value)} value={icondition ? icondition : ''} className="form-select  text-capitalize">
                             <option hidden>Select Condition</option>
                             {(selectedproduct.buyprice.split(',')).filter(name => name.includes(istorage)).map((itm,k) =>(
                             <option key={k} value={itm}>{itm.split('-')[1]}</option>
@@ -247,7 +248,7 @@ export default function Sellmyphone() {
           <div className="ec-test-name classheadstyle">Price : <b>Upto ${iprice}</b></div>
           
           <div className='textstart'>
-          <div className="ec-test-designation  text-start">Our expert will conduct a thorough condition assessment at the time of handover to ensure your iPhone is in the correct condition, and based on the evaluation, they will determine the final price.</div>
+          <div className="ec-test-designation  text-center">Our expert will conduct a thorough condition assessment at the time of handover to ensure your iPhone is in the correct condition, and based on the evaluation, they will determine the final price.</div>
           <hr className='bg-secondary' />
           <div className="m-right ">
             <h5 className='text-center classheadstyle' style={{textDecoration:"underline"}}>Properties</h5 >
@@ -330,7 +331,7 @@ export default function Sellmyphone() {
         {icondition ? <>
         <div className="ec-checkout-wrap margin-bottom-30 padding-bottom-3">
                 <div className="ec-checkout-block ec-check-bill">
-                  <h3 className="ec-checkout-title pt-2">Billing Details</h3>
+                  <h3 className="ec-checkout-title pt-2">Please enter your personal Info</h3>
                   <div className="ec-bl-block-content">
                     
                     

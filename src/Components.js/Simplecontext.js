@@ -3,6 +3,7 @@ import jwt_decode from "jwt-decode";
 import React, { createContext, useEffect, useState } from 'react'
 import {useNavigate } from 'react-router-dom';
 import Callaxios from './Callaxios';
+import Scripts from './Scripts';
 import { BaseURL } from './urlcall';
 export const Simplecontext = createContext();
 
@@ -18,6 +19,7 @@ export default function Simplecontextprovider({children}) {
   useEffect(() => {
     getproduct()
     getmodel()
+    Scripts()
     // getcategory()
     }, [])
 
