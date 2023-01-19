@@ -18,6 +18,7 @@ export default function Sellmyphone() {
     const [selectedproduct,setselectedproduct]=useState()
     const [customerdetails,setcustomerdetails]=useState([])
     const [conditions,setconditions]=useState([])
+    // console.log("conditiom",icondition)
     const notify = (msg) => toast.success(msg, {
         position: "top-center",
         });
@@ -54,8 +55,8 @@ export default function Sellmyphone() {
          
       } 
       const callconditionfn=async(value)=>{
-        // console.log("data",value.split('-')[1])
-        seticondition(()=>[...value.split('-')[1]]) 
+        // console.log("datsvcfa",value.split('-')[1])
+        seticondition(value.split('-')[1]) 
         setiprice(value.split('-')[2])
         let data = await Callaxios("get","product/condition/",{"condition":value.split('-')[1]})
         // console.log(data)
@@ -66,7 +67,7 @@ export default function Sellmyphone() {
       }  
       const checkout=async(e)=>{
         e.preventDefault();
-        // console.log("product",selectedproduct.id)
+        // console.log("product",selectedproduct)
         let data = {
           "product":selectedproduct.id,
           "price":iprice,
