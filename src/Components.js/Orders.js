@@ -30,7 +30,7 @@ export default function Orders() {
         try {
             let emailid = window.localStorage.getItem('email')
             if (emailid){
-                let data = await Callaxios("get","/purchase/order/",{'email':emailid})
+                let data = await Callaxios("get","purchase/order/",{'email':emailid})
                 console.log("data",data)
                 if (data.status===200){
                     
@@ -57,7 +57,7 @@ export default function Orders() {
     }
     const getorderproduct=async(order_id)=>{ 
         
-        let data = await Callaxios("get","/purchase/orderedproduct/",{"order_id":order_id})
+        let data = await Callaxios("get","purchase/orderedproduct/",{"order_id":order_id})
         // console.log("dataorderproductasfsdfsf",data.data)
         if (data.status===200){
             // console.log("orderproduct", data.data[0].product[0].images[0].image)

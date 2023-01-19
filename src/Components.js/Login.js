@@ -23,7 +23,7 @@ export default function Login() {
     const login=async(e)=>{
         e.preventDefault();
         try {
-            let data = await Callaxios("post",'/api/token/',{"username":username,"password":password} )
+            let data = await Callaxios("post",'api/token/',{"username":username,"password":password} )
             // console.log("data",data.data.access)
             if (data.status === 200){
                 // console.log("pk")

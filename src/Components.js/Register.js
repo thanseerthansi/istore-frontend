@@ -47,7 +47,7 @@ export default function Register() {
     const login=async()=>{
      
       try {
-          let data = await Callaxios("post",'/api/token/',{"username":email,"password":password} )
+          let data = await Callaxios("post",'api/token/',{"username":email,"password":password} )
           // console.log("data",data.data.access)
           if (data.status === 200){
               // console.log("pk")

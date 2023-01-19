@@ -29,7 +29,7 @@ export default function Selled() {
         try {
             let emailid = window.localStorage.getItem('email')
             if (emailid){
-                let data = await Callaxios("get","/selling/sellorder/",{email:emailid})
+                let data = await Callaxios("get","selling/sellorder/",{email:emailid})
                 if (data.status===200){
                     // console.log("statusdata",data)
                     setorders(data.data.results)
@@ -55,7 +55,7 @@ export default function Selled() {
     }
     const getorderproduct=async(order_id)=>{ 
         
-        let data = await Callaxios("get","/selling/sellproduct/",{"order_id":order_id})
+        let data = await Callaxios("get","selling/sellproduct/",{"order_id":order_id})
         if (data.status===200){
             // console.log("orderproduct",data)
             setorderproduct(data.data)

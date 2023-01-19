@@ -29,7 +29,7 @@ export default function Categoryproducts() {
   // console.log("models",urlmodel)
   const getcondition = async()=>{
     try {   
-      let data = await Callaxios("get","/product/condition/")
+      let data = await Callaxios("get","product/condition/")
       // console.log("conditiondata",data)
     if (data.status===200){
         // console.log("conditiondata",data)
