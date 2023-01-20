@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="ec_ser_content ec_ser_content_1 col-sm-12 col-md-3">
           <div className="ec_ser_inner">
             <div className="ec-service-image">
-              <img src="assets/images/icons/service_5_1.svg" className="svg_img" alt={''}/>
+              <img src="/assets/images/icons/service_5_1.svg" className="svg_img" alt={''}/>
             </div>
             <div className="ec-service-desc">
               <h2>Free shipping</h2>
@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="ec_ser_content ec_ser_content_2 col-sm-12 col-md-3">
           <div className="ec_ser_inner">
             <div className="ec-service-image">
-              <img src="assets/images/icons/service_2.svg" className="svg_img" alt={''}/>
+              <img src="/assets/images/icons/service_2.svg" className="svg_img" alt={''}/>
             </div>
             <div className="ec-service-desc">
               <h2>money gaurntee</h2>
@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="ec_ser_content ec_ser_content_3 col-sm-12 col-md-3">
           <div className="ec_ser_inner">
             <div className="ec-service-image">
-              <img src="assets/images/icons/service_3.svg" className="svg_img" alt={''}/>
+              <img src="/assets/images/icons/service_3.svg" className="svg_img" alt={''}/>
             </div>
             <div className="ec-service-desc">
               <h2>online support</h2>
@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="ec_ser_content ec_ser_content_4 col-sm-12 col-md-3">
           <div className="ec_ser_inner">
             <div className="ec-service-image">
-              <img src="assets/images/icons/service_5_4.svg" className="svg_img" alt={''}/>
+              <img src="/assets/images/icons/service_5_4.svg" className="svg_img" alt={''}/>
             </div>
             <div className="ec-service-desc">
               <h2>Member Discount</h2>

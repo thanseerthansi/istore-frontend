@@ -7,12 +7,51 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Simplecontext } from './Simplecontext';
 import { Link } from 'react-router-dom';
 import Scripts from './Scripts';
-
+import Slick from 'react-slick';
 export default function Home() {
   const {products,modelsname} =useContext(Simplecontext)
   // const [selectitem,setselectitem]=useState()
+  const settings = {
+    rows: 1,
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    responsive: [
+    {
+        breakpoint: 1200,
+        settings: {
+            slidesToShow: 5
+        }
+    },
+    {
+        breakpoint: 992,
+        settings: {
+            slidesToShow: 4
+        }
+    },
+    {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 3
+        }
+    },
+    {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 2,
+        }
+    }
+    ]
+  };
   useEffect(() => {
     Scripts()
+   
+
+    return () => {
+    }
   }, [])
   // console.log("setselectitem",selectitem)
 
@@ -81,17 +120,20 @@ export default function Home() {
   </div>
   {/* Main Slider End */}
   {/*  category Section Start */}
-  <section className="section ec-category-section section-space-mb">
+  <section className="section ec-category-section section-space-mb ">
     <div className="container">
       <div className="row">
-        <div className="ec_cat_slider">
+      {/* <div className=""> */}
+      <Slick {...settings}>
+        
+        
           {modelsname.length ?modelsname[0].model_name.split(',').map((itm,k)=>(
             <div key={k} className="ec_cat_content">
             <div className="ec_cat_inner">
               <Link to={`/categoryproduct/${itm}`}>
                 <h2 className="d-none">Category</h2>
                 <div className="ec-cat-image">
-                  <img src="assets/images/category-image/image-svg.svg" className="svg_img cat_svg" alt={''}/>
+                  <img src="assets/images/category-image/image-svg.svg" className="svg_img cat_svg" alt={''} height={"49px"}/>
                 </div>
                 <div className="ec-cat-desc">
                   <span className="ec-section-title">{itm}</span>
@@ -102,7 +144,9 @@ export default function Home() {
           )) :null}
           
           
-        </div>
+        
+        </Slick>
+        {/* </div> */}
       </div>
     </div>
   </section>

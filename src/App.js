@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 // import { useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router,Navigate,Route,Routes} from "react-router-dom";
 import Aboutus from "./Components.js/Aboutus";
 import Cart from "./Components.js/Cart";
@@ -14,13 +15,17 @@ import Orders from "./Components.js/Orders";
 import Passwordchange from "./Components.js/Passwordchange";
 import Product from "./Components.js/Product";
 import Register from "./Components.js/Register";
+import Scripts from "./Components.js/Scripts";
 import Selled from "./Components.js/Selled";
 import Sellmyphone from "./Components.js/Sellmyphone";
 import Simplecontextprovider from "./Components.js/Simplecontext";
 import Userprofile from "./Components.js/Userprofile";
 
 function App() {
- 
+  useEffect(() => {
+    Scripts()
+  }, [])
+  
   
   return (
     <div className="App">
