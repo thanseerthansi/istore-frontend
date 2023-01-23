@@ -1499,7 +1499,7 @@
 
   .ec-login-wrapper .ec-login-container .ec-login-form .btn {
     font-size: 14px;
-    width: auto;
+    width: 100px;
     margin-top: 15px;
     height: 40px;
     min-width: unset;

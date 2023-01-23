@@ -381,7 +381,7 @@ export default function Sellmyphone() {
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,postcode:e.target.value})}  name="postalcode" placeholder="Post Code" />
                         </span>
                        
-                        <div className="ec-check-order-btn ml-auto">
+                        <div className="ec-check-order-btn ml-auto " style={{paddingRight: "13px"}}>
                           <button className='btn btn-primary' type="submit" htmlFor="submit" >Sell Now</button>
                         </div>
                         

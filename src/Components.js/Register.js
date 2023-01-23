@@ -123,10 +123,12 @@ export default function Register() {
                 <label>Password*</label>
                 <input type="password" onChange={(e)=>setpassword(e.target.value)} value={password}  placeholder="Enter your password" required />
               </span>
+              {/* <div><p>already has account </p></div> */}
               <span className="ec-login-wrap ec-login-btn">
                 <button className="btn btn-primary" type="submit">Register</button>
                  {/* <a href="register.html" className="btn btn-secondary">Register</a>  */}
               </span>
+              
             </form>
           </div>
         </div>

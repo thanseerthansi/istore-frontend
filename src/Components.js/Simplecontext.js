@@ -63,7 +63,7 @@ export default function Simplecontextprovider({children}) {
             })
         //   console.log("data",accessdata)    
             if(accessdata.status===200){
-              window.localStorage.setItem('access_token', accessdata.data.access)   
+              window.localStorage.setItem('access_user', accessdata.data.access)   
             } else{
               return navigate('/login')
             }

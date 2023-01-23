@@ -7,7 +7,7 @@ export default async function  Callaxios(method,url,datalist) {
     //     canceltoken.cancel("Cancelling Request")
     // }
     // canceltoken = axios.CancelToken.source()
-    const token = localStorage.getItem('user_token');
+    const token = localStorage.getItem('access_user');
     var refresh_token = window.localStorage.getItem('refresh_user')
     // console.log("valid1",refresh_token)
     
