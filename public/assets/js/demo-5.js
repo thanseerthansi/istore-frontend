@@ -378,42 +378,42 @@ function ecCheckCookie()
     });
 
     /*----------------------------- Feature Product Slider   -------------------------------- */
-    $('.ec-exe-products').slick({
-        rows: 1,
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        responsive: [
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToScroll: 1,
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 575,
-            settings: {
-                slidesToScroll: 1,
-                slidesToShow: 1,
-            }
-        }
-        ]
-    });
+    // $('.ec-exe-products').slick({
+    //     rows: 1,
+    //     dots: false,
+    //     arrows: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 2,
+    //     slidesToScroll: 1,
+    //     responsive: [
+    //     {
+    //         breakpoint: 768,
+    //         settings: {
+    //             slidesToScroll: 1,
+    //             slidesToShow: 2,
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 575,
+    //         settings: {
+    //             slidesToScroll: 1,
+    //             slidesToShow: 1,
+    //         }
+    //     }
+    //     ]
+    // });
 
     /*-----------------------------  Offer Product Slider  -------------------------------- */
-    $('.ec-spe-products').slick({
-        rows: 1,
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    });
+    // $('.ec-spe-products').slick({
+    //     rows: 1,
+    //     dots: false,
+    //     arrows: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    // });
 
     /*----------------------------- Brand Slider -------------------------------- */    
     $('#ec-brand-slider').slick({

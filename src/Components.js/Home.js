@@ -46,10 +46,11 @@ export default function Home() {
     }
     ]
   };
+  
+    
+  
   useEffect(() => {
     Scripts()
-   
-
     return () => {
     }
   }, [])
@@ -279,7 +280,15 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-spe-products">
-           
+          <Slick
+              rows={1}
+              dots={false}
+              arrows={true}
+              infinite={true}
+              speed={500}
+              slidesToShow={1}
+              slidesToScroll={1}
+            >
             {products.filter(t => t.category.toUpperCase().includes("DEAL")).map((itm,k)=>(
             <div key={k} className="ec-fs-product">
               <div className="ec-fs-pro-inner ec-product-inner">
@@ -305,7 +314,7 @@ export default function Home() {
               </div>
             </div>
             )) }
-            
+          </Slick>
           </div>
         </div>
         {/*  Special Section End */}
@@ -317,36 +326,60 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-exe-products product-mt-minus-15">
+          <Slick
+              rows={1}
+              dots={false}
+              arrows={true}
+              infinite={true}
+              speed={500}
+              slidesToShow={2}
+              slidesToScroll={1}
+              responsive={[
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                  }
+                },
+                {
+                  breakpoint: 575,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+              ]}
+            >
           {products.length ? products.filter(t => t.category.toUpperCase().includes("EXCLUSIVE")).map((itm,k)=>( 
-              <div key={k} className="ec-product-content">
+              <div key={k} className="ec-product-content" >
                 <Link to={`/product/${itm.id}`}><div className="ec-product-inner">
-                  <div className="ec-product-hover" />
-                  <div className="ec-pro-image-outer" >
-                    <div className="ec-pro-image ">
-                      <p  className="image ">
+                  <div className="" />
+                  {/* <div className="ec-pro-image-outer" > */}
+                    {/* <div className="ec-pro-image "> */}
+                      {/* <p  className="image ">
                         <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="auto"/>
-                        
+                         */}
                         <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="auto" />
                        
-                      </p>
+                      {/* </p> */}
+                    {/* </div> */}
+                  {/* </div> */}
+                  <div className="ec-pro-">
+                    <div className="ec-pro-">
                     </div>
-                  </div>
-                  <div className="ec-pro-content">
-                    <div className="ec-pro-option">
-                    </div>
-                    <h5 className="ec-pro-title "><p  className="ec-btn-group ">{itm.title}</p></h5>
+                    <h5 className="ec-pro-title "><p  className="ec-btn-group ec-pro-titles  ">{itm.title}</p></h5>
                     {/* <h6 className="ec-pro-stitle"><a href="shop-left-sidebar-col-3.html">Camera</a></h6> */}
-                    <div className="ec-pro-rat-price">
-                      <div className="ec-pro-rat-pri-inner">
-                        <span className="ec-price">
+                    <div className="ec-pro-rat-">
+                      <div className="ec-pro-rat-">
+                        <span className="ec-prices">
                           <span className="new-price">${itm.sellfromprice}</span>
                           <span className="old-price">${itm.oldfromprice}</span>
                         </span>
-                        <span className="ec-price "  >
+                        {/* <span className="ec-price "  >
                           <span className="new-price">${itm.sellfromprice}</span>
                           <span className="old-price">${itm.oldfromprice}</span>
-                          {/* <div className='text-right ml-3'><button title="Add To Cart" className="add-to-cart btn btn-primary">Add To Cart</button></div> */}
-                        </span>
+                        </span> */}
                       </div>
                     </div>
                     
@@ -355,7 +388,7 @@ export default function Home() {
                 </Link>
               </div>
               )):null}
-           
+           </Slick>
           </div>
         </div>
         {/*  Feature Section End */}

@@ -19733,7 +19733,9 @@ li.ec-brand-item {
   color: #444444;
   font-size: 20px;
   line-height: 40px;
-  height: 40px;
+  /* height: 40px; */
+  height: 29px;
+  padding-right: 7px;
 }
 .ec-exe-spe-section .slick-arrow:hover {
   border-color: #13b5e1;
@@ -21502,10 +21504,14 @@ section.ec-instagram-section {
 
   .section-space-mb {
     margin-bottom: 35px;
+    
   }
 
   .slick-arrow:before {
     font-size: 35px;
+  }
+  .ec-exe-spe-section .ec-fs-pro-inner {
+    height:280px
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -21705,6 +21711,9 @@ section.ec-instagram-section {
     font-size: 13px;
     padding: 0 10px;
     min-width: 110px;
+  }
+  .ec-exe-spe-section .ec-fs-pro-inner {
+    height:280px
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -22666,7 +22675,7 @@ section.ec-instagram-section {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
-            flex-direction: column;
+            flex-direction: none;
   }
   .ec-exe-spe-section .ec-fs-pro-inner .ec-fs-pro-image {
     padding: 0;
@@ -24512,4 +24521,43 @@ html{
 }
 .terms_condition_page .ec-cms-block:last-child p {
   margin-bottom: 0;
+}
+.ec-prices{
+  overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #13b5e1;
+}
+.ec-prices{
+  color: #13b5e1;
+  font-weight: 700;
+  font-size: 16px;
+}
+.ec-prices span.old-price{
+  font-size: 14px; 
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #777;
+  margin-left: 9px;
+}
+.ec-pro-titles{
+  text-decoration: none;
+    color: #202020;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 600;
 }
