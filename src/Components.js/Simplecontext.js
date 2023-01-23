@@ -65,23 +65,24 @@ export default function Simplecontextprovider({children}) {
             if(accessdata.status===200){
               window.localStorage.setItem('access_user', accessdata.data.access)   
             } else{
-              return navigate('/login')
+              // return navigate('/login')
             }
             
         }catch (error) {
           console.log("error",error)
           // console.log("erro/rmessga",error.response.status)
           if (error.response.status===401){
-              return navigate('/login');
+            console.log(error)
+              // return navigate('/login');
           }
         }
       }else{
-        console.log("notvalid")
-        return navigate('/adminlogin');
+        // console.log("notvalid")
+        return navigate('/login');
       }
   }else{
-    console.log("notrefresh token")
-        return navigate('/login');
+    // console.log("notrefresh token")
+        // return navigate('/login');
   }
 }
   const logoutf=()=>{

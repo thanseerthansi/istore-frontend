@@ -32,7 +32,7 @@ export default async function  Callaxios(method,url,datalist) {
             console.log("error",error)
             // console.log("erro/rmessga",error.response.status)
             if (error.response.status===401){
-                window.location.href ='/login';
+                window.location ='/login';
             }
             }
         }

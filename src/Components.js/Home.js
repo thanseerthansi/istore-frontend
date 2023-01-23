@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Scripts from './Scripts';
 import Slick from 'react-slick';
 export default function Home() {
-  const {products,modelsname} =useContext(Simplecontext)
+  const {products,modelsname,getproduct,getmodel} =useContext(Simplecontext)
   // const [selectitem,setselectitem]=useState()
   const settings = {
     rows: 1,
@@ -50,6 +50,8 @@ export default function Home() {
     
   
   useEffect(() => {
+    getproduct()
+    getmodel()
     Scripts()
     return () => {
     }
