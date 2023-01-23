@@ -81,6 +81,9 @@
     max-width: 720px;
     width: 720px;
   }
+  .card-width{
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 1450px) {
   .ec-slide-content .ec-slide-title {
@@ -162,6 +165,9 @@
 
   .ec-check-pay-img-wrap .ec-check-pay-img-inner {
     width: 60%;
+  }
+  .card-width{
+    width: 390px;
   }
 }
 @media only screen and (max-width: 1366px) {
@@ -315,6 +321,9 @@
   .main-info {
     width: 550PX;
   }
+  .card-width{
+    width: 390px;
+  }
 }
 @media only screen and (max-width: 1199px) {
   .mb-5 {
@@ -339,6 +348,7 @@
 
   .pt-5 {
     padding-top: 20px !important;
+   
   }
 
   .pt-6 {
@@ -570,6 +580,9 @@
   .dl-blurbs dl {
     padding-top: 3vw;
     padding-bottom: 3vw;
+  }
+  .card-width{
+    width: 390px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -1140,6 +1153,9 @@
 
   .ec-payment-fail-page .ec-payment-fail .ec-payment-content .section-title .ec-title {
     font-size: 30px;
+  }
+  .card-width{
+    width: 100%;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1964,6 +1980,9 @@
   }
   .ec-thank-you-page .ec-thank-you .ec-hunger .ec-hunger-detial h3 {
     font-size: 20px;
+  }
+  .card-width{
+    width: 100%;
   }
 
   .ec-payment-fail-page .ec-payment-fail .ec-payment-content .section-title .ec-title {
@@ -2921,6 +2940,9 @@
     border-left: none !important;
     border-right: none !important;
   }
+  .card-width{
+    width: 100%;
+  }
 }
 @media (max-width: 500px) {
   .ec-blog-card {
@@ -2944,6 +2966,9 @@
   .single-pro-sidebar{
     width:100%;
     background-color: #fff;
+  }
+  .card-width{
+    width: 100%;
   }
 }
 @media (max-width: 480px) {
@@ -2978,6 +3003,9 @@
   .ec-page-detail .ec-cat-bnr a span {
     height: 180px;
   }
+  .card-width{
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 375px) {
   .ec-banner-block-1 .banner-block .banner-text {
@@ -2993,6 +3021,9 @@
 
   .ec-page-detail .ec-cat-bnr a span {
     height: 150px;
+  }
+  .card-width{
+    width: 100%;
   }
 }
 /*# sourceMappingURL=responsive.css.map */

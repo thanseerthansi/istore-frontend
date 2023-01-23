@@ -245,7 +245,7 @@ export default function Sellmyphone() {
           </div>
         {/* card start */}
         {icondition ? <>
-        <div className="pt-5 m-auto " aria-hidden="false" role="tabpanel" id="slick-slide100" style={{width: 390}}><div><li className="ec-test-item " style={{width: '100%', display: 'inline-block'}}>
+        <div className="pt-5 m-auto card-width " aria-hidden="false" role="tabpanel" id="slick-slide100" ><div><li className="ec-test-item " style={{display: 'inline-block'}}>
       <div className="ec-test-inner ">
         <div className="ec-test-content pb-6">
         <h5 className="ec-pro-title text-capitalize classheadstyle fs-3 " >{icondition}</h5>
