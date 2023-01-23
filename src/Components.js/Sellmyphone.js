@@ -161,8 +161,9 @@ export default function Sellmyphone() {
                   <div className='row'>
                   {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(
                    
-                  <div key={k} className="col-md-2 col-3 ec-product-content ">
-                  {(products.filter(t=>t.model_name.toUpperCase().includes(itm.toUpperCase()))).length ? 
+                  
+                  (products.filter(t=>t.model_name.toUpperCase().includes(itm.toUpperCase()))).length ? 
+                    <div key={k} className="col-md-2 col-3 ec-product-content ">
                   <a href="#form_section">
                 <div onClick={()=>setimodel(itm) & callstorage(itm) & seticondition('') & setistorage('')} className=" text-center p-2 card-product  " style={imodel ===itm ? {border:"4px solid red",flexDirection:"row"}:{}} >
                   
@@ -180,8 +181,10 @@ export default function Sellmyphone() {
                     <h5  className="ec-pro-title  "><p className="classchildstyle ">{itm}</p></h5>                 
                   </div>
                 </div>  </a>
-                :null}             
-              </div>
+                </div>
+                :null            
+              
+              
 
               )) :null}
               </div>

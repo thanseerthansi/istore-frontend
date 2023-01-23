@@ -141,9 +141,9 @@ export default function Orders() {
       <h5>Order History</h5>
       
     </div>
-    <div className="ec-vendor-card-body">
+    <div className="ec-vendor-card-body overflow-auto">
       <div className="ec-vendor-card-table">
-        <table className="table ec-table">
+        <table className="table ec-table overflow-auto">
           <thead>
             <tr>
               <th scope="col">SN.ID</th>

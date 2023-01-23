@@ -126,9 +126,9 @@ export default function Selled() {
       <h5>Sell History</h5>
       
     </div>
-    <div className="ec-vendor-card-body">
-      <div className="ec-vendor-card-table">
-        <table className="table ec-table">
+    <div className="ec-vendor-card-body overflow-auto">
+      <div className="ec-vendor-card-table ">
+        <table className="table ec-table overflow-auto">
           <thead>
             <tr>
               <th scope="col">SN.ID</th>
