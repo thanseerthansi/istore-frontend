@@ -155,6 +155,30 @@ export default function Sellmyphone() {
                 <div className="ec-checkout-inner">
                 <div className="ec-checkout-wrap margin-bottom-30">     
                 <div className="ec-bl-block-content">
+                  {/* steps start */}
+                  <div className='pt-2 mb-5'>
+                    <div  className='rounded' style={{width: '100%',backgroundColor:"#F8F4F4",padding:"20px" }}>
+                      <div className="ec-sb-pro-sl-item p-2">                        
+                        <div className="ec-pro-content text-start  ">
+                          <h5 className="ec-pro-title classheadstyle mb-0  "style={{fontSize:"13px",fontWeight:700}}>Step-1 :  Add Your iPhone</h5>                         
+                          <ul className='ml-7 mb-3 '  >
+                              <li  className='classchildstyle text-capitalize  '>• Select Your phone</li>
+                              <li  className='classchildstyle text-capitalize '>• Select Storage</li>
+                              <li  className='classchildstyle text-capitalize '>• Select condition</li>
+                              <li  className='classchildstyle text-capitalize '>(You will be able to See the condition and its properties)</li>
+                          </ul>
+                          <h5 className="ec-pro-title classheadstyle mb-0 "style={{fontSize:"13px",fontWeight:700}}>Step-2 :  Add Your Personal information</h5>                         
+                          <ol className='ml-7 ' >
+                              <li  className='classchildstyle text-capitalize  '>• add your information</li>
+                              <li  className='classchildstyle text-capitalize  '>• Sell Your phone</li>
+                              <li  className='classchildstyle text-capitalize '>(Our Expert will contact you soon)</li>
+                          </ol>
+                        </div>                        
+                      </div>
+                    </div>
+                    </div>
+                  
+                  {/* steps end */}
                 <h1 className='classheadstyle'>Select Your iPhone</h1>
                 <div className="ec-check-bill-form">
                   {/* cardrd start */}
