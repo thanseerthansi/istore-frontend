@@ -153,7 +153,13 @@ export default function Header() {
           {/* Header Top Language Currency */}
           {/* Header Top responsive Action */}
           <div className="col header-top-res d-lg-none">
+          
             <div className="ec-header-bottons">
+            <div className="col" >
+            <div className="header-logo m-auto">
+              <a href="index.html"><img src="/assets/images/logo/logo.png" alt="Site Logo" /><img className="dark-logo" src="/assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></a>
+            </div>
+            </div>
               {/* Header User Start */}
               {/* <div className="ec-header-user dropdown">
                 <button className="dropdown-toggle" data-bs-toggle="dropdown"><img src="/assets/images/icons/user_5.svg" className="svg_img header_svg" alt={''}/></button>
@@ -244,7 +250,7 @@ export default function Header() {
       <div className="container position-relative">
         <div className="row ">
           {/* Ec Header Logo Start */}
-          <div className="col">
+          <div className="col" hidden>
             <div className="header-logo">
               <a href="index.html"><img src="/assets/images/logo/logo.png" alt="Site Logo" /><img className="dark-logo" src="/assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></a>
             </div>
