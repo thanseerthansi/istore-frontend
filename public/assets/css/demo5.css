@@ -20122,7 +20122,7 @@ button.btn-close.qty_close {
 .ec-product-inner:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  border: 1px solid #13b5e1;
+  border: 1.4px solid #13b5e1;
 }
 .ec-product-inner:hover .ec-product-hover {
   -webkit-transition: all 0.3s ease-in-out;
@@ -20736,7 +20736,10 @@ ul.slick-dots {
   color: #444444;
   font-size: 18px;
   line-height: 30px;
-  height: 30px;
+  /* height: 30px; */
+  height: 24px;
+  right: 4px;
+
 }
 .ec-all-product-content .slick-arrow:hover {
   border-color: #13b5e1;
