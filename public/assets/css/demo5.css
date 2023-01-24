@@ -20122,7 +20122,7 @@ button.btn-close.qty_close {
 .ec-product-inner:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  border: 2px solid #b5b4b4;
+  border: 1px solid #13b5e1;
 }
 .ec-product-inner:hover .ec-product-hover {
   -webkit-transition: all 0.3s ease-in-out;
