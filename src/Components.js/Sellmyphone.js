@@ -160,15 +160,15 @@ export default function Sellmyphone() {
                     <div  className='rounded' style={{width: '100%',backgroundColor:"#F8F4F4",padding:"20px" }}>
                       <div className="ec-sb-pro-sl-item p-2">                        
                         <div className="ec-pro-content text-start  ">
-                          <h5 className="ec-pro-title classheadstyle mb-0  "style={{fontSize:"13px",fontWeight:700}}>Step-1 :  Add Your iPhone</h5>                         
-                          <ul className='ml-7 mb-3 '  >
+                          <h5 className="ec-pro-title classheadstyle mb-2  "style={{fontSize:"13px",fontWeight:700,lineHeight: "15px"}}>Step-1 :  Add Your iPhone</h5>                         
+                          <ul className='ml-5 mb-3 '  >
                               <li  className='classchildstyle text-capitalize  '>• Select Your phone</li>
                               <li  className='classchildstyle text-capitalize '>• Select Storage</li>
                               <li  className='classchildstyle text-capitalize '>• Select condition</li>
                               <li  className='classchildstyle text-capitalize '>(You will be able to See the condition and its properties)</li>
                           </ul>
-                          <h5 className="ec-pro-title classheadstyle mb-0 "style={{fontSize:"13px",fontWeight:700}}>Step-2 :  Add Your Personal information</h5>                         
-                          <ol className='ml-7 ' >
+                          <h5 className="ec-pro-title classheadstyle mb-2 "style={{fontSize:"13px",fontWeight:700,lineHeight:"15px"}}>Step-2 :  Add Your Personal information</h5>                         
+                          <ol className='ml-5 mb-3' >
                               <li  className='classchildstyle text-capitalize  '>• add your information</li>
                               <li  className='classchildstyle text-capitalize  '>• Sell Your phone</li>
                               <li  className='classchildstyle text-capitalize '>(Our Expert will contact you soon)</li>
