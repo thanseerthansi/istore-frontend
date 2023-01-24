@@ -279,7 +279,7 @@ export default function Sellmyphone() {
           <div className="ec-test-designation  text-center">Our expert will conduct a thorough condition assessment at the time of handover to ensure your iPhone is in the correct condition, and based on the evaluation, they will determine the final price.</div>
           <hr className='bg-secondary' />
           <div className="m-right ">
-            <h5 className='text-center classheadstyle' style={{textDecoration:"underline"}}>Properties</h5 >
+            <h5 className='text-center classheadstyle' style={{textDecoration:"underline"}}>Condition</h5 >
           <ul className='text-center '>
             
           {conditiondata ? conditiondata[0] ? conditiondata[0].description.split(',').map((itm,k)=>(
