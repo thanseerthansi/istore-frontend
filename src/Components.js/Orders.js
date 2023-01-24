@@ -7,8 +7,8 @@ import Scripts from './Scripts';
 import { Simplecontext } from './Simplecontext';
 import Footer from './Footer';
 import Callaxios from './Callaxios';
-import { BaseURL } from './urlcall';
-import ReactWhatsapp from 'react-whatsapp';
+import { BaseURLwithout } from './urlcall';
+// import ReactWhatsapp from 'react-whatsapp';
 
 export default function Orders() {
     const [orderproduct,setorderproduct]= useState('')
@@ -28,10 +28,11 @@ export default function Orders() {
         });
       const getorders=async()=>{
         try {
+            accesscheck()
             let emailid = window.localStorage.getItem('email')
             if (emailid){
                 let data = await Callaxios("get","purchase/order/",{'email':emailid})
-                console.log("data",data)
+                // console.log("data",data)
                 if (data.status===200){
                     
                     setorders(data.data.results)
@@ -46,6 +47,7 @@ export default function Orders() {
         
     }
     const getnextorders=async()=>{
+        accesscheck()
         let data = await Callaxios("next",nextorder)
         if (data.status===200){
             // console.log("statusdata",data)
@@ -56,7 +58,7 @@ export default function Orders() {
         }
     }
     const getorderproduct=async(order_id)=>{ 
-        
+        accesscheck()
         let data = await Callaxios("get","purchase/orderedproduct/",{"order_id":order_id})
         // console.log("dataorderproductasfsdfsf",data.data)
         if (data.status===200){
@@ -125,7 +127,7 @@ export default function Orders() {
                 <li><Link to="/userprofile">User Profile</Link></li>
                 <li><Link to="/orders">Orders</Link></li>
                 <li><Link to="/selled">Sells</Link></li>
-                <li><a onClick={()=>logoutf()} >Logout</a></li>
+                <li><Link onClick={()=>logoutf()} >Logout</Link></li>
                 
                 
                 </ul>
@@ -164,7 +166,7 @@ export default function Orders() {
                 <td><span>{itm.created_date.split("T")[0]}</span></td>
                 <td><span>${itm.total_price}</span></td>
                 <td><span>{itm.status[0].status}</span></td>
-                <td><span className="tbl-btn"><a onClick={()=>getorderproduct(itm.id)} className="btn btn-lg btn-primary" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal">View</a></span></td>
+                <td><span className="tbl-btn"><Link onClick={()=>getorderproduct(itm.id)} className="btn btn-lg btn-primary" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal">View</Link></span></td>
               </tr>
             )):null}
             
@@ -213,12 +215,12 @@ export default function Orders() {
             {orderproduct ? orderproduct.map((itm,k)=>(
                 <tr key={k}>
                 <th scope="row"><span>{itm.product[0].title}</span></th>
-                <td><img className="prod-img" src={BaseURL+itm.product[0].images[0].image} alt="product image " height={50}  /></td>
+                <td><img className="prod-img" src={BaseURLwithout+itm.product[0].images[0].image} alt="product " height={50}  /></td>
                 <td><span>{itm.condition}</span></td>
                 <td><span>${itm.price}</span></td>
                 <td><span>{itm.status[0].status}</span></td>
                 <td>
-                <span className="tbl-btn"><a onClick={()=>whatsappchat(itm.id,itm.order_id[0].id,itm.order_id[0].created_date)} className="btn btn-lg btn-primary">Return</a></span>
+                <span className="tbl-btn"><Link onClick={()=>whatsappchat(itm.id,itm.order_id[0].id,itm.order_id[0].created_date)} className="btn btn-lg btn-primary">Return</Link></span>
                 </td>
                 
                 

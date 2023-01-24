@@ -20102,7 +20102,7 @@ button.btn-close.qty_close {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: -3rem;
+  bottom: -1rem;
   left: 0;
   visibility: hidden;
   background-color: #FFF;
@@ -20122,7 +20122,7 @@ button.btn-close.qty_close {
 .ec-product-inner:hover {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  border: none;
+  border: 2px solid #b5b4b4;
 }
 .ec-product-inner:hover .ec-product-hover {
   -webkit-transition: all 0.3s ease-in-out;
@@ -20165,7 +20165,7 @@ button.btn-close.qty_close {
   -webkit-transition: opacity 0.3s ease, visibility 0s ease;
   transition: opacity 0.3s ease, visibility 0s ease;
   height: auto;
-  min-height: 45px;
+  min-height: 7px;
 }
 .ec-product-inner .pro-hidden-block {
   -webkit-transition: all 0.3s ease-in-out;
@@ -22680,6 +22680,14 @@ section.ec-instagram-section {
   .ec-exe-spe-section .ec-fs-pro-inner .ec-fs-pro-image {
     padding: 0;
   }
+  .ec-exe-spe-section .slick-arrow:before {
+    height: 25px;
+    right: 2px;
+  }
+  .ec-all-product-content .slick-arrow:before{
+    height: 24px;
+    right: 4px;
+  }
 }
 @media only screen and (max-width: 574px) {
   .ec-header-bottom .col {
@@ -24561,3 +24569,7 @@ html{
     line-height: 1.2;
     font-weight: 600;
 }
+
+/* .ec-product-inner:hover{
+  margin-bottom: -40px;
+} */

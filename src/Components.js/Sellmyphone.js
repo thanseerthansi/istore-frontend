@@ -178,7 +178,7 @@ export default function Sellmyphone() {
                   <div className="ec-pro-content ">
                     <div className="ec-pro-option">                    
                     </div>
-                    <h5  className="ec-pro-title  "><p className="classchildstyle ">{itm}</p></h5>                 
+                    <h5  className="ec-pro-title  "><p className="classchildstyle  " style={{fontSize: "10px"}}>{itm}</p></h5>                 
                   </div>
                 </div>  </a>
                 </div>

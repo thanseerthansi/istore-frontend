@@ -7,7 +7,7 @@ import Scripts from './Scripts';
 import { Simplecontext } from './Simplecontext';
 import Footer from './Footer';
 import Callaxios from './Callaxios';
-import { BaseURL } from './urlcall';
+import { BaseURLwithout } from './urlcall';
 
 export default function Selled() {
     const [orderproduct,setorderproduct]= useState('')
@@ -26,6 +26,7 @@ export default function Selled() {
         position: "top-center",
         });
       const getorders=async()=>{
+        accesscheck()
         try {
             let emailid = window.localStorage.getItem('email')
             if (emailid){
@@ -44,6 +45,7 @@ export default function Selled() {
         
     }
     const getnextorders=async()=>{
+        accesscheck()
         let data = await Callaxios("next",nextorder)
         if (data.status===200){
             // console.log("statusdata",data)
@@ -54,7 +56,7 @@ export default function Selled() {
         }
     }
     const getorderproduct=async(order_id)=>{ 
-        
+        accesscheck()
         let data = await Callaxios("get","selling/sellproduct/",{"order_id":order_id})
         if (data.status===200){
             // console.log("orderproduct",data)
@@ -149,7 +151,7 @@ export default function Selled() {
                 <td><span>{itm.created_date.split("T")[0]}</span></td>
                 <td><span>${itm.total_price}</span></td>
                 <td><span>{itm.status[0].status}</span></td>
-                <td><span className="tbl-btn"><a onClick={()=>getorderproduct(itm.id)} className="btn btn-lg btn-primary" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal">View</a></span></td>
+                <td><span className="tbl-btn"><Link onClick={()=>getorderproduct(itm.id)} className="btn btn-lg btn-primary" data-link-action="editmodal" title="Edit Detail" data-bs-toggle="modal" data-bs-target="#edit_modal">View</Link></span></td>
               </tr>
             )):null}
             
@@ -196,7 +198,7 @@ export default function Selled() {
                 {orderproduct ? orderproduct.map((itm,k)=>(
                     <tr key={k}>
                     <th scope="row"><span>{itm.product[0].title}</span></th>
-                    <td><img className="prod-img" src={BaseURL+itm.product[0].images[0].image} alt="product image " height={50}  /></td>
+                    <td><img className="prod-img" src={BaseURLwithout+itm.product[0].images[0].image} alt="product image " height={50}  /></td>
                     <td><span>{itm.condition}</span></td>
                     <td><span>${itm.price}</span></td>
                     

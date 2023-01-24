@@ -459,41 +459,41 @@ function ecCheckCookie()
     });
 
     /*----------------------------- All Product Slider -------------------------------- */    
-    $('.ec-all-products .ec-new-slider,.ec-all-products .ec-special-slider,.ec-all-products .ec-best-slider').slick({
-        rows: 4,
-        dots: false,
-        arrows: true,
-        infinite: true,
-        autoplay:false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                rows: 2,
-                slidesToScroll: 2,
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                rows: 2,
-                slidesToScroll: 1,
-                slidesToShow: 1,
-            }
-        }
-        ]
-    });
+    // $('.ec-all-products .ec-new-slider,.ec-all-products .ec-special-slider,.ec-all-products .ec-best-slider').slick({
+    //     rows: 4,
+    //     dots: false,
+    //     arrows: true,
+    //     infinite: true,
+    //     autoplay:false,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     responsive: [
+    //     {
+    //         breakpoint: 1200,
+    //         settings: {
+    //             slidesToShow: 1,
+    //             slidesToScroll: 1
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 768,
+    //         settings: {
+    //             rows: 2,
+    //             slidesToScroll: 2,
+    //             slidesToShow: 2,
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 480,
+    //         settings: {
+    //             rows: 2,
+    //             slidesToScroll: 1,
+    //             slidesToShow: 1,
+    //         }
+    //     }
+    //     ]
+    // });
 
     /*----------------------------- Category Slider -------------------------------- */    
     $('.ec-category-section .ec_cat_slider').slick({

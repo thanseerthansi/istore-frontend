@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import Scripts from './Scripts';
 import Slick from 'react-slick';
 export default function Home() {
-  const {products,modelsname,getproduct,getmodel} =useContext(Simplecontext)
+  const {products,modelsname} =useContext(Simplecontext)
   // const [selectitem,setselectitem]=useState()
   const settings = {
     rows: 1,
@@ -50,20 +50,20 @@ export default function Home() {
     
   
   useEffect(() => {
-    getproduct()
-    getmodel()
+    // getproduct()
+    // getmodel()
     Scripts()
     return () => {
     }
   }, [])
   // console.log("setselectitem",selectitem)
 
-  const notifyproductadded = (msg) => toast.success(msg, {
-    position: "top-center",
-    });
-  const notifyerror = (msg) => toast.error(msg ,{
-    position: "top-center",
-    });
+  // const notifyproductadded = (msg) => toast.success(msg, {
+  //   position: "top-center",
+  //   });
+  // const notifyerror = (msg) => toast.error(msg ,{
+  //   position: "top-center",
+  //   });
   
   return (
     <div>
@@ -172,19 +172,19 @@ export default function Home() {
             {products.length ? products.filter((item,index)=>index < 8).map((itm,k)=>( 
               <div key={k} className="col-lg-3 col-md-6 col-sm-6 col-xs-6 ec-product-content">
                 <Link to={`/product/${itm.id}`}><div className="ec-product-inner">
-                  <div className="ec-product-hover" />
-                  <div className="ec-pro-image-outer ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
+                  <div className="" />
+                  {/* <div className="ec-pro-image-outer ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
                     <div className="ec-pro-image m-auto ">
                       <p to={`/product/${itm.id}`} className="image ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
-                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="auto"/>
+                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="auto"/> */}
                         
                         <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="auto" />
                        
-                      </p>
+                      {/* </p>
                     </div>
-                  </div>
-                  <div className="ec-pro-content">
-                    <div className="ec-pro-option">
+                  </div> */}
+                  <div className="ec-pro-">
+                    <div className="ec-pro-">
                       {/* <div className="ec-pro-opt-inner">
                         <div className="ec-pro-color">
                         <ul className="ec-opt-swatch ec-change-img">
@@ -197,19 +197,18 @@ export default function Home() {
                         </div>
                       </div> */}
                     </div>
-                    <h5  className="ec-pro-title "><p  className="ec-btn-group ">{itm.title}</p></h5>
+                    <h5  className="ec-pro-title "><p  className="ec-btn-group ec-pro-titles">{itm.title}</p></h5>
                     {/* <h6 className="ec-pro-stitle"><a href="shop-left-sidebar-col-3.html">Camera</a></h6> */}
                     <div className="ec-pro-rat-price">
-                      <div className="ec-pro-rat-pri-inner">
-                        <span className="ec-price">
+                      <div className="ec-pro-rat-pri-">
+                        <span className="ec-prices">
                           <span className="new-price">${itm.sellfromprice}</span>
                           <span className="old-price">${itm.oldfromprice}</span>
                         </span>
-                        <span className="ec-price "  >
+                        {/* <span className="ec-price "  >
                           <span className="new-price">${itm.sellfromprice}</span>
                           <span className="old-price">${itm.oldfromprice}</span>
-                          {/* <div className='text-right ml-3'><button title="Add To Cart" className="add-to-cart btn btn-primary">Add To Cart</button></div> */}
-                        </span>
+                        </span> */}
                       </div>
                     </div>
                     {/* <div className="pro-hidden-block"> */}
@@ -428,6 +427,41 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-new-slider">
+          <Slick
+                  rows={4}
+                  dots={false}
+                  arrows={true}
+                  infinite={true}
+                  autoplay={false}
+                  speed={500}
+                  slidesToShow={1}
+                  slidesToScroll={1}
+                  responsive={[
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        rows: 2,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        rows: 2,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    }
+                  ]}
+                >
           {products.length ? products.filter(t => t.category.toUpperCase().includes("NEW")).map((itm,k)=>(
             <div key={k} className="col-sm-12 ec-all-product-block">
               <div className="ec-all-product-inner">
@@ -453,7 +487,7 @@ export default function Home() {
               </div>
             </div>
             )):null}
-            
+            </Slick>
             
           </div>
         </div>
@@ -464,6 +498,41 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-special-slider">
+          <Slick
+                  rows={4}
+                  dots={false}
+                  arrows={true}
+                  infinite={true}
+                  autoplay={false}
+                  speed={500}
+                  slidesToShow={1}
+                  slidesToScroll={1}
+                  responsive={[
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        rows: 2,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        rows: 2,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    }
+                  ]}
+                >
           {products.length ? products.filter(t => t.category.toUpperCase().includes("SPECIAL")).map((itm,k)=>(
             <div key={k} className="col-sm-12 ec-all-product-block">
               <div className="ec-all-product-inner">
@@ -489,6 +558,7 @@ export default function Home() {
               </div>
             </div>
             )):null}
+            </Slick>
           </div>
         </div>
         <div className="col-lg-3 col-md-6 col-sm-12 col-xs-6 ec-all-product-content ec-best-product-content">
@@ -498,6 +568,41 @@ export default function Home() {
             </div>
           </div>
           <div className="ec-best-slider">
+          <Slick
+                  rows={4}
+                  dots={false}
+                  arrows={true}
+                  infinite={true}
+                  autoplay={false}
+                  speed={500}
+                  slidesToShow={1}
+                  slidesToScroll={1}
+                  responsive={[
+                    {
+                      breakpoint: 1200,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    },
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        rows: 2,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        rows: 2,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    }
+                  ]}
+                >
           {products.length ? products.filter(t => t.category.toUpperCase().includes("BEST")).map((itm,k)=>(
             <div key={k} className="col-sm-12 ec-all-product-block">
               <div className="ec-all-product-inner">
@@ -523,6 +628,7 @@ export default function Home() {
               </div>
             </div>
             )):null}
+            </Slick>
           </div>
         </div>
         <div className="col-lg-3 col-md-6 col-sm-12 col-xs-6 ec-right-banner-content dis-n-767">
