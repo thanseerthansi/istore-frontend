@@ -24576,3 +24576,12 @@ html{
 /* .ec-product-inner:hover{
   margin-bottom: -40px;
 } */
+.ec-category-menu {
+  transition: all 0.3s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+.ec-category-menu.active {
+  height: auto;
+}

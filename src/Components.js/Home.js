@@ -648,7 +648,7 @@ export default function Home() {
   </section>
   {/* All Item end */}
   {/* ec testimonial Start */}
-  {/* <section className="section ec-test-section section-space-ptb-100 section-space-mt section-space-mb" style={{backgroundImage: 'url("assets/images/testimonial/testimonial_bg.jpg")'}}>
+  <section className="section ec-test-section section-space-ptb-100 section-space-mt section-space-mb" style={{backgroundImage: 'url("assets/images/testimonial/testimonial_bg.jpg")'}}>
     <div className="container">
       <div className="row">
         <div className="col-md-12 section-title-block">
@@ -663,8 +663,10 @@ export default function Home() {
           <ul id="ec-testimonial-slider">
             <li className="ec-test-item">
               <div className="ec-test-inner">
-                <div className="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /></div>
-                <div className="ec-test-content">
+                <div className="ec-test-img">
+                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
+                  </div>
+                <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
                   <div className="ec-test-name">david james</div>
                   <div className="ec-test-designation">united states of america</div>
                   <div className="ec-test-rating">
@@ -681,8 +683,10 @@ export default function Home() {
             </li>
             <li className="ec-test-item">
               <div className="ec-test-inner">
-                <div className="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/2.jpg" /></div>
-                <div className="ec-test-content">
+                <div className="ec-test-img">
+                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
+                  </div>
+                <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
                   <div className="ec-test-name">david james</div>
                   <div className="ec-test-designation">united states of america</div>
                   <div className="ec-test-rating">
@@ -699,8 +703,10 @@ export default function Home() {
             </li>
             <li className="ec-test-item">
               <div className="ec-test-inner">
-                <div className="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/3.jpg" /></div>
-                <div className="ec-test-content">
+                <div className="ec-test-img">
+                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
+                  </div>
+                <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
                   <div className="ec-test-name">david james</div>
                   <div className="ec-test-designation">united states of america</div>
                   <div className="ec-test-rating">
@@ -717,8 +723,10 @@ export default function Home() {
             </li>
             <li className="ec-test-item">
               <div className="ec-test-inner">
-                <div className="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /></div>
-                <div className="ec-test-content">
+                <div className="ec-test-img">
+                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
+                  </div>
+                <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
                   <div className="ec-test-name">david james</div>
                   <div className="ec-test-designation">united states of america</div>
                   <div className="ec-test-rating">
@@ -733,11 +741,13 @@ export default function Home() {
                 </div>
               </div>
             </li>
+           
+           
           </ul>
         </div>
       </div>
     </div>
-  </section> */}
+  </section>
   {/* ec testimonial end */}
   {/* Ec Brand Section Start */}
   {/* <section className="section ec-brand-area section-space-p">

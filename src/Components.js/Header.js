@@ -6,6 +6,7 @@ import { RiWindowsFill } from 'react-icons/ri';
 export default function Header() {
   const {modelsname} =useContext(Simplecontext)
     const [search,setsearch]=useState();
+    const [isActive,setisActive]=useState(false);
     const [viewcart,setviewcart]=useState([]);
     let navigate = useNavigate();
     useEffect(() => {
@@ -284,16 +285,16 @@ export default function Header() {
         <div className="row">
           <div className="col ec-category-block">
             <div className="ec-cat-menu">
-              <div className="ec-category-toggle">
+              <div className="ec-category-toggle" onClick={()=>setisActive(!isActive)}>
                 <span className="ec-category-icon" />
-                <span className="ec-category-title">all categories</span>
+                <span className="ec-category-title" >all categories</span>
               </div>
-              <div className="ec-category-content">
-                <div id="ec-category-menu" className="ec-category-menu overflow-auto " style={{height:"250px"}}>
+              <div className="ec-category-content" style={{ display: isActive ? "block" : "none" }}>
+                <div id="ec-category-menu" className={`overflow-auto ec-category-menu ${isActive ? "active" : ""}`}  style={{height:"250px", display: isActive ? "block" : "none"}}>
                   <ul className="ec-category-wrapper ">
-                  <li><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/iphone`}>ALL PRODUCTS</Link></li>
+                  <li><Link className="ec-cat-menu-link text-uppercase"onClick={()=>setisActive(!isActive)} to={`/categoryproduct/iphone`}>ALL PRODUCTS</Link></li>
                     {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(                    
-                    <li key={k}><Link className="ec-cat-menu-link text-uppercase" to={`/categoryproduct/${itm}`}>{itm}</Link></li>
+                    <li key={k}><Link className="ec-cat-menu-link text-uppercase" onClick={()=>setisActive(!isActive)} to={`/categoryproduct/${itm}`}>{itm}</Link></li>
                     )):null}
                     {/* <li><a className="ec-cat-menu-link" href="/">Electronics &amp; Digital</a></li>
                     <li><a className="ec-cat-menu-link" href="/">Home Accessories</a></li>
@@ -509,15 +510,13 @@ export default function Header() {
           <button className="ec-close">×</button>
         </div>
         <ul className="eccart-pro-items  ">
-
           {viewcart.length ?  viewcart.map((itm,k)=>(
             <li key={k}>
             <Link to={`/product/${itm.product[0].id}`} className="sidecart_pro_img"><img src={itm.product[0].images[0].image} alt="product" /></Link>
             <div className="ec-pro-content">
               <Link to={`/product/${itm.product[0].id}`} className="cart_pro_title">{itm.product[0].title} {itm.storage}</Link>
               <span className='text-uppercase'>{itm.condition}</span>
-              <span className="cart-price"><span>${itm.price}</span></span>
-              
+              <span className="cart-price"><span>${itm.price}</span></span>             
                 <div className="d-flex quantitydiv pt-1 ">
                   <button onClick={()=>decrementhandler(k,itm)} className='border border-secondary'><b>-</b></button>
                   <span className="border border-secondary px-3 " type="text"> {itm.quantity}</span>  

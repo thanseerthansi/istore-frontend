@@ -147,10 +147,10 @@ function ecCheckCookie()
     });
 
     /*----------------------------- category Toggle Bar --------------------- */
-    jQuery(".ec-category-toggle").click(function(){
-        jQuery(this).parent().toggleClass('active');
-        jQuery("#ec-category-menu").slideToggle('slow');
-    });
+    // jQuery(".ec-category-toggle").click(function(){
+    //     jQuery(this).parent().toggleClass('active');
+    //     jQuery("#ec-category-menu").slideToggle('slow');
+    // });
 
     jQuery(".ec-search-cat-title").click(function(){
         jQuery(this).parent().toggleClass('active');
