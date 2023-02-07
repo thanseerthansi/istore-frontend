@@ -20643,7 +20643,7 @@ ul.slick-dots {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 35px;
+  /* width: 35px; */
   height: 35px;
   padding: 0;
   z-index: 1;
@@ -20655,8 +20655,8 @@ ul.slick-dots {
   position: relative;
   font-size: 50px;
   font-family: "EcIcons";
-  width: 100%;
-  width: 35px;
+  /* width: 100%;
+  width: 35px; */
   height: 35px;
   z-index: 1;
   display: -webkit-box;
@@ -22920,7 +22920,7 @@ section.ec-instagram-section {
   }
 
   .ec-test-section .slick-arrow {
-    width: 40px;
+    /* width: 40px; */
     -webkit-box-flex: 0;
         -ms-flex: 0 0 40px;
             flex: 0 0 40px;
@@ -24599,6 +24599,9 @@ html{
     font-size: 80px;
     font-weight: 700;
     color: #f5eddf
+  }
+  .ec-test-section .slick-arrow :before{
+    width:20px;
   }
 }
 .ec-whyus-section p{
