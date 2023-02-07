@@ -1,16 +1,49 @@
 import React, { useContext, useEffect } from 'react'
 import Footer from './Footer'
 import Header from './Header'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import Callaxios from './Callaxios';
 import { Simplecontext } from './Simplecontext';
 import { Link } from 'react-router-dom';
 import Scripts from './Scripts';
 import Slick from 'react-slick';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+import ReactStars from "react-rating-stars-component";
+import Callaxios from './Callaxios';
+import { useState } from 'react';
+import Slider from 'react-slick';
+import { TbHandFinger,TbHandTwoFingers,TbHandThreeFingers } from 'react-icons/tb';
+import { AiOutlineSafetyCertificate } from 'react-icons/ai';
+import { CiDeliveryTruck } from 'react-icons/ci';
+import { FaHandHoldingUsd } from 'react-icons/fa';
+const Card = ({ name, place, rating , review }) => (
+  <li className="ec-test-item">
+  <div className="ec-test-inner px-3  " >
+    <div className="ec-test-img">
+      
+      </div>
+    <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
+      <div className="ec-test-name">{name}</div>
+      <div className="ec-test-designation">{place}</div>
+      <ReactStars 
+                      key={`stars_${rating}`}
+                      value={rating ? rating :0}
+                      count={5}
+                      size={25}
+                      edit={false}
+                      isHalf={false}
+                      activeColor="#ffd700"
+                  />
+      <div className="ec-test-desc">{review}</div>
+    </div>
+  </div>
+  </li>
+  );
 export default function Home() {
   const {products,modelsname} =useContext(Simplecontext)
-  // const [selectitem,setselectitem]=useState()
+  const [testimonialdata,settestimonialdata]=useState()
   const settings = {
     rows: 1,
     dots: false,
@@ -52,10 +85,12 @@ export default function Home() {
   useEffect(() => {
     // getproduct()
     // getmodel()
+    gettestimonial()
     Scripts()
     return () => {
     }
   }, [])
+  
   // console.log("setselectitem",selectitem)
 
   // const notifyproductadded = (msg) => toast.success(msg, {
@@ -64,7 +99,26 @@ export default function Home() {
   // const notifyerror = (msg) => toast.error(msg ,{
   //   position: "top-center",
   //   });
-  
+  const gettestimonial=async()=>{
+    try {
+      let data = await Callaxios("get","product/testimonial")
+      // console.log("datatetestimonial",data.data)
+      if(data.status===200){
+        settestimonialdata(data.data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  // const cards = testimonialdata
+  const settingss = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div>
       <div>
@@ -270,7 +324,7 @@ export default function Home() {
   </section>
   {/* ec Banner Section End */}
   {/*  Feature & Special Section Start */}
-  <section className="section ec-exe-spe-section section-space-ptb-100 section-space-mt section-space-mb-100" style={{backgroundImage: 'url("assets/images/special-product/background.jpg")'}}>
+  <section hidden className="section ec-exe-spe-section section-space-ptb-100 section-space-mt section-space-mb-100" style={{backgroundImage: 'url("assets/images/special-product/background.jpg")'}}>
     <div className="container">
       <div className="row">
         {/*  Special Section Start */}
@@ -398,7 +452,7 @@ export default function Home() {
   </section>
   {/* Feature & Special Section End */}
   {/*  offer Section Start */}
-  <section className="section ec-offer-section section-space-mt section-space-mb">
+  <section hidden className="section ec-offer-section section-space-mt section-space-mb">
     <h2 className="d-none">Offer</h2>
     <div className="container">
       <div className="ec-offer-inner ofr-img">
@@ -416,7 +470,7 @@ export default function Home() {
   </section>
   {/* offer Section End */}
   {/* All Product Start */}
-  <section className="section ec-all-products section-space-p">
+  <section hidden className="section ec-all-products section-space-p">
     <h2 className="d-none">all product</h2>
     <div className="container">
       <div className="row">
@@ -647,8 +701,115 @@ export default function Home() {
     </div>
   </section>
   {/* All Item end */}
+  {/* why section */}
+  <section className="section ec-whyus-section">
+  {/* <div class="section-title ">
+    <h2 class="ec-title">Featured Products</h2>
+    </div> */}
+    <div className='text-center section-title mt-5' ><h4 className='ec-title ' >Why iPhoneSales </h4></div>
+    <h2 className="d-none">Services</h2>
+    <div className="container">
+      <div className="row mt-5 mb-5">
+      
+        <div className="ec_ser_content ec_ser_content_1 col-sm-12 col-md-4">
+        <div className="ec_why_inner  ">
+            <div className="ec-service-image ml-auto mr-auto ">
+              <AiOutlineSafetyCertificate className="svg_img" alt={''}/>
+            </div></div>
+          <div className="ec_why_inner  ">
+            {/* <div className="ec-service-image">
+              <img src="/assets/images/icons/service_5_1.svg" className="svg_img" alt={''}/>
+            </div> */}
+            <div className="ec-why-desc ml-auto mr-auto">
+              <h2>WE OFFER IDEAL RATES</h2>
+             
+            </div>
+          </div>
+        </div>
+        <div className="ec_ser_content ec_ser_content_2 col-sm-12 col-md-4">
+        <div className="ec_why_inner">
+            <div className="ec-service-image">
+              <CiDeliveryTruck className="svg_img" alt={''}/>
+            </div></div>
+          <div className="ec_why_inner">
+            
+            <div className="ec-why-desc">
+              <h2>DROP OFF AT OUR DOORSTEP</h2>
+              
+            </div>
+          </div>
+        </div>
+        <div className="ec_ser_content ec_ser_content_3 col-sm-12 col-md-4">
+        <div className="ec_why_inner">
+        <div className="ec-service-image">
+              <FaHandHoldingUsd className="svg_img" alt={''}/>
+            </div></div>
+          <div className="ec_why_inner">
+            
+            <div className="ec-why-desc">
+              <h2>CASH ON THE SPOT</h2>
+              
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  {/* how it work start */}
+  <section className="section  section-space-ptb- backgroundimage" style={{backgroundImage: 'url(/assets/images/main-slider-banner/banner.jpg)',height:"500px"}} >
+  <div className="container" >
+      <div className="row pt-5 ">
+          <div className='col-md-6 ' >
+            <h4 className='howit' >How it works</h4>
+            <div className='mt-4 d-flex'>
+              <div>
+              <TbHandFinger size={60} />
+              </div>
+              
+              <div className='pl-4 workp'>
+                <h4 className=''>Get a quote</h4>
+                <p >Share details of your asset and receive a quotation</p>
+              </div>
+              
+            </div>
+            <div className='mt-5 d-flex'>
+            <div>
+              <TbHandTwoFingers size={60} />
+              </div>
+              <div className='pl-4 workp'>
+                <h4 className=''>Evaluate</h4>
+                <p>Our experts will evaluate the condition of your asset</p>
+              </div>
+              
+            </div>
+            <div className='mt-5 d-flex'>
+              <div>
+              <TbHandThreeFingers size={60} />
+              </div>
+              
+              <div className='pl-4 workp'>
+                <h4 className=''>Cash on the spot</h4>
+                <p>Get your money instantly</p>
+              </div>
+              
+            </div>
+            {/* <div className='mt-5 d-flex'>
+              <TbHandTwoFingers size={60} />
+              <div className='pl-4 workp '>
+                <h4 className=''>Cash on the spot</h4>
+                <p>Get your money instantly</p>
+              </div>
+              
+            </div> */}
+          </div>
+          <div className='col-md-6'>
+            {/* <p className='text-white'>sdfsu</p> */}
+          </div>
+    </div></div>
+  </section>
   {/* ec testimonial Start */}
-  <section className="section ec-test-section section-space-ptb-100 section-space-mt section-space-mb" style={{backgroundImage: 'url("assets/images/testimonial/testimonial_bg.jpg")'}}>
+  <section className="section ec-test-section section-space-ptb-100 " style={{backgroundImage: 'url("assets/images/testimonial/testimonial_bg.jpg")'}}>
     <div className="container">
       <div className="row">
         <div className="col-md-12 section-title-block">
@@ -660,11 +821,17 @@ export default function Home() {
       </div>
       <div className="row">
         <div className="ec-test-outer">
-          <ul id="ec-testimonial-slider">
-            <li className="ec-test-item">
+          <ul id="ec-testimonial-slider " >
+          <Slider {...settingss} className="widthcard m-auto">
+      {testimonialdata? testimonialdata.map((card, index) => (
+        <Card key={index} {...card} />
+      )):null}
+    </Slider> 
+            {/* {testimonialdata  ? testimonialdata.map((itm,k)=>(
+              <li className="ec-test-item">
               <div className="ec-test-inner">
                 <div className="ec-test-img">
-                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
+                  
                   </div>
                 <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
                   <div className="ec-test-name">david james</div>
@@ -681,66 +848,9 @@ export default function Home() {
                 </div>
               </div>
             </li>
-            <li className="ec-test-item">
-              <div className="ec-test-inner">
-                <div className="ec-test-img">
-                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
-                  </div>
-                <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
-                  <div className="ec-test-name">david james</div>
-                  <div className="ec-test-designation">united states of america</div>
-                  <div className="ec-test-rating">
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                  </div>
-                  <div className="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry</div>
-                </div>
-              </div>
-            </li>
-            <li className="ec-test-item">
-              <div className="ec-test-inner">
-                <div className="ec-test-img">
-                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
-                  </div>
-                <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
-                  <div className="ec-test-name">david james</div>
-                  <div className="ec-test-designation">united states of america</div>
-                  <div className="ec-test-rating">
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                  </div>
-                  <div className="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry</div>
-                </div>
-              </div>
-            </li>
-            <li className="ec-test-item">
-              <div className="ec-test-inner">
-                <div className="ec-test-img">
-                  {/* <img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg" /> */}
-                  </div>
-                <div className="ec-test-content" style={{backgroundColor:"#fff",height:"180px"}}>
-                  <div className="ec-test-name">david james</div>
-                  <div className="ec-test-designation">united states of america</div>
-                  <div className="ec-test-rating">
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                    <i className="ecicon eci-star fill" />
-                  </div>
-                  <div className="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry</div>
-                </div>
-              </div>
-            </li>
+            )):null} */}
+            
+           
            
            
           </ul>

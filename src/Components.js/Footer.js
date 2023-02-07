@@ -6,6 +6,7 @@ export default function Footer() {
     <div>
       {/*  services Section Start */}
   <section className="section ec-services-section">
+    {/* <div className='text-start ml-4' ><h4 className='classheadstyle text-white'>Why iPhoneSales </h4></div> */}
     <h2 className="d-none">Services</h2>
     <div className="container">
       <div className="row">

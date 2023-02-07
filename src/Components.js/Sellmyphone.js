@@ -127,13 +127,13 @@ export default function Sellmyphone() {
             <div className="col-12">
             <div className="row ec_breadcrumb_inner">
                 <div className="col-md-6 col-sm-12">
-                <h2 className="ec-breadcrumb-title">Sell My iPhone</h2>
+                <h2 className="ec-breadcrumb-title">Sell Your iPhone here.</h2>
                 </div>
                 <div className="col-md-6 col-sm-12">
                 {/* ec-breadcrumb-list start */}
                 <ul className="ec-breadcrumb-list">
                     <li className="ec-breadcrumb-item"><Link to="/">Home </Link></li>
-                    <li className="ec-breadcrumb-item active"><span> ></span>Sell My iPhone</li>
+                    <li className="ec-breadcrumb-item active"><span> ></span>Sell Your iPhone</li>
                 </ul>
                 {/* ec-breadcrumb-list end */}
                 </div>
@@ -170,7 +170,7 @@ export default function Sellmyphone() {
                           <h5 className="ec-pro-title classheadstyle mb-2 "style={{fontSize:"13px",fontWeight:700,lineHeight:"15px"}}>Step-2 :  Add Your Personal information</h5>                         
                           <ol className='ml-5 mb-3' >
                               <li  className='classchildstyle text-capitalize  '>• add your information</li>
-                              <li  className='classchildstyle text-capitalize  '>• Sell Your phone</li>
+                              <li  className='classchildstyle text-capitalize  '>• Sell Your iPhone</li>
                               <li  className='classchildstyle text-capitalize '>(Our Expert will contact you soon)</li>
                           </ol>
                         </div>                        
@@ -285,9 +285,7 @@ export default function Sellmyphone() {
           {conditiondata ? conditiondata[0] ? conditiondata[0].description.split(',').map((itm,k)=>(
               <li key={k} className='classchildstyle text-capitalize'>{itm}</li>
           )):null :null}
-            
-            
-            
+ 
           </ul>
           </div>                
           </div>

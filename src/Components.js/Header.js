@@ -372,7 +372,7 @@ export default function Header() {
                   </ul>
                 </li> */}
                 <li className="dropdown"><Link to="/categoryproduct/iphone">Products</Link> </li>
-                <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link></li>
+                {/* <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link></li> */}
                 
                 <li className="dropdown"><Link to="/userprofile">Account</Link> </li>
                 <li className="dropdown"><Link to="/aboutus">About Us</Link> </li>
@@ -381,7 +381,8 @@ export default function Header() {
           </div>
           <div className="col ec-spe-offer-block">
             <div className="ec-spe-offer-link">
-              <Link to="/" className="ec-spe-offer-title">Special offer</Link>
+              {/* <Link to="/" className="ec-spe-offer-title">Special offer</Link> */}
+              <Link to="/sellmyphone" className="ec-spe-offer-title">Sell Your iPhone</Link>
             </div>
           </div>
         </div>
@@ -451,7 +452,7 @@ export default function Header() {
               </ul>
             </li> */}
             <li className="dropdown"><Link to="/categoryproduct/iphone">Products</Link> </li>
-            <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link>
+            <li className="dropdown"><Link to="/sellmyphone">Sell Your iPhone</Link>
                  
             </li>
             <li className="dropdown"><Link to="/userprofile">Account</Link> </li>

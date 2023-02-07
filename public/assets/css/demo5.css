@@ -21177,6 +21177,7 @@ section.ec-test-section {
   font-weight: 700;
 }
 .ec-test-section .slick-dots {
+  
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21199,6 +21200,7 @@ section.ec-test-section {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   border-radius: 0;
+  display: none;
 }
 .ec-test-section .slick-dots li:hover {
   background-color: #13b5e1;
@@ -24584,4 +24586,89 @@ html{
 
 .ec-category-menu.active {
   height: auto;
+}
+@media only screen and (min-width: 768px){
+  .widthcard{
+    width: 60%;
+  }
+  .backgroundimage{
+    height: 450px;
+    background-size: cover;
+  }
+  .howit{
+    font-size: 80px;
+    font-weight: 700;
+    color: #f5eddf
+  }
+}
+.ec-whyus-section p{
+  color: #13b5e1;
+}
+.ec_why_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  /* display: flex; */
+  padding: 10px 0;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 15px;
+}
+.ec_why_inner .ec-service-image {
+  margin-right: auto;
+  margin-left:auto;
+  position: relative;
+}
+.ec_why_inner .ec-service-image svg {
+  width: 54px;
+  height: 54px;
+  fill: #13b5e1;
+}
+
+.ec-why-desc h2, .ec-why-desc .h2 {
+  font-size: 18px;
+  color: black;
+  letter-spacing: 0;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.ec-why-desc p {
+  font-size: 14px;
+  color: red;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+.ec-why-desc{
+  margin-right: auto;
+  margin-left:auto;
+}
+.how-work .slide-1 {
+  background-image: url(../images/main-slider-banner/banner_3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative; */
+  height: auto;
+}
+
+.itwork{
+  margin-left:142px;
+}
+
+@media  only screen and (max-width: 768px) {
+  .backgroundimage{
+    height: 450px;
+    background-position: center;
+    background-size: cover;
+  }
+  .howit{
+    font-size: 50px;
+    font-weight: 700;
+    color: #f5eddf
+  }
+}
+.workp p{
+  color: black;
 }
