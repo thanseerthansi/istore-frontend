@@ -24596,9 +24596,9 @@ html{
     background-size: cover;
   }
   .howit{
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 700;
-    color: #f5eddf
+    color: #b3b3b3
   }
   .ec-test-section .slick-arrow :before{
     width:20px;
@@ -24669,7 +24669,7 @@ html{
   .howit{
     font-size: 50px;
     font-weight: 700;
-    color: #f5eddf
+    color: #b3b3b3
   }
 }
 .workp p{
