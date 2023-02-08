@@ -21139,14 +21139,14 @@ section.ec-test-section {
           align-items: center;
 }
 .ec-test-section .ec-test-desc {
-  font-size: 12px;
+  font-size: 17px;
   color: #777;
   line-height: 21px;
   letter-spacing: 0.4px;
   font-weight: 300;
 }
 .ec-test-section .ec-test-name {
-  font-size: 15px;
+  font-size: 21px;
   font-weight: 600;
   margin-bottom: 11px;
   color: #13b5e1;
@@ -21155,7 +21155,7 @@ section.ec-test-section {
   text-transform: capitalize;
 }
 .ec-test-section .ec-test-designation {
-  font-size: 12px;
+  font-size: 15px;
   color: #777;
   line-height: 1;
   letter-spacing: 0;
