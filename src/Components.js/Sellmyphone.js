@@ -127,7 +127,7 @@ export default function Sellmyphone() {
             <div className="col-12">
             <div className="row ec_breadcrumb_inner">
                 <div className="col-md-6 col-sm-12">
-                <h2 className="ec-breadcrumb-title">Sell Your iPhone here.</h2>
+                <h2 className="ec-breadcrumb-title">Sell Your iPhone here</h2>
                 </div>
                 <div className="col-md-6 col-sm-12">
                 {/* ec-breadcrumb-list start */}
@@ -156,7 +156,7 @@ export default function Sellmyphone() {
                 <div className="ec-checkout-wrap margin-bottom-30">     
                 <div className="ec-bl-block-content">
                   {/* steps start */}
-                  <div className='pt-2 mb-5'>
+                  {/* <div className='pt-2 mb-5'>
                     <div  className='rounded' style={{width: '100%',backgroundColor:"#F8F4F4",padding:"20px" }}>
                       <div className="ec-sb-pro-sl-item p-2">                        
                         <div className="ec-pro-content text-start  ">
@@ -176,8 +176,32 @@ export default function Sellmyphone() {
                         </div>                        
                       </div>
                     </div>
-                    </div>
-                  
+                    </div> */}
+ <div className="timeline">
+  <div className="outer">
+    <div className="card">
+      <div className="info">
+      <h3 class="title">Step-1 :  Add Your iPhone</h3>
+        <p>• Select Your phone</p>
+        <p>• Select Storage</p>
+        <p>• Select condition</p>
+        <p>• (You will be able to See the condition and its properties)</p>
+      </div>
+    </div>
+    <div className="card">
+    <div class="info">
+        <h3 class="title">Step-2 :  Add Your Personal information</h3>
+        <p>• Add your information </p>
+        <p>• Sell Your iPhone </p>
+        <p>• (Our Expert will contact you soon)</p>
+      </div>
+    </div>
+    
+    
+  
+  </div>
+</div>
+
                   {/* steps end */}
                 <h1 className='classheadstyle'>Select Your iPhone</h1>
                 <div className="ec-check-bill-form">

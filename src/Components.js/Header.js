@@ -303,79 +303,32 @@ export default function Header() {
                     <li><a className="ec-cat-menu-link" href="/">Hotel Furniture</a></li> */}
                   </ul>
                 </div>
+                
               </div>
             </div>
           </div>
+          
           <div className="col ec-main-menu-block align-self-center d-none d-lg-block p-0">
             <div className="ec-main-menu">
               <ul>
                 <li className="dropdown"><Link to="/">Home</Link>
                   
                 </li>
-                {/* <li className="dropdown position-static"><a href="/">Categories</a>
-                  <ul className="mega-menu d-block">
-                    <li className="d-flex">
-                      <ul className="d-block">
-                        <li className="menu_title"><a href="/">Classic</a></li>
-                        <li><a href="shop-left-sidebar-col-3.html">Left sidebar 3 column</a>
-                        </li>
-                        <li><a href="shop-left-sidebar-col-4.html">Left sidebar 4 column</a>
-                        </li>
-                        <li><a href="shop-right-sidebar-col-3.html">Right sidebar 3 column</a>
-                        </li>
-                        <li><a href="shop-right-sidebar-col-4.html">Right sidebar 4 column</a>
-                        </li>
-                        <li><a href="shop-full-width.html">Full width 4 column</a></li>
-                      </ul>
-                      <ul className="d-block">
-                        <li className="menu_title"><a href="/">Banner</a></li>
-                        <li><a href="shop-banner-left-sidebar-col-3.html">left sidebar 3
-                            column</a></li>
-                        <li><a href="shop-banner-left-sidebar-col-4.html">left sidebar 4
-                            column</a></li>
-                        <li><a href="shop-banner-right-sidebar-col-3.html">right sidebar
-                            3 column</a></li>
-                        <li><a href="shop-banner-right-sidebar-col-4.html">right sidebar
-                            4 column</a></li>
-                        <li><a href="shop-banner-full-width.html">Full width 4 column</a>
-                        </li>
-                      </ul>
-                      <ul className="d-block">
-                        <li className="menu_title"><a href="/">Columns</a></li>
-                        <li><a href="shop-full-width-col-3.html">3 Columns full width</a></li>
-                        <li><a href="shop-full-width-col-4.html">4 Columns full width</a></li>
-                        <li><a href="shop-full-width-col-5.html">5 Columns full width</a></li>
-                        <li><a href="shop-full-width-col-6.html">6 Columns full width</a></li>
-                        <li><a href="shop-banner-full-width-col-3.html">Banner 3 Columns</a>
-                        </li>
-                      </ul>
-                      <ul className="d-block">
-                        <li className="menu_title"><a href="/">List</a>
-                        </li>
-                        <li><a href="shop-list-left-sidebar.html">Shop left sidebar</a></li>
-                        <li><a href="shop-list-right-sidebar.html">Shop right sidebar</a></li>
-                        <li><a href="shop-list-banner-left-sidebar.html">Banner left sidebar</a>
-                        </li>
-                        <li><a href="shop-list-banner-right-sidebar.html">Banner right
-                            sidebar</a></li>
-                        <li><a href="shop-list-full-col-2.html">Full width 2 columns</a></li>
-                      </ul>
-                    </li>
-                    <li>
-                      <ul className="ec-main-banner w-100">
-                        <li><a className="p-0" href="shop-left-sidebar-col-3.html"><img className="img-responsive" src="/assets/images/menu-banner/1.jpg" alt={''}/></a></li>
-                        <li><a className="p-0" href="shop-left-sidebar-col-4.html"><img className="img-responsive" src="/assets/images/menu-banner/2.jpg" alt={''}/></a></li>
-                        <li><a className="p-0" href="shop-right-sidebar-col-3.html"><img className="img-responsive" src="/assets/images/menu-banner/3.jpg" alt={''}/></a></li>
-                        <li><a className="p-0" href="shop-right-sidebar-col-4.html"><img className="img-responsive" src="/assets/images/menu-banner/4.jpg" alt={''}/></a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li> */}
                 <li className="dropdown"><Link to="/categoryproduct/iphone">Products</Link> </li>
-                {/* <li className="dropdown"><Link to="/sellmyphone">Sell My iPhone</Link></li> */}
+                {/* <li className="dropdown sellphone d-sm-block"><Link to="/sellmyphone">Sell Your iPhone</Link></li> */}
                 
                 <li className="dropdown"><Link to="/userprofile">Account</Link> </li>
                 <li className="dropdown"><Link to="/aboutus">About Us</Link> </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col ec-main-menu-block align-self-center d-block d-sm-none p-0">
+            <div className="ec-main-menu">
+              <ul>
+               
+                <li className="dropdown sellphone d-sm-block"><Link to="/sellmyphone">Sell Your iPhone</Link></li>
+                
+                
               </ul>
             </div>
           </div>
