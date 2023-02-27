@@ -24749,7 +24749,7 @@ html{
 /* Setting the border of top, bottom, right */
 .card:nth-child(even)::before {
   right: 0;
-  top: -6px;
+  top: -5.5px;
   bottom: -1px;
   border-width: 5px 5px 5px 0;
   border-radius: 0 50px 50px 0;
@@ -24781,12 +24781,20 @@ html{
   color: gray;
   border-radius: 10px;
   padding: 10px;
+  line-height: 14px;
+  
 }
-
+.info p{
+  padding-left: 4px;
+  margin-bottom: 12px;
+}
 /* Title of the card */
 .title {
   color: orangered;
   position: relative;
+  margin-bottom: 10px;
+  font-size: 20px;
+  
 }
 
 /* Timeline dot  */
@@ -24802,7 +24810,7 @@ html{
 
 /* text right if the card is even  */
 .card:nth-child(even) > .info > .title {
-  text-align: right;
+  text-align: left;
 }
 
 /* setting dot to the left if the card is odd */

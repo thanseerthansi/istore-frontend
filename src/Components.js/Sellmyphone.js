@@ -182,7 +182,7 @@ export default function Sellmyphone() {
     <div className="card">
       <div className="info">
       <h3 class="title">Step-1 :  Add Your iPhone</h3>
-        <p>• Select Your phone</p>
+        <p >• Select Your phone</p>
         <p>• Select Storage</p>
         <p>• Select condition</p>
         <p>• (You will be able to See the condition and its properties)</p>
