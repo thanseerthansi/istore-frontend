@@ -21074,7 +21074,7 @@ ul.slick-dots {
 ---------------------------------------------------*/
 .ec-services-section {
   background: #143f66;
-  padding: 1px 0;
+  padding: 9px 0;
 }
 
 .ec_ser_inner {
@@ -21094,12 +21094,12 @@ ul.slick-dots {
 }
 .ec_ser_inner .ec-service-image svg {
   width: 54px;
-  height: 54px;
-  fill: #202020;
+  height: 45px;
+  fill: #ffffff;
 }
 
 .ec-service-desc h2, .ec-service-desc .h2 {
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   letter-spacing: 0;
   margin-bottom: 8px;
@@ -21107,7 +21107,7 @@ ul.slick-dots {
   text-transform: capitalize;
 }
 .ec-service-desc p {
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff;
   line-height: 1.2;
   letter-spacing: 0.5px;
@@ -24735,7 +24735,7 @@ html{
   content: "";
   position: absolute;
   width: 50%;
-  border: solid orangered;
+  border: solid #00a279;
 }
 
 /* Setting the border of top, bottom, left */
@@ -24778,8 +24778,8 @@ html{
 .info {
   display: flex;
   flex-direction: column;
-  background: #333;
-  color: gray;
+  background: #143f66;
+  color: #d1e8de;
   border-radius: 10px;
   padding: 10px;
   line-height: 14px;
@@ -24791,7 +24791,7 @@ html{
 }
 /* Title of the card */
 .title {
-  color: orangered;
+  color: #ffffff;
   position: relative;
   margin-bottom: 10px;
   font-size: 20px;
@@ -24806,7 +24806,7 @@ html{
   height: 10px;
   background: white;
   border-radius: 999px;
-  border: 3px solid orangered;
+  border: 3px solid #00a279;
 }
 
 /* text right if the card is even  */

@@ -213,7 +213,7 @@ export default function Sellmyphone() {
                   (products.filter(t=>t.model_name.toUpperCase().includes(itm.toUpperCase()))).length ? 
                     <div key={k} className="col-md-2 col-3 ec-product-content ">
                   <a href="#form_section">
-                <div onClick={()=>setimodel(itm) & callstorage(itm) & seticondition('') & setistorage('')} className=" text-center p-2 card-product  " style={imodel ===itm ? {border:"4px solid red",flexDirection:"row"}:{}} >
+                <div onClick={()=>setimodel(itm) & callstorage(itm) & seticondition('') & setistorage('')} className=" text-center p-2 card-product  " style={imodel ===itm ? {border:"4px solid #00a279",flexDirection:"row"}:{}} >
                   
                   
                     <div className="m-auto ">
