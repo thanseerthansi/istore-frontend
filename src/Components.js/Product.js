@@ -381,7 +381,7 @@ export default function Product() {
                             storagelist.map((itm,k)=>(
                               
                               // <div key={k} className='p-2'><button onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')} className={istorage === itm ? `bg-gray-700 font-semibold  py-2 px-4 border  text-white border-gray-400  hover:bg-gray-700  rounded`:`bg-gray font-semibold  py-2 px-4 border text-gray-400 hover:text-white border-gray-400  hover:bg-gray-700  rounded`} >{itm}</button></div>
-                              <li key={k} className="classheadstyle"  style={istorage === itm ?{backgroundColor:"#13b5e1",color:"#ffffff"}:{}} onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')}><span >{itm}</span></li>
+                              <li key={k} className="classheadstyle"  style={istorage === itm ?{backgroundColor:"#143f66",color:"#ffffff"}:{}} onClick={()=>setistorage(itm) &seticondition('') &setiprice('') & setogprice('')}><span >{itm}</span></li>
                             ))
                           :null}
                           </ul>
@@ -404,9 +404,9 @@ export default function Product() {
                     </div>
                     <div className="ec-single-qty ">
                       <div className="d-flex quantitydiv pt-1 item-center">
-                        <button onClick={()=>decrementhandler()} className='border border-secondary h-75 px-2'><b>-</b></button>
+                        <button onClick={()=>decrementhandler()} className='border border-secondary h-75 px-2'><b> -&nbsp; </b></button>
                         <input className="qty-input  h-75" type="text" name="ec_qtybtn"   onChange={(e)=>setiquantity(e.target.value)} value={iquantity} />
-                        <button onClick={()=>incrementhandler()} className='border border-secondary h-75 px-'><b>+</b></button>
+                        <button onClick={()=>incrementhandler()} className='border border-secondary h-75 px-2' style={{padding:"2px"}}><b>+</b></button>
                       </div>
                       <div className="ec-single-cart ">
                         <button onClick={()=>iprice ? addtocartfunction(): notifyerror("Select all fields")} className="btn btn-primary">Add To Cart</button>

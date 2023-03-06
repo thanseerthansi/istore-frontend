@@ -472,9 +472,9 @@ export default function Header() {
               <span className='text-uppercase'>{itm.condition}</span>
               <span className="cart-price"><span>${itm.price}</span></span>             
                 <div className="d-flex quantitydiv pt-1 ">
-                  <button onClick={()=>decrementhandler(k,itm)} className='border border-secondary'><b>-</b></button>
+                  <button onClick={()=>decrementhandler(k,itm)} className='border border-secondary px-2'><b>-</b></button>
                   <span className="border border-secondary px-3 " type="text"> {itm.quantity}</span>  
-                  <button onClick={()=>incrementhandler(k,itm)} className='border border-secondary '><b>+</b></button>
+                  <button onClick={()=>incrementhandler(k,itm)} className='border border-secondary px-1 '><b>+</b></button>
                 </div>
               
               <button onClick={()=>deletefromcartfunction(k)} className='deletecart'>×</button>
