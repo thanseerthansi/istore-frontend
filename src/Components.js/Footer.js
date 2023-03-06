@@ -169,7 +169,7 @@ export default function Footer() {
             {/* Footer Copyright Start */}
             <div className="col footer-copy">
               <div className="footer-bottom-copy ">
-                <div className="ec-copy">© 2023 <Link className="site-name" to="/">iPhone sales</Link>. All Rights Reserved
+                <div className="ec-copy">© 2023 <Link className="site-name" to="/">ZELL</Link>. All Rights Reserved
                 </div>
               </div>
             </div>

@@ -189,7 +189,7 @@ export default function Home() {
             <div className="ec_cat_inner">
               <Link to={`/categoryproduct/${itm}`}>
                 <h2 className="d-none">Category</h2>
-                <div className="ec-cat-image">
+                <div className="ec-cat-image  "  >
                   <img src="assets/images/category-image/iphone.png" className="svg_img cat_svg" alt={''} height={"49px"}/>
                 </div>
                 <div className="ec-cat-desc">
