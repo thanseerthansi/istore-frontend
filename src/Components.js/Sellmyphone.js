@@ -26,6 +26,7 @@ export default function Sellmyphone() {
         position: "top-center",
         });
     useEffect(() => {
+      window.scrollTo(0, 0);
       Scripts()
       getcondition()
     }, [])

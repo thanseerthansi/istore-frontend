@@ -24726,9 +24726,11 @@ html{
 /* setting padding based on even or odd */
 .card:nth-child(odd) {
   padding: 30px 0 30px 30px;
+  border-color: transparent;
 }
 .card:nth-child(even) {
   padding: 30px 30px 30px 0;
+  border-color: transparent;
 }
 /* Global ::before */
 .card::before {
@@ -24736,6 +24738,7 @@ html{
   position: absolute;
   width: 50%;
   border: solid #00a279;
+  
 }
 
 /* Setting the border of top, bottom, left */

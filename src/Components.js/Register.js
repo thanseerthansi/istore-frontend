@@ -13,6 +13,7 @@ export default function Register() {
     const [contact,setcontact]=useState()
     const [password,setpassword]=useState()
     useEffect(() => {
+      window.scrollTo(0, 0);
         Scripts()
     }, [])
     const notify = (msg) => toast.success(msg, {

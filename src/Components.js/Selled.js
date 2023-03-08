@@ -15,6 +15,7 @@ export default function Selled() {
     const [nextorder,setnextorder]=useState('')
     const {accesscheck,logoutf} =useContext(Simplecontext)
     useEffect(() => {
+      window.scrollTo(0, 0);
         Scripts()
         accesscheck()
         getorders()

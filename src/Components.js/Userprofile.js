@@ -15,6 +15,7 @@ export default function Userprofile() {
     const [password,setpassword]=useState('')
     const [userid,setuserid]=useState('')
     useEffect(() => {
+      window.scrollTo(0, 0);
         Scripts()
         accesscheck()
         getuser()

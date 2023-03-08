@@ -34,6 +34,7 @@ export default function Product() {
   let urlid = urlparam.id
     // console.log("reviewdata",reviewdata.length)
     useEffect(() => {
+      window.scrollTo(0, 0);
       Scripts()
       getdetailproduct()
       getreview()

@@ -20,6 +20,7 @@ export default function Categoryproducts() {
   const [storage,setstorage]=useState()
   // console.log("cobnditioim",toprice)
     useEffect(() => {
+      window.scrollTo(0, 0);
       Scripts()
       getcondition()
       // console.log("product",products)
