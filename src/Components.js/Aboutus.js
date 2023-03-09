@@ -6,6 +6,7 @@ import Scripts from './Scripts'
 
 export default function Aboutus() {
     useEffect(() => {
+      window.scrollTo(0, 0);
       Scripts()
     }, [])
     

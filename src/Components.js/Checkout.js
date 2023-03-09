@@ -11,6 +11,7 @@ export default function Checkout() {
     const [customerdetails,setcustomerdetails]=useState();
     console.log("viewcaer",viewcart)
     useEffect(() => {
+      window.scrollTo(0, 0);
       Scripts()
       cartfunction()
     }, [])
