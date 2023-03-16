@@ -24706,18 +24706,18 @@ html{
 }
 
 /* Card container */
-.card {
+/* .card {
   position: relative;
   max-width: 100%;
-}
-@media only screen and (min-width: 768px){
+} */
+@media only screen and (min-width: 1000px){
   .card {
     position: relative;
     max-width: 90%;
   }
   .card:nth-child(even)::before {
     right: 0;
-    top: -5px;
+    top: -5.5px;
     bottom: -1px;
     border-width: 5px 5px 5px 0;
     border-radius: 0 50px 50px 0;
@@ -24749,15 +24749,67 @@ html{
   border-width: 5px 0 5px 5px;
   border-radius: 50px 0 0 50px;
 }
+@media only screen and (max-width: 1000px) and (min-width:767px){
+  .card {
+    position: relative;
+    max-width: 100%;
+  }
+  .card:nth-child(even)::before {
+    right: 0;
+    top: -6px;
+    bottom: -1px;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width:567px){
+  .card {
+    position: relative;
+    max-width: 100%;
+  }
+  .card:nth-child(even)::before {
+    right: 0;
+    top: -6.5px;
+    bottom: -1px;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+}
+@media only screen and (max-width: 567px) and (min-width:378px) {
+  .card {
+    position: relative;
+    max-width: 100%;
+  }
+  .card:nth-child(even)::before {
+    right: 0;
+    top: -5.5px;
+    bottom: -1px;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+}
 
+@media only screen and (max-width: 378px) {
+  .card {
+    position: relative;
+    max-width: 100%;
+  }
+  .card:nth-child(even)::before {
+    right: 0;
+    top: -6.5px;
+    bottom: -1px;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+}
 /* Setting the border of top, bottom, right */
-.card:nth-child(even)::before {
+/* .card:nth-child(even)::before {
   right: 0;
   top: -5.5px;
   bottom: -1px;
   border-width: 5px 5px 5px 0;
   border-radius: 0 50px 50px 0;
-}
+} */
 
 /* Removing the border if it is the first card */
 .card:first-child::before {
