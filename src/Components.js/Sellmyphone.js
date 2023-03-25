@@ -298,7 +298,7 @@ export default function Sellmyphone() {
       <div className="ec-test-inner ">
         <div className="ec-test-content pb-6">
         <h5 className="ec-pro-title text-capitalize classheadstyle fs-3 " >{icondition}</h5>
-          <div className="ec-test-name classheadstyle">Price : <b>Upto ${iprice}</b></div>
+          <div className="ec-test-name classheadstyle">Price : <b>Upto </b>AED {iprice}</div>
           
           <div className='textstart'>
           <div className="ec-test-designation  text-center">Our expert will conduct a thorough condition assessment at the time of handover to ensure your iPhone is in the correct condition, and based on the evaluation, they will determine the final price.</div>

@@ -163,8 +163,8 @@ export default function Categoryproducts() {
                     <div className="ec-pro-rat-">
                       <div className="ec-pro-rat-pri-">
                         <span className="ec-prices">
-                          <span className="new-price">${itm.sellfromprice}</span>
-                          <span className="old-price">${itm.oldfromprice}</span>
+                          <span className="new-price"><b style={{fontSize:"80%"}}>AED </b> {itm.sellfromprice}</span>
+                          <span className="old-price"> {itm.oldfromprice}</span>
                         </span>
                         {/* <span className="ec-price "  >
                           <span className="new-price">${itm.sellfromprice}</span>

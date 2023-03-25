@@ -257,8 +257,8 @@ export default function Home() {
                     <div className="ec-pro-rat-price">
                       <div className="ec-pro-rat-pri-">
                         <span className="ec-prices">
-                          <span className="new-price">${itm.sellfromprice}</span>
-                          <span className="old-price">${itm.oldfromprice}</span>
+                          <span className="new-price"><b style={{fontSize:"80%"}}>AED </b>{itm.sellfromprice}</span>
+                          <span className="old-price">{itm.oldfromprice}</span>
                         </span>
                         {/* <span className="ec-price "  >
                           <span className="new-price">${itm.sellfromprice}</span>
@@ -325,10 +325,10 @@ export default function Home() {
   </section>
   {/* ec Banner Section End */}
   {/*  Feature & Special Section Start */}
-  <section hidden className="section ec-exe-spe-section section-space-ptb-100 section-space-mt section-space-mb-100" style={{backgroundImage: 'url("assets/images/special-product/background.jpg")'}}>
+  {/* <section hidden className="section ec-exe-spe-section section-space-ptb-100 section-space-mt section-space-mb-100" style={{backgroundImage: 'url("assets/images/special-product/background.jpg")'}}>
     <div className="container">
       <div className="row">
-        {/*  Special Section Start */}
+        
         <div className="ec-spe-section col-lg-6 col-md-12 col-sm-12 margin-b-30">
           <div className="col-md-12 text-left">
             <div className="section-title mb-6">
@@ -358,8 +358,8 @@ export default function Home() {
                   <h6 className="ec-pro-stitle"><Link to={`/product/${itm.id}`}>{itm.model_name}</Link></h6>
                   <div className="ec-pro-rat-price">
                     <span className="ec-price">
-                      <span className="new-price">${itm.sellfromprice}</span>
-                      <span className="old-price">${itm.oldfromprice}</span>
+                      <span className="new-price">AED {itm.sellfromprice}</span>
+                      <span className="old-price">AED {itm.oldfromprice}</span>
                     </span>
                   </div>
                   <Link to={`/product/${itm.id}`}>
@@ -373,8 +373,7 @@ export default function Home() {
           </Slick>
           </div>
         </div>
-        {/*  Special Section End */}
-        {/*  Feature Section Start */}
+        
         <div className="ec-exe-section col-lg-6 col-md-12 col-sm-12">
           <div className="col-md-12 text-left">
             <div className="section-title mb-6">
@@ -411,31 +410,21 @@ export default function Home() {
               <div key={k} className="ec-product-content" >
                 <Link to={`/product/${itm.id}`}><div className="ec-product-inner">
                   <div className="" />
-                  {/* <div className="ec-pro-image-outer" > */}
-                    {/* <div className="ec-pro-image "> */}
-                      {/* <p  className="image ">
-                        <img className="main-image objectimage " src={itm.images[0] ? itm.images[0].image: null} alt="Product "   height="auto"/>
-                         */}
+                  
                         <img className="hover-image objectimage" src={itm.images[0] ? itm.images[0].image :null } alt="Product"  height="auto" />
                        
-                      {/* </p> */}
-                    {/* </div> */}
-                  {/* </div> */}
+                     
                   <div className="ec-pro-">
                     <div className="ec-pro-">
                     </div>
                     <h5 className="ec-pro-title "><p  className="ec-btn-group ec-pro-titles  ">{itm.title}</p></h5>
-                    {/* <h6 className="ec-pro-stitle"><a href="shop-left-sidebar-col-3.html">Camera</a></h6> */}
                     <div className="ec-pro-rat-">
                       <div className="ec-pro-rat-">
                         <span className="ec-prices">
-                          <span className="new-price">${itm.sellfromprice}</span>
-                          <span className="old-price">${itm.oldfromprice}</span>
+                          <span className="new-price">AED {itm.sellfromprice}</span>
+                          <span className="old-price">AED {itm.oldfromprice}</span>
                         </span>
-                        {/* <span className="ec-price "  >
-                          <span className="new-price">${itm.sellfromprice}</span>
-                          <span className="old-price">${itm.oldfromprice}</span>
-                        </span> */}
+                        
                       </div>
                     </div>
                     
@@ -447,17 +436,16 @@ export default function Home() {
            </Slick>
           </div>
         </div>
-        {/*  Feature Section End */}
+        
       </div>
     </div>
-  </section>
+  </section> */}
   {/* Feature & Special Section End */}
   {/*  offer Section Start */}
-  <section hidden className="section ec-offer-section section-space-mt section-space-mb">
+  {/* <section hidden className="section ec-offer-section section-space-mt section-space-mb">
     <h2 className="d-none">Offer</h2>
     <div className="container">
       <div className="ec-offer-inner ofr-img">
-        {/* <img src="assets/images/offer-image/offer_bg.png" alt="" class="offer_bg" /> */}
         <div className="col-sm-6 ec-offer-content">
           <div className="ec-offer-content-inner">
             <h2 className="ec-offer-stitle">black friday</h2>
@@ -468,10 +456,10 @@ export default function Home() {
         </div>
       </div>
     </div>
-  </section>
+  </section> */}
   {/* offer Section End */}
   {/* All Product Start */}
-  <section hidden className="section ec-all-products section-space-p">
+  {/* <section hidden className="section ec-all-products section-space-p">
     <h2 className="d-none">all product</h2>
     <div className="container">
       <div className="row">
@@ -533,8 +521,8 @@ export default function Home() {
                   <div className="ec-pro-rat-price">
                     <div className="ec-pro-rat-pri-inner">
                       <span className="ec-price">
-                        <span className="new-price">${itm.sellfromprice}</span>
-                        <span className="old-price">${itm.oldfromprice}</span>
+                        <span className="new-price">AED {itm.sellfromprice}</span>
+                        <span className="old-price">AED {itm.oldfromprice}</span>
                       </span>
                     </div>
                   </div>
@@ -693,14 +681,13 @@ export default function Home() {
               <div className="right-banner-content">
                 <span className="ec-right-banner-title">iPhone</span>
                 <span className="ec-right-banner-stitle">selfies and style</span>
-                {/* <span className="ec-right-banner-btn"><a href="/" className="btn-primary">Add to cart</a></span> */}
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </section> */}
   {/* All Item end */}
   {/* why section */}
   <section className="section ec-whyus-section">
