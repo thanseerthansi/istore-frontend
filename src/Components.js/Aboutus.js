@@ -41,8 +41,8 @@ export default function Aboutus() {
       <div className="col-md-12 text-center">
         <div className="section-title">
           
-          <h2 className="ec-title">About Us</h2>
-          <p className="sub-title mb-3">About our business Firm</p>
+          <h2 className="ec-title mb-5">ABOUT US</h2>
+          {/* <p className="sub-title mb-3">About our business Firm</p> */}
         </div>
       </div>
       <div className="ec-common-wrapper">
@@ -54,17 +54,11 @@ export default function Aboutus() {
           </div>
           <div className="col-md-6 ec-cms-block ec-abcms-block text-center">
             <div className="ec-cms-block-inner">
-              <h3 className="ec-cms-block-title">What is the iPhone Sales?</h3>
-              <p>Electronic typesetting text of the printing and typesetting industry. when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. Lorem Ipsum is
-                simply dutmmy text ever since the 1500s, It has survived not only,
-                but also the leap into electronic typesetting.</p>
-              <p>Lorem Ipsum is simply dummy text of the printing. It has survived not only five centuries,
-                but also the leap into electronic typesetting.</p>
-              <p>Also the leap into electronic typesetting printing and typesetting industry. It has survived not only five centuries,
-                but also the leap into electronic typesetting, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived not only five centuries,
-                but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              {/* <h3 className="ec-cms-block-title">What is the iPhone Sales?</h3> */}
+              <p>Hassle-free and trustworthy</p>
+              <p>Get smarter to own your dream iPhone.</p>
+              <p>As a refurbished iPhone supplier, we strive to provide customers with high-quality and affordable pricing. Technology should be accessible to everyone without paying high prices for brand-new phones. Our team of experienced technicians inspects and refurbishes every iPhone carefully before it's sold to a customer, making sure that it's in great condition.</p>
+              <p>We offer a platform for individuals to sell their old iPhones as well as a trusted source for customers looking to purchase refurbished iPhones. Your iPhone will be refurbished and given a new life when you sell it to us. You will receive a fair price for your device. Our team is dedicated to providing a hassle-free and trustworthy experience, regardless of whether you are looking to buy or sell an iPhone.</p>
             </div>
           </div>
         </div>

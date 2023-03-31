@@ -16,8 +16,20 @@ export default function Footer() {
               <img src="/assets/images/icons/service_5_1.svg"  className="svg_img" alt={''}/>
             </div>
             <div className="ec-service-desc">
-              <h2>Free shipping</h2>
+              <h2>Free Shipping</h2>
               <p>Free shipping on all US orders</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="ec_ser_content ec_ser_content_3 col-sm-12 col-md-3">
+          <div className="ec_ser_inner">
+            <div className="ec-service-image">
+              <img src="/assets/images/icons/service_3.svg" className="svg_img" alt={''}/>
+            </div>
+            <div className="ec-service-desc">
+              <h2>Online Support</h2>
+              <p>24/7 Customer Support</p>
             </div>
           </div>
         </div>
@@ -27,19 +39,8 @@ export default function Footer() {
               <img src="/assets/images/icons/service_2.svg" className="svg_img" alt={''}/>
             </div>
             <div className="ec-service-desc">
-              <h2>money gaurntee</h2>
+              <h2>Money Back Guarantee</h2>
               <p>30 days money back guarantee</p>
-            </div>
-          </div>
-        </div>
-        <div className="ec_ser_content ec_ser_content_3 col-sm-12 col-md-3">
-          <div className="ec_ser_inner">
-            <div className="ec-service-image">
-              <img src="/assets/images/icons/service_3.svg" className="svg_img" alt={''}/>
-            </div>
-            <div className="ec-service-desc">
-              <h2>online support</h2>
-              <p>We support online 24/7 on day</p>
             </div>
           </div>
         </div>
@@ -49,8 +50,8 @@ export default function Footer() {
               <img src="/assets/images/icons/service_5_4.svg" className="svg_img" alt={''}/>
             </div>
             <div className="ec-service-desc">
-              <h2>Member Discount</h2>
-              <p>Onevery order over $120.00</p>
+              <h2>Discounts</h2>
+              <p>On orders over $120.00</p>
             </div>
           </div>
         </div>
@@ -67,7 +68,7 @@ export default function Footer() {
             <div className="col-sm-12 col-lg-4 ec-footer-contact">
               <div className="ec-footer-widget">
                 <div className="ec-footer-logo"><a href="#"><img src="/assets/images/logo/logo.png " alt={''}/><img className="dark-footer-logo" src="assets/images/logo/dark-logo-5.png" alt="Site Logo" style={{display: 'none'}} /></a></div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <p>A trusted team for buying and selling your iPhones</p>
                 <h4 className="ec-footer-heading">Ask Me questions</h4>
                 <div className="ec-footer-links">
                   <ul className="align-items-center">

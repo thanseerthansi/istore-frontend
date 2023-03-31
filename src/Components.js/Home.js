@@ -134,10 +134,9 @@ export default function Home() {
           <div className="row">
             <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
               <div className="ec-slide-content slider-animation">
-                <h2 className="ec-slide-stitle">new arrival</h2>
-                <h1 className="ec-slide-title">stylish iphone</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <h2 className="ec-slide-stitle">Upgrade Now</h2>
+                <h1 className="ec-slide-title">REFURBISHED IPHONES</h1>
+                <p>Get the iPhone you want, at a price you'll love. Find your perfect refurbished iPhone match today.</p>
                 <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See More</Link>
               </div>
             </div>
@@ -149,10 +148,9 @@ export default function Home() {
           <div className="row">
             <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
               <div className="ec-slide-content slider-animation">
-                <h2 className="ec-slide-stitle">Trending Item</h2>
-                <h1 className="ec-slide-title">iphone 14</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <h2 className="ec-slide-stitle">Upgrade Now</h2>
+                <h1 className="ec-slide-title">REFURBISHED IPHONES</h1>
+                <p>Get the iPhone you want, at a price you'll love. Find your perfect refurbished iPhone match today.</p>
                 <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See more</Link>
               </div>
             </div>
@@ -164,10 +162,9 @@ export default function Home() {
           <div className="row">
             <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
               <div className="ec-slide-content slider-animation">
-                <h2 className="ec-slide-stitle">new arrival</h2>
-                <h1 className="ec-slide-title">iphone</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+              <h2 className="ec-slide-stitle">Upgrade Now</h2>
+                <h1 className="ec-slide-title">REFURBISHED IPHONES</h1>
+                <p>Get the iPhone you want, at a price you'll love. Find your perfect refurbished iPhone match today.</p>
                 <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See more</Link>
               </div>
             </div>
@@ -215,8 +212,8 @@ export default function Home() {
       <div className="row">
         <div className="col-md-12 section-title-block">
           <div className="section-title">
-            <h2 className="ec-title">Featured Products</h2>
-            <h6 className="ec-sub-title">Lorem Ipsum is simply dummy text of the printing</h6>
+            <h2 className="ec-title">BESTSELLERS</h2>
+            <h6 className="ec-sub-title">Your dream iPhone is just a click away!</h6>
           </div>
         </div>
       </div>
@@ -694,7 +691,7 @@ export default function Home() {
   {/* <div class="section-title ">
     <h2 class="ec-title">Featured Products</h2>
     </div> */}
-    <div className='text-center section-title mt-5' ><h4 className='ec-title ' >Why iPhoneSales </h4></div>
+    <div className='text-center section-title mt-5' ><h4 className='ec-title ' >OUR FEATURES</h4></div>
     <h2 className="d-none">Services</h2>
     <div className="container">
       <div className="row mt-5 mb-5">
@@ -709,7 +706,7 @@ export default function Home() {
               <img src="/assets/images/icons/service_5_1.svg" className="svg_img" alt={''}/>
             </div> */}
             <div className="ec-why-desc ml-auto mr-auto">
-              <h2>WE OFFER IDEAL RATES</h2>
+              <h2>Ideal Prices</h2>
              
             </div>
           </div>
@@ -722,7 +719,7 @@ export default function Home() {
           <div className="ec_why_inner">
             
             <div className="ec-why-desc">
-              <h2>DROP OFF AT OUR DOORSTEP</h2>
+              <h2>Doorstep Delivery</h2>
               
             </div>
           </div>
@@ -735,7 +732,7 @@ export default function Home() {
           <div className="ec_why_inner">
             
             <div className="ec-why-desc">
-              <h2>CASH ON THE SPOT</h2>
+              <h2>Instant cash</h2>
               
             </div>
           </div>
@@ -749,7 +746,7 @@ export default function Home() {
   <div className="container" >
       <div className="row pt-5 ">
           <div className='col-md-6 ' >
-            <h4 className='howit' >How it works</h4>
+            <h4 className='howit' >Process Flow</h4>
             <div className='mt-4 d-flex'>
               <div>
               <TbHandFinger size={60} />
@@ -757,7 +754,7 @@ export default function Home() {
               
               <div className='pl-4 workp'>
                 <h4 className=''>Get a quote</h4>
-                <p >Share details of your asset and receive a quotation</p>
+                <p >Receive a quote for your asset by sharing details</p>
               </div>
               
             </div>
@@ -767,7 +764,7 @@ export default function Home() {
               </div>
               <div className='pl-4 workp'>
                 <h4 className=''>Evaluate</h4>
-                <p>Our experts will evaluate the condition of your asset</p>
+                <p>Your asset will be evaluated by our experts</p>
               </div>
               
             </div>
@@ -777,8 +774,8 @@ export default function Home() {
               </div>
               
               <div className='pl-4 workp'>
-                <h4 className=''>Cash on the spot</h4>
-                <p>Get your money instantly</p>
+                <h4 className=''>Instant Cash</h4>
+                <p>Get your cash on the spot</p>
               </div>
               
             </div>
@@ -802,8 +799,8 @@ export default function Home() {
       <div className="row">
         <div className="col-md-12 section-title-block">
           <div className="section-title">
-            <h2 className="ec-title">Client Testimonials</h2>
-            <h6 className="ec-sub-title">Lorem Ipsum is simply dummy text of the printing</h6>
+            <h2 className="ec-title">WHY US?</h2>
+            <h6 className="ec-sub-title">Get Your Dream iPhone Now!</h6>
           </div>
         </div>
       </div>
