@@ -82,9 +82,9 @@ export default function Footer() {
                   </ul>
                 </div>
               </div>
-              <div className="ec-footer-widget ec-footer-social">
+              {/* <div className="ec-footer-widget ec-footer-social">
                 <h4 className="ec-footer-heading">Follow Us</h4>
-                {/* <div className="ec-footer-links">
+                <div className="ec-footer-links">
                   <ul className="align-items-center">
                     <li className="list-inline-item"><a href="#"><i className="ecicon eci-facebook" /></a>
                     </li>
@@ -94,8 +94,8 @@ export default function Footer() {
                     <li className="list-inline-item"><a href="#"><i className="ecicon eci-twitter" /></a>
                     </li>
                   </ul>
-                </div> */}
-              </div>
+                </div>
+              </div> */}
             </div>
             <div className="col-sm-12 col-lg-2 ec-footer-info">
               <div className="ec-footer-widget">
@@ -128,11 +128,11 @@ export default function Footer() {
             </div>
             <div className="col-sm-12 col-lg-4 ec-footer-news">
               <div className="ec-footer-widget">
-                <h4 className="ec-footer-heading">Newsletter</h4>
+                <h4 className="ec-footer-heading">Follow Us</h4>
                 <div className="ec-footer-links">
-                  <ul className="align-items-center">
+                  {/* <ul className="align-items-center">
                     <li className="ec-footer-link">Sign up for our e-mail to get latest news.</li>
-                  </ul>
+                  </ul> */}
                   <div className="ec-subscribe-form">
                     <form id="ec-newsletter-form" name="ec-newsletter-form" method="post" action="#">
                       <div id="ec_news_signup" className="ec-form">

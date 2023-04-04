@@ -17541,13 +17541,13 @@ body.ec-open:before {
           flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          /* justify-content: space-between; */
 }
 .ec-footer .footer-top .ec-footer-news .ec-share ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 15px;
+  margin-top: 45px;
 }
 .ec-footer .footer-top .ec-footer-news .ec-share ul li:not(:last-child) {
   margin-right: 30px;
