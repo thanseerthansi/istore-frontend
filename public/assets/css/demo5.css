@@ -1284,7 +1284,7 @@ progress {
   display: inline-block;
 }
 .list-inline-item:not(:last-child) {
-  margin-right: 8px;
+  margin-right: 20px;
 }
 
 .initialism {

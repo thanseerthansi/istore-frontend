@@ -5,11 +5,13 @@ import Scripts from './Scripts'
 import Callaxios from './Callaxios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { BaseURL } from './urlcall';
 
 export default function Checkout() {
     const [viewcart,setviewcart]=useState([]);
     const [customerdetails,setcustomerdetails]=useState();
-    console.log("viewcaer",viewcart)
+    // console.log("viewcaer",viewcart)
     useEffect(() => {
       window.scrollTo(0, 0);
       Scripts()
@@ -80,6 +82,57 @@ export default function Checkout() {
         window.localStorage.setItem('cart','')
         setcustomerdetails()
       }
+      const Payment_Page = (order_id) => {
+        setload(true)
+        // if(window.localStorage.getItem("ffcart")){
+        //   window.localStorage.removeItem("ffcart")
+        // }else{
+        //   let ids =[]
+        //   cartdata.forEach(element=>{
+        //     ids.push(element.id)
+        //   })
+        //   deletecart(ids)
+        // }
+        
+        var data = {
+            'product_name' : 'check_out',
+            'unit_amount' : 250 ,
+            'currency' : 'AED',
+            'site' : window.origin,
+            'order_id' : order_id
+            
+        }
+        axios.post(`${BaseURL}product/create-checkout-session/`,data,{
+          
+        })
+        .then((res) => {
+          // console.log("response",res)
+            if (res.data.Status === 200){
+              setload(true)  
+              window.location.assign(res.data.Message.url); 
+              
+            }
+            else{
+                // setalert({ open : true , msg: "Something Went Wrong",severity:"error"})
+                notifyerror("Something Went Wrong")
+                setload(false)
+            }
+          })
+          .catch((error) => {
+            setload(false)
+            if (error.response.request.status === 401) {
+              // setalert({ open : true , msg: "Un Authorized request",severity:"error"})
+              notifyerror("Un Authorized request")
+    
+            }
+            else{
+              // setalert({ open : true , msg: "Something Went Wrong",severity:"error"})
+              notifyerror("Something Went Wrong")
+    
+            }
+          })
+    
+    }
   return (
     <div>
         <Header/>

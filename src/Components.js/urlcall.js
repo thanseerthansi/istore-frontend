@@ -1,6 +1,6 @@
 
-// export const BaseURL = 'https://iphonetest.foxiomlabs.com/'
-// export const BaseURLwithout = 'https://iphonetest.foxiomlabs.com'
-export const BaseURL = 'https://backend.zellstores.com/'
-export const BaseURLwithout = 'https://backend.zellstores.com'
+export const BaseURL = 'http://192.168.1.113:8000/'
+export const BaseURLwithout = 'http://192.168.1.113:8000'
+// export const BaseURL = 'https://backend.zellstores.com/'
+// export const BaseURLwithout = 'https://backend.zellstores.com'
 

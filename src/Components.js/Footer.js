@@ -140,13 +140,13 @@ export default function Footer() {
                         <button id="ec-news-btn" className="button btn-primary" type="submit" name="subscribe" value>subscribe</button> */}
                         <div className="ec-footer-links">
                           <ul className="align-items-center">
-                            <li className="list-inline-item"><Link to="/"><i className="ecicon eci-facebook" /></Link>
+                            <li className="list-inline-item"><a target="_blank"  href="https://Facebook.com/zellstores"><i className="ecicon eci-facebook" /></a>
                             </li>
-                            <li className="list-inline-item"><Link to="/"><i className="ecicon eci-instagram" /></Link></li>
-                            <li className="list-inline-item"><Link to="/"><i className="ecicon eci-linkedin" /></Link>
+                            <li className="list-inline-item"><a target="_blank"  href="https://instagram.com/zellstores?igshid=OGQ5ZDc2ODk2ZA=="><i className="ecicon eci-instagram" /></a></li>
+                            {/* <li className="list-inline-item"><Link to="/"><i className="ecicon eci-linkedin" /></Link>
                             </li>
                             <li className="list-inline-item"><Link to="/"><i className="ecicon eci-twitter" /></Link>
-                            </li>
+                            </li> */}
                           </ul>
                         </div>
                       </div>
@@ -154,12 +154,12 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="ec-footer-widget ec-share">
+              {/* <div className="ec-footer-widget ec-share">
                 <ul>
                   <li className="ec-share-link"><a href="#"><img src="/assets/images/icons/iphone.png" alt={''}/></a></li>
                   <li className="ec-share-link"><a href="#"><img src="/assets/images/icons/google.png" alt={''}/></a></li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

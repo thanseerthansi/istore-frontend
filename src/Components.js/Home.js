@@ -44,6 +44,7 @@ const Card = ({ name, place, rating , review }) => (
 export default function Home() {
   const {products,modelsname} =useContext(Simplecontext)
   const [testimonialdata,settestimonialdata]=useState()
+  console.log("modelsname",modelsname)
   const settings = {
     rows: 1,
     dots: false,
@@ -79,7 +80,7 @@ export default function Home() {
     }
     ]
   };
-  
+ 
     
   
   useEffect(() => {
@@ -183,7 +184,7 @@ export default function Home() {
         
         
           {modelsname.length ?modelsname[0].model_name.split(',').map((itm,k)=>(
-            <div key={k} className="ec_cat_content">
+            <div key={itm} className="ec_cat_content">
             <div className="ec_cat_inner">
               <Link to={`/categoryproduct/${itm}`}>
                 <h2 className="d-none">Category</h2>
@@ -195,6 +196,7 @@ export default function Home() {
                 </div>
               </Link>
             </div>
+            
           </div>
           )) :null}
           

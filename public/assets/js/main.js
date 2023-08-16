@@ -1196,45 +1196,45 @@ function ecCheckCookie()
     });
 
     /*----------------------------- category Slider -------------------------------- */    
-    $('.ec-category-section .ec_cat_slider').slick({
-        rows: 1,
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-            }
-        },
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToScroll: 3,
-                slidesToShow: 3,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToScroll: 2,
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 425,
-            settings: {
-                slidesToScroll: 1,
-                slidesToShow: 1,
-            }
-        }
-        ]
-    });
+    // $('.ec-category-section .ec_cat_slider').slick({
+    //     rows: 1,
+    //     dots: false,
+    //     arrows: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 4,
+    //     responsive: [
+    //     {
+    //         breakpoint: 1200,
+    //         settings: {
+    //             slidesToShow: 3,
+    //             slidesToScroll: 3
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 992,
+    //         settings: {
+    //             slidesToScroll: 3,
+    //             slidesToShow: 3,
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 600,
+    //         settings: {
+    //             slidesToScroll: 2,
+    //             slidesToShow: 2,
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 425,
+    //         settings: {
+    //             slidesToScroll: 1,
+    //             slidesToShow: 1,
+    //         }
+    //     }
+    //     ]
+    // });
 
     /*----------------------------- Catalog multi vendor Slider -------------------------------- */    
     $('.ec-catalog-multi-vendor .ec-multi-vendor-slider').slick({

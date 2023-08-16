@@ -271,7 +271,7 @@ export default function Product() {
               {/* ec-breadcrumb-list start */}
               <ul className="ec-breadcrumb-list">
                 <li className="ec-breadcrumb-item"><Link to="/">Home </Link></li>
-                <li className="ec-breadcrumb-item active"><span> ></span>Products</li>
+                <li className="ec-breadcrumb-item active"><span> > </span>Products</li>
               </ul>
               {/* ec-breadcrumb-list end */}
             </div>

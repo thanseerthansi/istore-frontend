@@ -124,8 +124,8 @@ export default function Categoryproducts() {
         <div className="col-">
           <div className="tab-content">
             <div className="row">
-            {products.length ? products.filter(t => t.model_name.toUpperCase().includes(urlmodel.toUpperCase()))
-            .filter(t=>t.sellprice.toUpperCase().includes(condition ? condition.toUpperCase() : ""))
+            {products.length ? products.filter(t => t.model_name.toUpperCase().replace(/ /g, '').includes(urlmodel.toUpperCase().replace(/ /g, '')))
+            .filter(t=>t.sellprice.toUpperCase().replace(/ /g, '').includes(condition ? condition.toUpperCase().replace(/ /g, '') : ""))
             .filter(t=>t.sellprice.toUpperCase().includes(storage ? storage : ""))
             .filter(t=>t.sellfromprice >= (fromprice ? fromprice:"0"))
             .filter(t=>t.sellfromprice <=(toprice ? toprice : "1000000000"))
