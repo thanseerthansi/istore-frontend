@@ -499,12 +499,12 @@ export default function Header() {
                 <td className="text-right">${viewcart.reduce((n, {price}) => n + parseInt(price), 0)}</td>
               </tr>
               <tr>
-                <td className="text-left">VAT (20%) :</td>
-                <td className="text-right">${parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.2)}</td>
+                <td className="text-left">VAT (5%) :</td>
+                <td className="text-right">${parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05)}</td>
               </tr>
               <tr>
                 <td className="text-left">Total :</td>
-                <td className="text-right primary-color">${(viewcart.reduce((n, {price}) => n + parseInt(price), 0))+(parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.2))}</td>
+                <td className="text-right primary-color">${(viewcart.reduce((n, {price}) => n + parseInt(price), 0))+(parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05))}</td>
               </tr>
               
               

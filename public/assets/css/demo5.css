@@ -17792,9 +17792,9 @@ body {
   background-color: #143f66;
 }
 
-.modal.show .modal-dialog {
+/* .modal.show .modal-dialog {
   max-width: 700px;
-}
+} */
 
 .slick-slide img {
   width: 100%;

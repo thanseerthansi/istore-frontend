@@ -20,6 +20,8 @@ import Selled from "./Components.js/Selled";
 import Sellmyphone from "./Components.js/Sellmyphone";
 import Simplecontextprovider from "./Components.js/Simplecontext";
 import Userprofile from "./Components.js/Userprofile";
+import Success from "./Payment.js/Success";
+import Failure from "./Payment.js/Failure";
 
 function App() {
   useEffect(() => {
@@ -34,6 +36,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           {/* <Route exact path="detail/:id" element={<Detailproduct/>}/> */}
+          <Route  path="/success=true&session_id=/:id" element={<Success/>} />  
+           <Route  path={`/canceled=true&order_id=` } element={<Failure/>} />
           <Route exact path="cart" element={<Cart/>}/>
           <Route exact path="product/:id" element={<Product/>}/>
           <Route exact path="categoryproduct/:model" element={<Categoryproducts/>}/>

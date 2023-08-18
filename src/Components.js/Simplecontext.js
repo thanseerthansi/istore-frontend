@@ -34,7 +34,7 @@ export default function Simplecontextprovider({children}) {
   }
   const getmodel = async()=>{
     let data = await Callaxios("get","product/modelname/")
-    console.log("dataresponsenwxt",data)
+    // console.log("dataresponsenwxt",data)
     if (data.status===200){ 
       setmodelsname(data.data) 
 
