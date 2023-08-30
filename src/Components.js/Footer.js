@@ -76,7 +76,7 @@ export default function Footer() {
                       <span className="call-img"><img src="/assets/images/icons/call_5.svg" className="svg_img foo_img" alt={''}/></span>
                       <span className="call-desc">
                         <span>Got questions? Call us 24/7!</span>
-                        <span><a href="tel:+80080018588">(91) 1234-1234</a>, <a href="tel:+0600874548">(91) 123 123</a></span>
+                        <span><a href="tel:+971 56 156 7594">+971 56 156 7594</a></span>
                       </span>
                     </li>
                   </ul>
@@ -106,7 +106,7 @@ export default function Footer() {
                     <li className="ec-footer-link"><Link to="/">Policy &amp; policy </Link></li>
                     <li className="ec-footer-link"><Link to="/">Terms &amp; conditions</Link></li>
                     <li className="ec-footer-link"><Link to="/">Contact us</Link></li>
-                    <li className="ec-footer-link"><Link to="/">Returns</Link></li>
+                    {/* <li className="ec-footer-link"><Link to="/">Returns</Link></li> */}
                   </ul>
                 </div>
               </div>
@@ -116,11 +116,11 @@ export default function Footer() {
                 <h4 className="ec-footer-heading">Quick Links</h4>
                 <div className="ec-footer-links">
                   <ul className="align-items-center">
-                    <li className="ec-footer-link"><Link to="/">Home</Link></li>
+                    {/* <li className="ec-footer-link"><Link to="/">Home</Link></li> */}
                     <li className="ec-footer-link"><Link to="/categoryproduct/iphone">Products</Link></li>
                     <li className="ec-footer-link"><Link to="/sellmyphone">Sell My iPhone</Link></li>
                     <li className="ec-footer-link"><Link to="/userprofile">Account</Link></li>
-                    <li className="ec-footer-link"><Link to="/aboutus">About Us</Link></li>
+                    {/* <li className="ec-footer-link"><Link to="/aboutus">About Us</Link></li> */}
                     
                   </ul>
                 </div>

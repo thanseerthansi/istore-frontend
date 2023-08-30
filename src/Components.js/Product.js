@@ -119,7 +119,7 @@ export default function Product() {
       form_data.append("review_star",starrating)
     
       let postreview = await Callaxios("post","purchase/review/",form_data)
-      console.log("postdata",postreview.data.Status)
+      // console.log("postdata",postreview.data.Status)
       if (postreview.data.Status===200){
         notify("Review added Successfully")
         getreview()
@@ -138,7 +138,7 @@ export default function Product() {
       
       try {
         if (orderlist.length){
-          console.log("orderlis3",JSON.parse(orderlist))
+          // console.log("orderlis3",JSON.parse(orderlist))
           list =  (JSON.parse(orderlist))  
         }else{}      
       } catch (error) {} 
@@ -176,9 +176,9 @@ export default function Product() {
     }
     const getcondition=async()=>{
       let data = await Callaxios("get","product/condition/")
-      console.log(data)
+      // console.log(data)
       if (data.status===200){
-        console.log("datacondition",data.data)
+        // console.log("datacondition",data.data)
         setconditiondata(()=>[...data.data])
       }
     }

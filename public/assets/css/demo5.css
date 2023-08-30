@@ -24879,3 +24879,31 @@ html{
   right: -45px;
 }
 
+/* spinner */
+.spinner {
+  width: 2em;
+  height: 2em;
+  margin-top: 9px !important;
+  margin-left:5px;
+  border: 0.3em solid rgba(0, 0, 0, 0.1);
+  border-left-color: #efeff0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.spinnerb {
+  width: 2em;
+  height: 2em;
+  margin-left:5px;
+  margin-top: 9px !important;
+  border: 0.3em solid rgba(0, 0, 0, 0.1);
+  border-left-color: #1b1b1b;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

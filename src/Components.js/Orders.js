@@ -76,7 +76,7 @@ export default function Orders() {
       // let isMobileDevice = window.matchMedia("only screen and (max-width: 760px)").matches;
       // if(isMobileDevice){
       // console.log("sdf")
-      let url = `https://web.whatsapp.com/send?phone="917034114744"&text= I have got wrong product from your website .want to return  this product -ID${id} in Order-${"SN"+date.split('T')[1].split('.')[1]+orderid}`;
+      let url = `https://web.whatsapp.com/send?phone="+971 56 156 7594"&text= I have got wrong product from your website .want to return  this product -ID${id} in Order-${"SN"+date.split('T')[1].split('.')[1]+orderid}`;
       window.open(url);
       // }
     }

@@ -15,9 +15,12 @@ export default function Checkout() {
     const [viewcart,setviewcart]=useState([]);
     const [customerdetails,setcustomerdetails]=useState();
     const [statusModal, setstatusModal] = useState({show: false, login:true});
+    const [paymentmodal, setpaymentmodal] = useState({show: false});
     const [username,setusername]=useState()
     const [contact,setcontact]=useState()
     const [password,setpassword]=useState()
+    const [load,setload]=useState(false)
+    const [load1,setload1]=useState(false)
     console.log("localStorage.getItem('access_user')",localStorage.getItem('access_user'))
     useEffect(() => {
       window.scrollTo(0, 0);
@@ -43,7 +46,9 @@ export default function Checkout() {
         } catch (error) {} 
       }
       const checkout=async(e,price)=>{
+        
         e.preventDefault();
+        setload1(true)
         if(localStorage.getItem('access_user')){
         accesscheck()
         
@@ -66,7 +71,7 @@ export default function Checkout() {
             "vat":(parseFloat(price)*0.05)
           }
           if (customerdetails){
-            console.log("dddddddddddddddd",data)
+            // console.log("dddddddddddddddd",data)
             for (const [key, value] of Object.entries(customerdetails)) {
               data[key]= value
             }
@@ -91,6 +96,60 @@ export default function Checkout() {
         //   notifyerror("Some thing Went wrong")
         // }
       }else{setstatusModal({...statusModal,show:true})} 
+      setload1(false)
+      }
+      const checkoutcashDelivery=async(e,price)=>{
+        
+        e.preventDefault();
+        setload(true)
+        if(localStorage.getItem('access_user')){
+        accesscheck()
+        
+        
+        // console.log("product",productdetail)
+        let checdata = []
+        viewcart.map((itm)=>{
+          // let price=viewcart.reduce((n, {price}) => n + parseInt(price), 0)
+          // console.log("price",price)
+          let data = {
+            "product":itm.product[0].id,
+            "price":itm.price,
+            "condition":itm.condition,
+            "storage":itm.storage,
+            "quantity":itm.quantity,
+            "color":itm.color,
+            "subtotal_price":price,
+            "total_price":parseFloat(price)+(parseFloat(price)*0.05),
+            "status":"new",
+            "vat":(parseFloat(price)*0.05)
+          }
+          if (customerdetails){
+            // console.log("dddddddddddddddd",data)
+            for (const [key, value] of Object.entries(customerdetails)) {
+              data[key]= value
+            }
+          }
+          checdata.push(data)
+          console.log("chkdta",checdata)
+        })
+        // console.log("chkdta",checdata)
+        
+        // console.log("data",data)
+        // window.localStorage.setItem('zell_orderedproduct',JSON.stringify(checdata))
+        // setallnull()
+        // Payment_Page(checdata[0].total_price)
+        let postdata = await Callaxios('post',"purchase/order/",checdata)
+        console.log("data",postdata)
+        if (postdata.data.Status===200){
+          notify("Successfully placed")
+          setallnull()
+          setpaymentmodal({...paymentmodal,show:false})
+          
+        }else{
+          notifyerror("Some thing Went wrong")
+        }
+      }else{setstatusModal({...statusModal,show:true})} 
+      setload(false)
       }
       const setallnull=()=>{
         setviewcart([])       
@@ -187,6 +246,7 @@ export default function Checkout() {
     
                                       
 }
+
   return (
     <div>
         <Header/>
@@ -232,7 +292,7 @@ export default function Checkout() {
                     
                     <div className="ec-check-bill-form">
                       {viewcart.length ? 
-                      <form onSubmit={(e)=>checkout(e,(viewcart.reduce((n, {price}) => n + parseInt(price), 0)))} >
+                      <form onSubmit={(e)=>{e.preventDefault(); setpaymentmodal({ ...paymentmodal, show: true })}} >
                         <span className="ec-bill-wrap ">
                           <label>Name*</label>
                           <input type="text" onChange={(e)=> setcustomerdetails({...customerdetails,customer_name:e.target.value})} name="name" placeholder="Enter your name" required />
@@ -411,7 +471,44 @@ export default function Checkout() {
           </div>
         </div>
       </Modal>
-
+      <Modal
+        show={paymentmodal.show}
+        centered
+        size='md'
+        backdrop="static"
+        onHide={() =>
+          setpaymentmodal({ ...paymentmodal, show: false})
+        }
+      >
+        <div className="modal-content">
+          <div className="modal-header">
+           <h6>Select Payment type</h6>
+            <button
+              type="button"
+              onClick={() =>
+                setpaymentmodal({ ...paymentmodal, show: false })
+              }
+              className="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            />
+          </div>
+          <div className="modal-body text-center">
+          <button className='btn btn-primary '  onClick={(e)=>checkoutcashDelivery(e,(viewcart.reduce((n, {price}) => n + parseInt(price), 0)))}  type="button">
+          {
+                      load ? <div className='d-flex'>loading<div class="spinner"></div>
+ </div>
+                                            :<> Cash On Delivery</>
+                    }</button>
+          <button className='btn btn-warning ml-4' onClick={(e)=>checkout(e,(viewcart.reduce((n, {price}) => n + parseInt(price), 0)))} type="button">{
+                      load1 ? <div className='d-flex'>loading<div class="spinnerb"></div>
+ </div>
+                                            :<> Online Payment</>
+                    }</button>
+           
+          </div>
+        </div>
+      </Modal>
     </div>
   )
 }
