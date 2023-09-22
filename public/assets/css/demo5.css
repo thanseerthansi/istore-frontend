@@ -24907,3 +24907,28 @@ html{
   }
 }
 
+.header-title{
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: 700;
+  margin: 0;
+}
+.terms p {
+  display: block;
+    margin-block-start: 1em !important;
+    margin-block-end: 1em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+}
+.terms {
+  background: #fff !important;
+  color: #000 !important;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif !important;
+  font-size: 16px !important;
+  line-height: 28px !important;
+}
+.terms h4{
+    font-size: 20px !important;
+    line-height: 30px !important;
+    font-weight: 700 !important;
+}

@@ -22,6 +22,7 @@ import Simplecontextprovider from "./Components.js/Simplecontext";
 import Userprofile from "./Components.js/Userprofile";
 import Success from "./Payment.js/Success";
 import Failure from "./Payment.js/Failure";
+import Termsandcondition from "./Pages.js/Termsandcondition";
 
 function App() {
   useEffect(() => {
@@ -51,9 +52,11 @@ function App() {
           <Route exact path="aboutus" element={<Aboutus/>} /> 
           <Route exact path="forgetpassword" element={<Forgetpassword/>} /> 
           <Route exact path="passwordchange/:id" element={<Passwordchange/>} /> 
-          
+          <Route  path="terms&condition" element={<Termsandcondition/>}/>
         </Routes>
+        
       </Simplecontextprovider>
+      
       </Router>
     </div>
   );

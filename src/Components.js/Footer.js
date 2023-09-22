@@ -103,8 +103,8 @@ export default function Footer() {
                 <div className="ec-footer-links">
                   <ul className="align-items-center">
                     
-                    <li className="ec-footer-link"><Link to="/">Policy &amp; policy </Link></li>
-                    <li className="ec-footer-link"><Link to="/">Terms &amp; conditions</Link></li>
+                    <li className="ec-footer-link"><a target="_blank" href="https://www.freeprivacypolicy.com/live/fde03286-b72c-4d86-a4ec-6344337a0ee3">Policy &amp; policy </a></li>
+                    <li className="ec-footer-link"><Link to="/terms&condition">Terms &amp; conditions</Link></li>
                     <li className="ec-footer-link"><Link to="/">Contact us</Link></li>
                     {/* <li className="ec-footer-link"><Link to="/">Returns</Link></li> */}
                   </ul>
