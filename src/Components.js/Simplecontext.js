@@ -65,11 +65,13 @@ export default function Simplecontextprovider({children}) {
             if(accessdata.status===200){
               window.localStorage.setItem('access_user', accessdata.data.access)   
             } else{
+              window.localStorage.removeItem('access_user')
               // return navigate('/login')
             }
             
         }catch (error) {
           console.log("error",error)
+          window.localStorage.removeItem('access_user')
           // console.log("erro/rmessga",error.response.status)
           if (error.response.status===401){
             console.log(error)
@@ -78,6 +80,7 @@ export default function Simplecontextprovider({children}) {
         }
       }else{
         // console.log("notvalid")
+        window.localStorage.removeItem('access_user')
         return navigate('/login');
       }
   }else{

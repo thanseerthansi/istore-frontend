@@ -10,6 +10,8 @@ import { BaseURL } from './urlcall';
 import { Modal } from 'react-bootstrap'
 import { Simplecontext } from './Simplecontext';
 import { useContext } from 'react';
+import jwt_decode from "jwt-decode";
+
 export default function Checkout() {
   const {accesscheck} =useContext(Simplecontext)
     const [viewcart,setviewcart]=useState([]);
@@ -21,12 +23,13 @@ export default function Checkout() {
     const [password,setpassword]=useState()
     const [load,setload]=useState(false)
     const [load1,setload1]=useState(false)
-    console.log("localStorage.getItem('access_user')",localStorage.getItem('access_user'))
+    // console.log("localStorage.getItem('access_user')",localStorage.getItem('access_user'))
     useEffect(() => {
       window.scrollTo(0, 0);
       Scripts()
       cartfunction()
-      
+      // accesscheck()
+      tokenCheck()
     }, [])
     const notify = (msg) => toast.success(msg, {
       position: "top-right",
@@ -44,6 +47,20 @@ export default function Checkout() {
             setviewcart(JSON.parse(orderlist))  
           }else{}      
         } catch (error) {} 
+      }
+      const tokenCheck=()=>{
+        const token = localStorage.getItem('access_user');
+        
+        
+        var dateNow = new Date();
+        // console.log("valid1",refresh_token)
+        if(token){
+          var decodedToken=jwt_decode(token, {complete: true});
+          if(decodedToken.exp < dateNow.getTime()){
+            localStorage.removeItem('access_user')
+          }
+        }
+        
       }
       const checkout=async(e,price)=>{
         
@@ -77,7 +94,7 @@ export default function Checkout() {
             }
           }
           checdata.push(data)
-          console.log("chkdta",checdata)
+          // console.log("chkdta",checdata)
         })
         // console.log("chkdta",checdata)
         
@@ -130,7 +147,7 @@ export default function Checkout() {
             }
           }
           checdata.push(data)
-          console.log("chkdta",checdata)
+          // console.log("chkdta",checdata)
         })
         // console.log("chkdta",checdata)
         
@@ -139,7 +156,7 @@ export default function Checkout() {
         // setallnull()
         // Payment_Page(checdata[0].total_price)
         let postdata = await Callaxios('post',"purchase/order/",checdata)
-        console.log("data",postdata)
+        // console.log("data",postdata)
         if (postdata.data.Status===200){
           notify("Successfully placed")
           setallnull()
@@ -154,6 +171,8 @@ export default function Checkout() {
       const setallnull=()=>{
         setviewcart([])       
         setcustomerdetails()
+        localStorage.setItem('cart','')
+        localStorage.setItem('zell_orderedproduct','')
       }
       const Payment_Page = (price) => {
         var data = {
