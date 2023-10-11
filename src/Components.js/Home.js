@@ -138,7 +138,7 @@ export default function Home() {
 
   let topbannerslist = bannervalue.filter(t=>t.banner_name==="Top Banner")
   let leftbannerslist = bannervalue.filter(t=>t.banner_name==="Bottom Left Banner")
-  let rightbannerslist = bannervalue.filter(t=>t.banner_name==="Bottom Right Banne")
+  let rightbannerslist = bannervalue.filter(t=>t.banner_name==="Bottom Right Banner")
   // console.log("topbanners",topbannerslist)
   return (
     <div>
