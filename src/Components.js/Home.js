@@ -44,7 +44,8 @@ const Card = ({ name, place, rating , review }) => (
 export default function Home() {
   const {products,modelsname} =useContext(Simplecontext)
   const [testimonialdata,settestimonialdata]=useState()
-  console.log("modelsname",modelsname)
+  const [bannervalue,setbannervalue]=useState([])
+  // console.log("bannervalue",bannervalue)
   const settings = {
     rows: 1,
     dots: false,
@@ -89,6 +90,7 @@ export default function Home() {
     // getmodel()
     gettestimonial()
     Scripts()
+    getBanners()
     return () => {
     }
   }, [])
@@ -120,7 +122,24 @@ export default function Home() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  const getBanners =async()=>{
+    try {
+      let data = await Callaxios("get","banner/banner/")
+      // console.log("bannersdara",data)
+      if (data.status===200){
+          setbannervalue(data.data)
+      }else{
+          // notifyerror("Something Went Wrong")
+      }
+  } catch (error) {
+      console.log(error)
+  }
+}
 
+  let topbannerslist = bannervalue.filter(t=>t.banner_name==="Top Banner")
+  let leftbannerslist = bannervalue.filter(t=>t.banner_name==="Bottom Left Banner")
+  let rightbannerslist = bannervalue.filter(t=>t.banner_name==="Bottom Right Banne")
+  // console.log("topbanners",topbannerslist)
   return (
     <div>
       <div>
@@ -128,52 +147,77 @@ export default function Home() {
     <ToastContainer/>
   
   {/* Main Slider Start */}
-  <div className="ec-main-slider section ">
+ 
+  <div className="ec-main-slider section " >
     <div className="ec-slider">
-      <div className="ec-slide-item d-flex slide-1">
+    
+    
+        <div  className="ec-slide-item d-flex slide-0"  
+        style={{
+          backgroundImage: `url(${topbannerslist?.[0]?.banner_image || ""})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
+        }}
+        >
         <div className="container align-self-center">
           <div className="row">
             <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
               <div className="ec-slide-content slider-animation">
                 <h2 className="ec-slide-stitle">Upgrade Now</h2>
-                <h1 className="ec-slide-title">REFURBISHED IPHONES</h1>
-                <p>Get the iPhone you want, at a price you'll love. Find your perfect refurbished iPhone match today.</p>
-                <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See More</Link>
+                <h1 className="ec-slide-title">{topbannerslist?.[0]?.banner_heading??""}</h1>
+                <p>{topbannerslist?.[0]?.description??""}</p>
+                <Link to={`/categoryproduct/${topbannerslist?.[0]?.banner_redirect??""}`} className="btn btn-lg btn-secondary">See More</Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="ec-slide-item d-flex slide-2">
-        <div className="container align-self-center">
-          <div className="row">
-            <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
-              <div className="ec-slide-content slider-animation">
-                <h2 className="ec-slide-stitle">Upgrade Now</h2>
-                <h1 className="ec-slide-title">REFURBISHED IPHONES</h1>
-                <p>Get the iPhone you want, at a price you'll love. Find your perfect refurbished iPhone match today.</p>
-                <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See more</Link>
-              </div>
-            </div>
-          </div>
-        </div>
+      
+         <div className="ec-slide-item d-flex slide-2"
+         style={{
+          backgroundImage: `url(${topbannerslist?.[1]?.banner_image || ""})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
+         }}>  
+           <div className="container align-self-center">
+             <div className="row">
+               <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                 <div className="ec-slide-content slider-animation">
+                   <h2 className="ec-slide-stitle">Upgrade Now</h2>
+                   <h1 className="ec-slide-title">{topbannerslist?.[1]?.banner_heading??""}</h1>
+                   <p>{topbannerslist?.[1]?.description??""}</p>
+                   <Link to={`/categoryproduct/${topbannerslist?.[1]?.banner_redirect??""}`} className="btn btn-lg btn-secondary">See more</Link>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div className="ec-slide-item d-flex slide-3"
+         style={{
+          backgroundImage: `url(${topbannerslist?.[2]?.banner_image || ""})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover'
+         }}> 
+           <div className="container align-self-center">
+             <div className="row">
+               <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                 <div className="ec-slide-content slider-animation">
+                 <h2 className="ec-slide-stitle">Upgrade Now</h2>
+                   <h1 className="ec-slide-title">{topbannerslist?.[2]?.banner_heading??""}</h1>
+                   <p>{topbannerslist?.[2]?.description??""}</p>
+                   <Link to={`/categoryproduct/${topbannerslist?.[2]?.banner_redirect??"iphone"}`} className="btn btn-lg btn-secondary">See more</Link>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
       </div>
-      <div className="ec-slide-item d-flex slide-3">
-        <div className="container align-self-center">
-          <div className="row">
-            <div className="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
-              <div className="ec-slide-content slider-animation">
-              <h2 className="ec-slide-stitle">Upgrade Now</h2>
-                <h1 className="ec-slide-title">REFURBISHED IPHONES</h1>
-                <p>Get the iPhone you want, at a price you'll love. Find your perfect refurbished iPhone match today.</p>
-                <Link to="/categoryproduct/iphone" className="btn btn-lg btn-secondary">See more</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
+      
+      
   {/* Main Slider End */}
   {/*  category Section Start */}
   <section className="section ec-category-section section-space-mb ">
@@ -296,26 +340,34 @@ export default function Home() {
         <div className="ec-banners">
           <div className="ec-banner-left col-sm-6">
             <div className="ec-banner-block ec-banner-block-1 col-sm-12">
-              <div className="banner-block">
-                <img src="assets/images/banner/23.png" alt={''}/>
-                <div className="banner-content">
-                  <span className="ec-banner-stitle">iPhone</span>
-                  <span className="ec-banner-title">UP to 70% OFF</span>
-                  <span className="ec-banner-btn"><Link to="/categoryproduct/iphone" className="btn-primary">See more</Link></span>
+            <Link to={`/categoryproduct/${leftbannerslist?.[0]?.banner_redirect??"iphone"}`}>
+              <div className="banner-block  hover01">
+              <figure>
+                <img src={leftbannerslist?.[0]?.banner_image??"assets/images/banner/23.png"} alt={''}/>
+                </figure>
+                <div className="banner-content banner-button">
+                  {/* <span className="ec-banner-stitle">iPhone</span>
+                  <span className="ec-banner-title">UP to 70% OFF</span> */}
+                  {/* <span className="ec-banner-btn"><Link to="/categoryproduct/iphone" className="btn-primary banner-buttoncolor">See more</Link></span> */}
                 </div>
               </div>
+              </Link>
             </div>
           </div>
           <div className="ec-banner-right col-sm-6">
             <div className="ec-banner-block ec-banner-block-2 col-sm-12">
-              <div className="banner-block">
-                <img src="assets/images/banner/24.png" alt={''}/>
-                <div className="banner-content">
-                  <span className="ec-banner-stitle">iPhone</span>
-                  <span className="ec-banner-title">iPhone 14 pro</span>
-                  <span className="ec-banner-btn"><Link to="/categoryproduct/iphone" className="btn-primary">See more</Link></span>
+              <Link to={`/categoryproduct/${rightbannerslist?.[0]?.banner_redirect??"iphone"}`}>
+              <div className="banner-block  hover01">
+                <figure>
+                <img   src={rightbannerslist?.[0]?.banner_image??"assets/images/banner/24.png"} alt={''}/>
+                </figure>
+                <div className="banner-content banner-button">
+                  {/* <span className="ec-banner-stitle">iPhone</span>
+                  <span className="ec-banner-title">iPhone 14 pro</span> */}
+                  {/* <span className="ec-banner-btn"><Link  to={`/categoryproduct/${rightbannerslist?.[0]?.banner_redirect??"iphone"}`} className="btn-primary banner-buttoncolor">See more</Link></span> */}
                 </div>
               </div>
+              </Link>
             </div>
           </div>
         </div>

@@ -19217,11 +19217,17 @@ select::-ms-expand {
   position: relative;
 }
 
-.ec-main-slider .slide-1, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
+.ec-main-slider .slide-0, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
   height: 70vh;
 }
-.ec-main-slider .slide-1 {
+.ec-main-slider .slide-0 {
   background-image: url(../images/main-slider-banner/banner_3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.my-specific-class {
+  background-image: url(../images/main-slider-banner/banner.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21787,7 +21793,7 @@ section.ec-instagram-section {
     margin-bottom: 35px;
   }
 
-  .ec-main-slider .slide-1, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
+  .ec-main-slider .slide-0, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
     height: 60vh;
   }
 
@@ -22291,7 +22297,7 @@ section.ec-instagram-section {
     min-height: 250px;
   }
 
-  .ec-main-slider .slide-1, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
+  .ec-main-slider .slide-0, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
     height: 50vh;
   }
 
@@ -22638,11 +22644,11 @@ section.ec-instagram-section {
   }
 }
 @media only screen and (max-width: 575px) {
-  .ec-main-slider .slide-1, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
+  .ec-main-slider .slide-0, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
     height: 40vh;
     background-position: right;
   }
-  .ec-main-slider .slide-1 .ec-slide-content, .ec-main-slider .slide-2 .ec-slide-content, .ec-main-slider .slide-3 .ec-slide-content {
+  .ec-main-slider .slide-0 .ec-slide-content, .ec-main-slider .slide-2 .ec-slide-content, .ec-main-slider .slide-3 .ec-slide-content {
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
@@ -22724,7 +22730,7 @@ section.ec-instagram-section {
     margin-top: 10px;
   }
 
-  .ec-main-slider .slide-1, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
+  .ec-main-slider .slide-0, .ec-main-slider .slide-2, .ec-main-slider .slide-3 {
     height: 30vh;
   }
 
@@ -24648,7 +24654,7 @@ html{
   margin-right: auto;
   margin-left:auto;
 }
-.how-work .slide-1 {
+.how-work .slide-0 {
   background-image: url(../images/main-slider-banner/banner_3.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -24931,4 +24937,31 @@ html{
     font-size: 20px !important;
     line-height: 30px !important;
     font-weight: 700 !important;
+}
+.banner-button{
+  margin-top: 123px !important;
+
+}
+.banner-buttoncolor{
+  background-color: transparent !important;
+
+}
+.banner-buttoncolor :hover{
+  color: #143f66 !important;
+}
+.bannerhover:hover{
+  /* box-shadow: 2px 1px 27px  #888888 !important; */
+  box-shadow: 10px 8px 28px 0px rgb(111 109 109 / 40%) !important;
+}
+
+.hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .4s ease-in-out;
+  overflow: hidden;
+}
+.hover01 figure:hover img {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
 }

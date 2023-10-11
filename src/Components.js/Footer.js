@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Callaxios from './Callaxios'
+import { useEffect } from 'react'
 
 export default function Footer() {
+  const [number,setnumber]=useState([])
+  // console.log("numberrrrrrrr",number)
+  useEffect(() => {
+    getNumber()
+  }, [])
+  
+  const getNumber =async()=>{
+    try {
+      let data = await Callaxios("get","banner/contact/")
+      // console.log("contactdara",data)
+      if (data.status===200){
+        setnumber(data.data)
+      }else{
+          // notifyerror("Something Went Wrong")
+      }
+  } catch (error) {
+      console.log(error)
+  }
+
+  }
   return (
     <div>
       {/*  services Section Start */}
@@ -76,7 +98,7 @@ export default function Footer() {
                       <span className="call-img"><img src="/assets/images/icons/call_5.svg" className="svg_img foo_img" alt={''}/></span>
                       <span className="call-desc">
                         <span>Got questions? Call us 24/7!</span>
-                        <span><a href="tel:+971 56 156 7594">+971 56 156 7594</a></span>
+                        <span><a href={`tel:${number?.[0]?.contact??"+971 56 156 7594"}`}>{number?.[0]?.contact??"+971 56 156 7594"}</a></span>
                       </span>
                     </li>
                   </ul>
