@@ -18,7 +18,8 @@ export default function Sellmyphone() {
     const [selectedproduct,setselectedproduct]=useState()
     const [customerdetails,setcustomerdetails]=useState([])
     const [conditions,setconditions]=useState([])
-    // console.log("conditiom",icondition)
+    // console.log("products",products)
+    // console.log("products",products)
     const notify = (msg) => toast.success(msg, {
         position: "top-center",
         });
@@ -219,8 +220,10 @@ export default function Sellmyphone() {
                   
                     <div className="m-auto ">
                       <p >
-                        <img className="main-image objectimage " src={(products.filter(t=>t.model_name.toUpperCase().includes(itm.toUpperCase())))[0].images[0].image} alt="Product "   />           
-                                            
+                        {/* {itm.toUpperCase()} */}
+                      {(products.filter(t=>t.model_name.toUpperCase().replace(/ /g, '').includes(itm.toUpperCase().replace(/ /g, ''))))?.[0]?.images?.[0]?.image?
+                        <img className="main-image objectimage " src={(products.filter(t=>t.model_name.toUpperCase().replace(/ /g, '').includes(itm.toUpperCase().replace(/ /g, ''))))[0].images[0].image} alt="Product "   />           
+                        :""}                  
                       </p>
                     </div>
                   
