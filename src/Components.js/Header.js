@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Simplecontext } from './Simplecontext';
 import {useNavigate } from 'react-router-dom';
-import { RiWindowsFill } from 'react-icons/ri';
+// import { RiWindowsFill } from 'react-icons/ri';
 export default function Header() {
   const {modelsname} =useContext(Simplecontext)
     const [search,setsearch]=useState();
@@ -89,10 +89,10 @@ export default function Header() {
             {/* Social Start */}
             <div className="header-top-social">
               <ul className="mb-0">
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-facebook" /></a></li>
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-instagram" /></a></li>
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-linkedin" /></a></li>
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-twitter" /></a></li>
+                <li className="list-inline-item"><a target="_blank"  href="https://Facebook.com/zellstores"><i className="ecicon eci-facebook" /></a></li>
+                <li className="list-inline-item"><a target="_blank"  href="https://instagram.com/zellstores?igshid=OGQ5ZDc2ODk2ZA=="><i className="ecicon eci-instagram" /></a></li>
+                {/* <li className="list-inline-item"><a href="/"><i className="ecicon eci-linkedin" /></a></li>
+                <li className="list-inline-item"><a href="/"><i className="ecicon eci-twitter" /></a></li> */}
               </ul>
             </div>
             {/* Social End */}
@@ -124,17 +124,7 @@ export default function Header() {
           <div className="col header-top-right d-none d-lg-block">
             <div className="header-top-right-inner d-flex justify-content-end">
               {/* Header User Start */}
-              {/* <div className="ec-header-user dropdown">
-                <Link to="/login" className="dropdown-toggle" data-bs-toggle="dropdown"><img src="/assets/images/icons/user_5.svg" className="svg_img top_svg" alt={''}/>{window.localStorage.getItem('email') ?<span className="ec-btn-title">Logout</span>:<span className="ec-btn-title">Login</span>}</Link>
-                <ul className="dropdown-menu dropdown-menu-right">
-                  <li><Link className="dropdown-item" to="/register">Register</Link></li>
-                  <li><Link className="dropdown-item" to="/checkout">Checkout</Link></li>
-                  {window.localStorage.getItem('email') ?
-                  <li><p className="dropdown-item" onClick={()=>logoutf()}>Logout</p></li>
-                  :<li><Link className="dropdown-item" to="/login">Login</Link></li>
-                  }
-                </ul>
-              </div> */}
+              
               <div className="ec-header-wishlist">
                 <Link  to="/login">
                   {/* <div className="top-icon"></div> */}
@@ -216,12 +206,7 @@ export default function Header() {
               <div className="header-search">
                 <form className="ec-search-group-form" onSubmit={(e)=>callsearchproduct(e)}>
                   <div className="ec-search-select-inner">
-                    {/* <div className="ec-search-cat-title">Search</div> */}
-                    {/* <ul className="ec-search-cat-block">
-                      <li><a href="/">Cloths</a></li>
-                      <li><a href="/">Bag</a></li>
-                      <li><a href="/">Shoes</a></li>
-                    </ul> */}
+                    
                   </div>
                   <input onChange={(e)=>setsearch(e.target.value)} required className="form-control" placeholder="Search Here..." type="text" />
                   <button className="search_submit" type="submit"><i className="ecicon eci-search" /></button>
@@ -261,14 +246,7 @@ export default function Header() {
           <div className="col align-self-center ec-header-search">
             <div className="header-search">
               <form className="ec-search-group-form" onSubmit={(e)=>callsearchproduct(e)}>
-                {/* <div className="ec-search-select-inner">
-                  <div className="ec-search-cat-title">All</div>
-                  <ul className="ec-search-cat-block">
-                    <li><a href="/">Cloths</a></li>
-                    <li><a href="/">Bag</a></li>
-                    <li><a href="/">Shoes</a></li>
-                  </ul>
-                </div> */}
+               
                 <input onChange={(e)=>setsearch(e.target.value)} className="form-control" placeholder="Search Here..." type="text" />
                 <button className="search_submit" type="submit"><i className="ecicon eci-search" /></button>
               </form>
@@ -296,11 +274,7 @@ export default function Header() {
                     {modelsname.length ? modelsname[0].model_name.split(',').map((itm,k)=>(                    
                     <li key={k}><Link className="ec-cat-menu-link text-uppercase" onClick={()=>setisActive(!isActive)} to={`/categoryproduct/${itm}`}>{itm}</Link></li>
                     )):null}
-                    {/* <li><a className="ec-cat-menu-link" href="/">Electronics &amp; Digital</a></li>
-                    <li><a className="ec-cat-menu-link" href="/">Home Accessories</a></li>
-                    <li><a className="ec-cat-menu-link" href="/">Electronics</a></li>
-                    <li><a className="ec-cat-menu-link" href="/">Office Furniture</a></li>
-                    <li><a className="ec-cat-menu-link" href="/">Hotel Furniture</a></li> */}
+                    
                   </ul>
                 </div>
                 
@@ -354,56 +328,7 @@ export default function Header() {
           <li ><Link to="/">Home</Link>
               
             </li>
-            {/* <li><a href="/">Categories</a>
-              <ul className="sub-menu">
-                <li>
-                <a href="/">Classic Variation</a>
-                  <ul className="sub-menu">
-                    {categorydata.length ?  categorydata[0].category.split(',').map((itm,k)=>(
-                      <li key={k}><Link to="/">{itm}</Link></li>
-                    )):null}
-                    
-                   
-                  </ul>
-                </li>
-                <li>
-                  <a href="/">Classic Variation</a>
-                  <ul className="sub-menu">
-                    <li><a href="shop-banner-left-sidebar-col-3.html">Banner left sidebar 3
-                        column</a></li>
-                    <li><a href="shop-banner-left-sidebar-col-4.html">Banner left sidebar 4
-                        column</a></li>
-                    <li><a href="shop-banner-right-sidebar-col-3.html">Banner right sidebar 3
-                        column</a></li>
-                    <li><a href="shop-banner-right-sidebar-col-4.html">Banner right sidebar 4
-                        column</a></li>
-                    <li><a href="shop-banner-full-width.html">Banner Full width 4 column</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="/">Columns Variation</a>
-                  <ul className="sub-menu">
-                    <li><a href="shop-full-width-col-3.html">3 Columns full width</a></li>
-                    <li><a href="shop-full-width-col-4.html">4 Columns full width</a></li>
-                    <li><a href="shop-full-width-col-5.html">5 Columns full width</a></li>
-                    <li><a href="shop-full-width-col-6.html">6 Columns full width</a></li>
-                    <li><a href="shop-banner-full-width-col-3.html">Banner 3 Columns</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="/">List Variation</a>
-                  <ul className="sub-menu">
-                    <li><a href="shop-list-left-sidebar.html">Shop left sidebar</a></li>
-                    <li><a href="shop-list-right-sidebar.html">Shop right sidebar</a></li>
-                    <li><a href="shop-list-banner-left-sidebar.html">Banner left sidebar</a></li>
-                    <li><a href="shop-list-banner-right-sidebar.html">Banner right sidebar</a></li>
-                    <li><a href="shop-list-full-col-2.html">Full width 2 columns</a></li>
-                  </ul>
-                </li>
-                <li><a className="p-0" href="shop-left-sidebar-col-3.html"><img className="img-responsive" src="/assets/images/menu-banner/1.jpg" alt={''}/></a>
-                </li>
-              </ul>
-            </li> */}
+           
             <li className="dropdown"><Link to="/categoryproduct/iphone">Products</Link> </li>
             <li className="dropdown"><Link to="/sellmyphone">Sell Your iPhone</Link>
                  
@@ -439,10 +364,10 @@ export default function Header() {
           <div className="header-res-social">
             <div className="header-top-social">
               <ul className="mb-0">
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-facebook" /></a></li>
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-twitter" /></a></li>
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-instagram" /></a></li>
-                <li className="list-inline-item"><a href="/"><i className="ecicon eci-linkedin" /></a></li>
+                <li className="list-inline-item"><a target="_blank"  href="https://Facebook.com/zellstores"><i className="ecicon eci-facebook" /></a></li>
+                {/* <li className="list-inline-item"><a href="/"><i className="ecicon eci-twitter" /></a></li> */}
+                <li className="list-inline-item"><a target="_blank"  href="https://instagram.com/zellstores?igshid=OGQ5ZDc2ODk2ZA=="><i className="ecicon eci-instagram" /></a></li>
+                {/* <li className="list-inline-item"><a href="/"><i className="ecicon eci-linkedin" ></a></li> */}
               </ul>
             </div>
           </div>
@@ -470,7 +395,7 @@ export default function Header() {
             <div className="ec-pro-content">
               <Link to={`/product/${itm.product[0].id}`} className="cart_pro_title">{itm.product[0].title} {itm.storage}</Link>
               <span className='text-uppercase'>{itm.condition}</span>
-              <span className="cart-price"><span>${itm.price}</span></span>             
+              <span className="cart-price"><span>{itm.price} AED</span></span>             
                 <div className="d-flex quantitydiv pt-1 ">
                   <button onClick={()=>decrementhandler(k,itm)} className='border border-secondary px-2'><b>-</b></button>
                   <span className="border border-secondary px-3 " type="text"> {itm.quantity}</span>  
@@ -496,15 +421,15 @@ export default function Header() {
               
               <tr>
                 <td className="text-left">Sub-Total :</td>
-                <td className="text-right">${viewcart.reduce((n, {price}) => n + parseInt(price), 0)}</td>
+                <td className="text-right">{viewcart.reduce((n, {price}) => n + parseInt(price), 0)} AED</td>
               </tr>
               <tr>
                 <td className="text-left">VAT (5%) :</td>
-                <td className="text-right">${parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05)}</td>
+                <td className="text-right">{parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05)} AED</td>
               </tr>
               <tr>
                 <td className="text-left">Total :</td>
-                <td className="text-right primary-color">${(viewcart.reduce((n, {price}) => n + parseInt(price), 0))+(parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05))}</td>
+                <td className="text-right primary-color">{(viewcart.reduce((n, {price}) => n + parseInt(price), 0))+(parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05))} AED</td>
               </tr>
               
               

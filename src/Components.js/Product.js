@@ -309,39 +309,9 @@ export default function Product() {
 
                       {/* carousealend */}
 
-                      {/* <div className="single-slide zoom-image-hover">
-                        <img className="img-responsive" src="/assets/images/product-image/9_1.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide zoom-image-hover">
-                        <img className="img-responsive" src="/assets/images/product-image/9_2.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide zoom-image-hover">
-                        <img className="img-responsive" src="/assets/images/product-image/9_3.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide zoom-image-hover">
-                        <img className="img-responsive" src="/assets/images/product-image/9_4.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide zoom-image-hover">
-                        <img className="img-responsive" src="/assets/images/product-image/9_3.jpg" alt={''}/>
-                      </div> */}
+                  
                     </div>
-                    {/* <div className="single-nav-thumb">
-                      <div className="single-slide">
-                        <img className="img-responsive" src="/assets/images/product-image/9_1.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide">
-                        <img className="img-responsive" src="/assets/images/product-image/9_2.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide">
-                        <img className="img-responsive" src="/assets/images/product-image/9_3.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide">
-                        <img className="img-responsive" src="/assets/images/product-image/9_4.jpg" alt={''}/>
-                      </div>
-                      <div className="single-slide">
-                        <img className="img-responsive" src="/assets/images/product-image/9_3.jpg" alt={''}/>
-                      </div>
-                    </div> */}
+                   
                   </div>
                 </div>
                 <div className="single-pro-desc">
@@ -364,14 +334,7 @@ export default function Product() {
                     {/* <div className="ec-single-desc">{productdetail ? productdetail[0].description : null}</div> */}
                     
                     <div className="ec-single-price-stoke">
-                      {/* <div className="ec-single-price">
-                        <span className="ec-single-ps-title">As low as</span>
-                        <span className="new-price">$68.00</span>
-                      </div> */}
-                      {/* <div className="ec-single-stoke">
-                        <span className="ec-single-ps-title">IN STOCK</span>
-                        <span className="ec-single-sku">SKU#: WH12</span>
-                      </div> */}
+                      
                     </div>
                     <div className="ec-pro-variation">
                       <div className="ec-pro-variation-inner ec-pro-variation-size">
@@ -412,24 +375,9 @@ export default function Product() {
                       <div className="ec-single-cart ">
                         <button onClick={()=>iprice ? addtocartfunction(): notifyerror("Select all fields")} className="btn btn-primary">Add To Cart</button>
                       </div>
-                      {/* <div className="ec-single-wishlist">
-                        <a className="ec-btn-group wishlist" title="Wishlist"><img src="/assets/images/icons/wishlist.svg" className="svg_img pro_svg" alt={''}/></a>
-                      </div> */}
-                      {/* <div className="ec-single-quickview">
-                        <a href="/" className="ec-btn-group quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal"><img src="/assets/images/icons/quickview.svg" className="svg_img pro_svg" alt={''}/></a>
-                      </div> */}
+                     
                     </div>
-                    <div className="ec-single-social">
-                      <ul className="mb-0">
-                        <li className="list-inline-item facebook"><a href="/"><i className="ecicon eci-facebook" /></a></li>
-                        <li className="list-inline-item twitter"><a href="/"><i className="ecicon eci-twitter" /></a></li>
-                        <li className="list-inline-item instagram"><a href="/"><i className="ecicon eci-instagram" /></a></li>
-                        <li className="list-inline-item youtube-play"><a href="/"><i className="ecicon eci-youtube-play" /></a></li>
-                        <li className="list-inline-item behance"><a href="/"><i className="ecicon eci-behance" /></a></li>
-                        <li className="list-inline-item whatsapp"><a href="/"><i className="ecicon eci-whatsapp" /></a></li>
-                        <li className="list-inline-item plus"><a href="/"><i className="ecicon eci-plus" /></a></li>
-                      </ul>
-                    </div>
+                    
                   </div>
                 </div>
                 <div className="single-pro-sidebar   ">
@@ -491,12 +439,6 @@ export default function Product() {
                       <li key={key} className='text-capitalize ' style={{fontFamily:"Montserrat",fontWeight:"600",fontSize:"12px"}}> {item}</li>
                     </ul>) : null}
                     
-                    {/* <ul>
-                      <li>Any Product types that You want - Simple, Configurable</li>
-                      <li>Downloadable/Digital Products, Virtual Products</li>
-                      <li>Inventory Management with Backordered items</li>
-                      <li>Flatlock seams throughout.</li>
-                    </ul> */}
                   </div>
                 </div>
                 <div id="ec-spt-nav-info" className="tab-pane fade">

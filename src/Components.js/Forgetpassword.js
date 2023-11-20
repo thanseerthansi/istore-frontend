@@ -7,6 +7,7 @@ import Callaxios from './Callaxios';
 export default function Forgetpassword() {
     let navigate = useNavigate();
     const [email,setemail]=useState('')
+    const [loading,setloading]=useState(false)
     const notify = (msg) => toast.success(msg, {
         position: "top-center",
         });
@@ -15,6 +16,7 @@ export default function Forgetpassword() {
     });
     const sendmail=async(e)=>{
         e.preventDefault();
+        setloading(true)
         // console.log("emil",email)
         try {
             let data = await Callaxios("post","user/sentmail/",{"email":email,"url":window.location.origin+'/passwordchange/'})
@@ -32,7 +34,7 @@ export default function Forgetpassword() {
             console.log(error)
         }
         
-        
+        setloading(false)
     }
   return (
     <div>
@@ -56,7 +58,12 @@ export default function Forgetpassword() {
                                     <input onChange={(e)=>setemail(e.target.value)} value={email} type="email" name="email" placeholder="Enter your email add..." required />
                                 </span>
                                 <span className="ec-login-wrap ec-login-btn ml-auto">
+                                    {loading?
+                                    <button className="btn btn-primary" type="button">Loading... </button>
+                                    :
                                     <button className="btn btn-primary" type="submit">Send </button>
+                                    }
+                                    
                                     {/* <Link to="/register" className="btn btn-secondary">Register</Link> */}
                                 </span>
                                 <span className="ec-login-wrap ec-login-fp mt-2">

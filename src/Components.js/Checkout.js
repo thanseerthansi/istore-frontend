@@ -379,11 +379,11 @@ export default function Checkout() {
                 <div className="ec-checkout-summary">
                   <div>
                     <span className="text-left">Sub-Total</span>
-                    <span className="text-right">${viewcart.length ?  viewcart.reduce((n, {price}) => n + parseInt(price), 0): 0}</span>
+                    <span className="text-right">{viewcart.length ?  viewcart.reduce((n, {price}) => n + parseInt(price), 0): 0} AED</span>
                   </div>
                   <div>
                     <span className="text-left">VAT</span>
-                    <span className="text-right">${viewcart.length ? parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05):0}</span>
+                    <span className="text-right">{viewcart.length ? parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05):0} AED</span>
                   </div>
                   {/* <div>
                     <span className="text-left">Coupan Discount</span>
@@ -397,7 +397,7 @@ export default function Checkout() {
                   </div> */}
                   <div className="ec-checkout-summary-total">
                     <span className="text-left">Total Amount</span>
-                    <span className="text-right">${viewcart.length ? (viewcart.reduce((n, {price}) => n + parseInt(price), 0))+(parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05)):0}</span>
+                    <span className="text-right">{viewcart.length ? (viewcart.reduce((n, {price}) => n + parseInt(price), 0))+(parseFloat(viewcart.reduce((n, {price}) => n + parseInt(price), 0)*0.05)):0} AED</span>
                   </div>
                 </div>
                 <div className="ec-checkout-pro">
@@ -417,7 +417,7 @@ export default function Checkout() {
                         <span className='text-uppercase'><b> {itm.condition}</b></span> 
                         <span className="ec-price">
                           {/* <span className="old-price">$95.00</span> */}
-                          <span className="new-price">${itm.price}</span>
+                          <span className="new-price">{itm.price} AED</span>
                         </span>
                        
                       </div>
